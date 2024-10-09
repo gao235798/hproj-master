@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.Mom_SndetailMapper">
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.Mom_Sndetail">
+        <id column="AutoID" property="autoid" jdbcType="INTEGER"/>
+        <result column="iVouchID" property="ivouchid" jdbcType="INTEGER"/>
+        <result column="iVouchsID" property="ivouchsid" jdbcType="INTEGER"/>
+        <result column="iRowNO" property="irowno" jdbcType="INTEGER"/>
+        <result column="cWhCode" property="cwhcode" jdbcType="NVARCHAR"/>
+        <result column="cPosition" property="cposition" jdbcType="NVARCHAR"/>
+        <result column="cInvCode" property="cinvcode" jdbcType="NVARCHAR"/>
+        <result column="cfree1" property="cfree1" jdbcType="NVARCHAR"/>
+        <result column="cfree2" property="cfree2" jdbcType="NVARCHAR"/>
+        <result column="cfree3" property="cfree3" jdbcType="NVARCHAR"/>
+        <result column="cfree4" property="cfree4" jdbcType="NVARCHAR"/>
+        <result column="cfree5" property="cfree5" jdbcType="NVARCHAR"/>
+        <result column="cfree6" property="cfree6" jdbcType="NVARCHAR"/>
+        <result column="cfree7" property="cfree7" jdbcType="NVARCHAR"/>
+        <result column="cfree8" property="cfree8" jdbcType="NVARCHAR"/>
+        <result column="cfree9" property="cfree9" jdbcType="NVARCHAR"/>
+        <result column="cfree10" property="cfree10" jdbcType="NVARCHAR"/>
+        <result column="PartId" property="partid" jdbcType="INTEGER"/>
+        <result column="cSNDefine1" property="csndefine1" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine2" property="csndefine2" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine3" property="csndefine3" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine4" property="csndefine4" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine5" property="csndefine5" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine6" property="csndefine6" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine7" property="csndefine7" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine8" property="csndefine8" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine9" property="csndefine9" jdbcType="NVARCHAR"/>
+        <result column="cSNDefine10" property="csndefine10" jdbcType="NVARCHAR"/>
+        <result column="iSNCurState" property="isncurstate" jdbcType="SMALLINT"/>
+        <result column="iSNPreState" property="isnprestate" jdbcType="SMALLINT"/>
+        <result column="iSNOperateCount" property="isnoperatecount" jdbcType="INTEGER"/>
+        <result column="cInCode" property="cincode" jdbcType="NVARCHAR"/>
+        <result column="itrackid" property="itrackid" jdbcType="INTEGER"/>
+        <result column="cBatch" property="cbatch" jdbcType="NVARCHAR"/>
+        <result column="cVenCode" property="cvencode" jdbcType="NVARCHAR"/>
+        <result column="cInvSN" property="cinvsn" jdbcType="NVARCHAR"/>
+        <result column="dmdate" property="dmdate" jdbcType="TIMESTAMP"/>
+        <result column="dvdate" property="dvdate" jdbcType="TIMESTAMP"/>
+        <result column="imassunit" property="imassunit" jdbcType="SMALLINT"/>
+        <result column="imassdate" property="imassdate" jdbcType="INTEGER"/>
+        <result column="ipremassdate" property="ipremassdate" jdbcType="INTEGER"/>
+        <result column="cprewhcode" property="cprewhcode" jdbcType="NVARCHAR"/>
+        <result column="cprePosition" property="cpreposition" jdbcType="NVARCHAR"/>
+        <result column="cpreBatch" property="cprebatch" jdbcType="NVARCHAR"/>
+        <result column="cpreVenCode" property="cprevencode" jdbcType="NVARCHAR"/>
+        <result column="ipretrackid" property="ipretrackid" jdbcType="INTEGER"/>
+        <result column="cpreincode" property="cpreincode" jdbcType="NVARCHAR"/>
+        <result column="predmdate" property="predmdate" jdbcType="TIMESTAMP"/>
+        <result column="predvdate" property="predvdate" jdbcType="TIMESTAMP"/>
+        <result column="preimassunit" property="preimassunit" jdbcType="SMALLINT"/>
+        <result column="csnmemo" property="csnmemo" jdbcType="NVARCHAR"/>
+        <result column="bused" property="bused" jdbcType="BIT"/>
+        <result column="bmaused" property="bmaused" jdbcType="BIT"/>
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.Mom_Sndetail" extends="BaseResultMap">
+        <result column="Ufts" property="ufts" jdbcType="BINARY"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        AutoID
+        , iVouchID, iVouchsID, iRowNO, cWhCode, cPosition, cInvCode, cfree1, cfree2,
+    cfree3, cfree4, cfree5, cfree6, cfree7, cfree8, cfree9, cfree10, PartId, cSNDefine1, 
+    cSNDefine2, cSNDefine3, cSNDefine4, cSNDefine5, cSNDefine6, cSNDefine7, cSNDefine8, 
+    cSNDefine9, cSNDefine10, iSNCurState, iSNPreState, iSNOperateCount, cInCode, itrackid, 
+    cBatch, cVenCode, cInvSN, dmdate, dvdate, imassunit, imassdate, ipremassdate, cprewhcode, 
+    cprePosition, cpreBatch, cpreVenCode, ipretrackid, cpreincode, predmdate, predvdate, 
+    preimassunit, csnmemo, bused, bmaused
+    </sql>
+    <sql id="Blob_Column_List">
+        Ufts
+    </sql>
+    <select id="selectByALLMomSndetail" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from mom_SNDetail
+        where iVouchsID = #{iVouchsID,jdbcType=INTEGER}
+    </select>
+
+</mapper>

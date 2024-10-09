@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.espread.sys.mapper.Rdrecord08Mapper">
+
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.Rdrecord08">
+            <id property="id" column="ID" jdbcType="BIGINT"/>
+            <result property="brdflag" column="bRdFlag" jdbcType="TINYINT"/>
+            <result property="cvouchtype" column="cVouchType" jdbcType="VARCHAR"/>
+            <result property="cbustype" column="cBusType" jdbcType="VARCHAR"/>
+            <result property="csource" column="cSource" jdbcType="VARCHAR"/>
+            <result property="cbuscode" column="cBusCode" jdbcType="VARCHAR"/>
+            <result property="cwhcode" column="cWhCode" jdbcType="VARCHAR"/>
+            <result property="ddate" column="dDate" jdbcType="TIMESTAMP"/>
+            <result property="ccode" column="cCode" jdbcType="VARCHAR"/>
+            <result property="crdcode" column="cRdCode" jdbcType="VARCHAR"/>
+            <result property="cdepcode" column="cDepCode" jdbcType="VARCHAR"/>
+            <result property="cpersoncode" column="cPersonCode" jdbcType="VARCHAR"/>
+            <result property="cptcode" column="cPTCode" jdbcType="VARCHAR"/>
+            <result property="cstcode" column="cSTCode" jdbcType="VARCHAR"/>
+            <result property="ccuscode" column="cCusCode" jdbcType="VARCHAR"/>
+            <result property="cvencode" column="cVenCode" jdbcType="VARCHAR"/>
+            <result property="cordercode" column="cOrderCode" jdbcType="VARCHAR"/>
+            <result property="carvcode" column="cARVCode" jdbcType="VARCHAR"/>
+            <result property="cbillcode" column="cBillCode" jdbcType="BIGINT"/>
+            <result property="cdlcode" column="cDLCode" jdbcType="BIGINT"/>
+            <result property="cprobatch" column="cProBatch" jdbcType="VARCHAR"/>
+            <result property="chandler" column="cHandler" jdbcType="VARCHAR"/>
+            <result property="cmemo" column="cMemo" jdbcType="VARCHAR"/>
+            <result property="btransflag" column="bTransFlag" jdbcType="BIT"/>
+            <result property="caccounter" column="cAccounter" jdbcType="VARCHAR"/>
+            <result property="cmaker" column="cMaker" jdbcType="VARCHAR"/>
+            <result property="cdefine1" column="cDefine1" jdbcType="VARCHAR"/>
+            <result property="cdefine2" column="cDefine2" jdbcType="VARCHAR"/>
+            <result property="cdefine3" column="cDefine3" jdbcType="VARCHAR"/>
+            <result property="cdefine4" column="cDefine4" jdbcType="TIMESTAMP"/>
+            <result property="cdefine5" column="cDefine5" jdbcType="INTEGER"/>
+            <result property="cdefine6" column="cDefine6" jdbcType="TIMESTAMP"/>
+            <result property="cdefine7" column="cDefine7" jdbcType="FLOAT"/>
+            <result property="cdefine8" column="cDefine8" jdbcType="VARCHAR"/>
+            <result property="cdefine9" column="cDefine9" jdbcType="VARCHAR"/>
+            <result property="cdefine10" column="cDefine10" jdbcType="VARCHAR"/>
+            <result property="dkeepdate" column="dKeepDate" jdbcType="VARCHAR"/>
+            <result property="dveridate" column="dVeriDate" jdbcType="TIMESTAMP"/>
+            <result property="bpufirst" column="bpufirst" jdbcType="BIT"/>
+            <result property="biafirst" column="biafirst" jdbcType="BIT"/>
+            <result property="imquantity" column="iMQuantity" jdbcType="FLOAT"/>
+            <result property="darvdate" column="dARVDate" jdbcType="TIMESTAMP"/>
+            <result property="cchkcode" column="cChkCode" jdbcType="VARCHAR"/>
+            <result property="dchkdate" column="dChkDate" jdbcType="TIMESTAMP"/>
+            <result property="cchkperson" column="cChkPerson" jdbcType="VARCHAR"/>
+            <result property="vtId" column="VT_ID" jdbcType="INTEGER"/>
+            <result property="bisstqc" column="bIsSTQc" jdbcType="BIT"/>
+            <result property="cdefine11" column="cDefine11" jdbcType="VARCHAR"/>
+            <result property="cdefine12" column="cDefine12" jdbcType="VARCHAR"/>
+            <result property="cdefine13" column="cDefine13" jdbcType="VARCHAR"/>
+            <result property="cdefine14" column="cDefine14" jdbcType="VARCHAR"/>
+            <result property="cdefine15" column="cDefine15" jdbcType="INTEGER"/>
+            <result property="cdefine16" column="cDefine16" jdbcType="FLOAT"/>
+            <result property="gspcheck" column="gspcheck" jdbcType="VARCHAR"/>
+            <result property="ufts" column="ufts" jdbcType="TIMESTAMP"/>
+            <result property="iexchrate" column="iExchRate" jdbcType="FLOAT"/>
+            <result property="cexchName" column="cExch_Name" jdbcType="VARCHAR"/>
+            <result property="bomfirst" column="bOMFirst" jdbcType="BIT"/>
+            <result property="bfrompreyear" column="bFromPreYear" jdbcType="BIT"/>
+            <result property="bislsquery" column="bIsLsQuery" jdbcType="BIT"/>
+            <result property="biscomplement" column="bIsComplement" jdbcType="SMALLINT"/>
+            <result property="idiscounttaxtype" column="iDiscountTaxType" jdbcType="TINYINT"/>
+            <result property="ireturncount" column="ireturncount" jdbcType="INTEGER"/>
+            <result property="iverifystate" column="iverifystate" jdbcType="INTEGER"/>
+            <result property="iswfcontrolled" column="iswfcontrolled" jdbcType="INTEGER"/>
+            <result property="cmodifyperson" column="cModifyPerson" jdbcType="VARCHAR"/>
+            <result property="dmodifydate" column="dModifyDate" jdbcType="TIMESTAMP"/>
+            <result property="dnmaketime" column="dnmaketime" jdbcType="TIMESTAMP"/>
+            <result property="dnmodifytime" column="dnmodifytime" jdbcType="TIMESTAMP"/>
+            <result property="dnverifytime" column="dnverifytime" jdbcType="TIMESTAMP"/>
+            <result property="bredvouch" column="bredvouch" jdbcType="INTEGER"/>
+            <result property="iflowid" column="iFlowId" jdbcType="INTEGER"/>
+            <result property="cpzid" column="cPZID" jdbcType="VARCHAR"/>
+            <result property="csourcels" column="cSourceLs" jdbcType="VARCHAR"/>
+            <result property="csourcecodels" column="cSourceCodeLs" jdbcType="VARCHAR"/>
+            <result property="iprintcount" column="iPrintCount" jdbcType="INTEGER"/>
+            <result property="ctransflag" column="ctransflag" jdbcType="VARCHAR"/>
+            <result property="csysbarcode" column="csysbarcode" jdbcType="VARCHAR"/>
+            <result property="ccurrentauditor" column="cCurrentAuditor" jdbcType="VARCHAR"/>
+            <result property="cchecksignflag" column="cCheckSignFlag" jdbcType="VARCHAR"/>
+            <result property="csyssource" column="csyssource" jdbcType="VARCHAR"/>
+            <result property="csyssourceid" column="csyssourceid" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,bRdFlag,cVouchType,
+        cBusType,cSource,cBusCode,
+        cWhCode,dDate,cCode,
+        cRdCode,cDepCode,cPersonCode,
+        cPTCode,cSTCode,cCusCode,
+        cVenCode,cOrderCode,cARVCode,
+        cBillCode,cDLCode,cProBatch,
+        cHandler,cMemo,bTransFlag,
+        cAccounter,cMaker,cDefine1,
+        cDefine2,cDefine3,cDefine4,
+        cDefine5,cDefine6,cDefine7,
+        cDefine8,cDefine9,cDefine10,
+        dKeepDate,dVeriDate,bpufirst,
+        biafirst,iMQuantity,dARVDate,
+        cChkCode,dChkDate,cChkPerson,
+        VT_ID,bIsSTQc,cDefine11,
+        cDefine12,cDefine13,cDefine14,
+        cDefine15,cDefine16,gspcheck,
+        ufts,iExchRate,cExch_Name,
+        bOMFirst,bFromPreYear,bIsLsQuery,
+        bIsComplement,iDiscountTaxType,ireturncount,
+        iverifystate,iswfcontrolled,cModifyPerson,
+        dModifyDate,dnmaketime,dnmodifytime,
+        dnverifytime,bredvouch,iFlowId,
+        cPZID,cSourceLs,cSourceCodeLs,
+        iPrintCount,ctransflag,csysbarcode,
+        cCurrentAuditor,cCheckSignFlag,csyssource,
+        csyssourceid
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from RdRecord08
+        where  ID = #{id,jdbcType=BIGINT} 
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from RdRecord08
+        where  ID = #{id,jdbcType=BIGINT} 
+    </delete>
+    <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.espread.sys.model.Rdrecord08" useGeneratedKeys="true">
+        insert into RdRecord08
+        ( ID,bRdFlag,cVouchType
+        ,cBusType,cSource,cBusCode
+        ,cWhCode,dDate,cCode
+        ,cRdCode,cDepCode,cPersonCode
+        ,cPTCode,cSTCode,cCusCode
+        ,cVenCode,cOrderCode,cARVCode
+        ,cBillCode,cDLCode,cProBatch
+        ,cHandler,cMemo,bTransFlag
+        ,cAccounter,cMaker,cDefine1
+        ,cDefine2,cDefine3,cDefine4
+        ,cDefine5,cDefine6,cDefine7
+        ,cDefine8,cDefine9,cDefine10
+        ,dKeepDate,dVeriDate,bpufirst
+        ,biafirst,iMQuantity,dARVDate
+        ,cChkCode,dChkDate,cChkPerson
+        ,VT_ID,bIsSTQc,cDefine11
+        ,cDefine12,cDefine13,cDefine14
+        ,cDefine15,cDefine16,gspcheck
+        ,ufts,iExchRate,cExch_Name
+        ,bOMFirst,bFromPreYear,bIsLsQuery
+        ,bIsComplement,iDiscountTaxType,ireturncount
+        ,iverifystate,iswfcontrolled,cModifyPerson
+        ,dModifyDate,dnmaketime,dnmodifytime
+        ,dnverifytime,bredvouch,iFlowId
+        ,cPZID,cSourceLs,cSourceCodeLs
+        ,iPrintCount,ctransflag,csysbarcode
+        ,cCurrentAuditor,cCheckSignFlag,csyssource
+        ,csyssourceid)
+        values (#{id,jdbcType=BIGINT},#{brdflag,jdbcType=TINYINT},#{cvouchtype,jdbcType=VARCHAR}
+        ,#{cbustype,jdbcType=VARCHAR},#{csource,jdbcType=VARCHAR},#{cbuscode,jdbcType=VARCHAR}
+        ,#{cwhcode,jdbcType=VARCHAR},#{ddate,jdbcType=TIMESTAMP},#{ccode,jdbcType=VARCHAR}
+        ,#{crdcode,jdbcType=VARCHAR},#{cdepcode,jdbcType=VARCHAR},#{cpersoncode,jdbcType=VARCHAR}
+        ,#{cptcode,jdbcType=VARCHAR},#{cstcode,jdbcType=VARCHAR},#{ccuscode,jdbcType=VARCHAR}
+        ,#{cvencode,jdbcType=VARCHAR},#{cordercode,jdbcType=VARCHAR},#{carvcode,jdbcType=VARCHAR}
+        ,#{cbillcode,jdbcType=BIGINT},#{cdlcode,jdbcType=BIGINT},#{cprobatch,jdbcType=VARCHAR}
+        ,#{chandler,jdbcType=VARCHAR},#{cmemo,jdbcType=VARCHAR},#{btransflag,jdbcType=BIT}
+        ,#{caccounter,jdbcType=VARCHAR},#{cmaker,jdbcType=VARCHAR},#{cdefine1,jdbcType=VARCHAR}
+        ,#{cdefine2,jdbcType=VARCHAR},#{cdefine3,jdbcType=VARCHAR},#{cdefine4,jdbcType=TIMESTAMP}
+        ,#{cdefine5,jdbcType=INTEGER},#{cdefine6,jdbcType=TIMESTAMP},#{cdefine7,jdbcType=FLOAT}
+        ,#{cdefine8,jdbcType=VARCHAR},#{cdefine9,jdbcType=VARCHAR},#{cdefine10,jdbcType=VARCHAR}
+        ,#{dkeepdate,jdbcType=VARCHAR},#{dveridate,jdbcType=TIMESTAMP},#{bpufirst,jdbcType=BIT}
+        ,#{biafirst,jdbcType=BIT},#{imquantity,jdbcType=FLOAT},#{darvdate,jdbcType=TIMESTAMP}
+        ,#{cchkcode,jdbcType=VARCHAR},#{dchkdate,jdbcType=TIMESTAMP},#{cchkperson,jdbcType=VARCHAR}
+        ,#{vtId,jdbcType=INTEGER},#{bisstqc,jdbcType=BIT},#{cdefine11,jdbcType=VARCHAR}
+        ,#{cdefine12,jdbcType=VARCHAR},#{cdefine13,jdbcType=VARCHAR},#{cdefine14,jdbcType=VARCHAR}
+        ,#{cdefine15,jdbcType=INTEGER},#{cdefine16,jdbcType=FLOAT},#{gspcheck,jdbcType=VARCHAR}
+        ,#{ufts,jdbcType=TIMESTAMP},#{iexchrate,jdbcType=FLOAT},#{cexchName,jdbcType=VARCHAR}
+        ,#{bomfirst,jdbcType=BIT},#{bfrompreyear,jdbcType=BIT},#{bislsquery,jdbcType=BIT}
+        ,#{biscomplement,jdbcType=SMALLINT},#{idiscounttaxtype,jdbcType=TINYINT},#{ireturncount,jdbcType=INTEGER}
+        ,#{iverifystate,jdbcType=INTEGER},#{iswfcontrolled,jdbcType=INTEGER},#{cmodifyperson,jdbcType=VARCHAR}
+        ,#{dmodifydate,jdbcType=TIMESTAMP},#{dnmaketime,jdbcType=TIMESTAMP},#{dnmodifytime,jdbcType=TIMESTAMP}
+        ,#{dnverifytime,jdbcType=TIMESTAMP},#{bredvouch,jdbcType=INTEGER},#{iflowid,jdbcType=INTEGER}
+        ,#{cpzid,jdbcType=VARCHAR},#{csourcels,jdbcType=VARCHAR},#{csourcecodels,jdbcType=VARCHAR}
+        ,#{iprintcount,jdbcType=INTEGER},#{ctransflag,jdbcType=VARCHAR},#{csysbarcode,jdbcType=VARCHAR}
+        ,#{ccurrentauditor,jdbcType=VARCHAR},#{cchecksignflag,jdbcType=VARCHAR},#{csyssource,jdbcType=VARCHAR}
+        ,#{csyssourceid,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="com.espread.sys.model.Rdrecord08" useGeneratedKeys="true">
+        insert into RdRecord08
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="id != null">ID,</if>
+                <if test="brdflag != null">bRdFlag,</if>
+                <if test="cvouchtype != null">cVouchType,</if>
+                <if test="cbustype != null">cBusType,</if>
+                <if test="csource != null">cSource,</if>
+                <if test="cbuscode != null">cBusCode,</if>
+                <if test="cwhcode != null">cWhCode,</if>
+                <if test="ddate != null">dDate,</if>
+                <if test="ccode != null">cCode,</if>
+                <if test="crdcode != null">cRdCode,</if>
+                <if test="cdepcode != null">cDepCode,</if>
+                <if test="cpersoncode != null">cPersonCode,</if>
+                <if test="cptcode != null">cPTCode,</if>
+                <if test="cstcode != null">cSTCode,</if>
+                <if test="ccuscode != null">cCusCode,</if>
+                <if test="cvencode != null">cVenCode,</if>
+                <if test="cordercode != null">cOrderCode,</if>
+                <if test="carvcode != null">cARVCode,</if>
+                <if test="cbillcode != null">cBillCode,</if>
+                <if test="cdlcode != null">cDLCode,</if>
+                <if test="cprobatch != null">cProBatch,</if>
+                <if test="chandler != null">cHandler,</if>
+                <if test="cmemo != null">cMemo,</if>
+                <if test="btransflag != null">bTransFlag,</if>
+                <if test="caccounter != null">cAccounter,</if>
+                <if test="cmaker != null">cMaker,</if>
+                <if test="cdefine1 != null">cDefine1,</if>
+                <if test="cdefine2 != null">cDefine2,</if>
+                <if test="cdefine3 != null">cDefine3,</if>
+                <if test="cdefine4 != null">cDefine4,</if>
+                <if test="cdefine5 != null">cDefine5,</if>
+                <if test="cdefine6 != null">cDefine6,</if>
+                <if test="cdefine7 != null">cDefine7,</if>
+                <if test="cdefine8 != null">cDefine8,</if>
+                <if test="cdefine9 != null">cDefine9,</if>
+                <if test="cdefine10 != null">cDefine10,</if>
+                <if test="dkeepdate != null">dKeepDate,</if>
+                <if test="dveridate != null">dVeriDate,</if>
+                <if test="bpufirst != null">bpufirst,</if>
+                <if test="biafirst != null">biafirst,</if>
+                <if test="imquantity != null">iMQuantity,</if>
+                <if test="darvdate != null">dARVDate,</if>
+                <if test="cchkcode != null">cChkCode,</if>
+                <if test="dchkdate != null">dChkDate,</if>
+                <if test="cchkperson != null">cChkPerson,</if>
+                <if test="vtId != null">VT_ID,</if>
+                <if test="bisstqc != null">bIsSTQc,</if>
+                <if test="cdefine11 != null">cDefine11,</if>
+                <if test="cdefine12 != null">cDefine12,</if>
+                <if test="cdefine13 != null">cDefine13,</if>
+                <if test="cdefine14 != null">cDefine14,</if>
+                <if test="cdefine15 != null">cDefine15,</if>
+                <if test="cdefine16 != null">cDefine16,</if>
+                <if test="gspcheck != null">gspcheck,</if>
+                <if test="ufts != null">ufts,</if>
+                <if test="iexchrate != null">iExchRate,</if>
+                <if test="cexchName != null">cExch_Name,</if>
+                <if test="bomfirst != null">bOMFirst,</if>
+                <if test="bfrompreyear != null">bFromPreYear,</if>
+                <if test="bislsquery != null">bIsLsQuery,</if>
+                <if test="biscomplement != null">bIsComplement,</if>
+                <if test="idiscounttaxtype != null">iDiscountTaxType,</if>
+                <if test="ireturncount != null">ireturncount,</if>
+                <if test="iverifystate != null">iverifystate,</if>
+                <if test="iswfcontrolled != null">iswfcontrolled,</if>
+                <if test="cmodifyperson != null">cModifyPerson,</if>
+                <if test="dmodifydate != null">dModifyDate,</if>
+                <if test="dnmaketime != null">dnmaketime,</if>
+                <if test="dnmodifytime != null">dnmodifytime,</if>
+                <if test="dnverifytime != null">dnverifytime,</if>
+                <if test="bredvouch != null">bredvouch,</if>
+                <if test="iflowid != null">iFlowId,</if>
+                <if test="cpzid != null">cPZID,</if>
+                <if test="csourcels != null">cSourceLs,</if>
+                <if test="csourcecodels != null">cSourceCodeLs,</if>
+                <if test="iprintcount != null">iPrintCount,</if>
+                <if test="ctransflag != null">ctransflag,</if>
+                <if test="csysbarcode != null">csysbarcode,</if>
+                <if test="ccurrentauditor != null">cCurrentAuditor,</if>
+                <if test="cchecksignflag != null">cCheckSignFlag,</if>
+                <if test="csyssource != null">csyssource,</if>
+                <if test="csyssourceid != null">csyssourceid,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="id != null">#{id,jdbcType=BIGINT},</if>
+                <if test="brdflag != null">#{brdflag,jdbcType=TINYINT},</if>
+                <if test="cvouchtype != null">#{cvouchtype,jdbcType=VARCHAR},</if>
+                <if test="cbustype != null">#{cbustype,jdbcType=VARCHAR},</if>
+                <if test="csource != null">#{csource,jdbcType=VARCHAR},</if>
+                <if test="cbuscode != null">#{cbuscode,jdbcType=VARCHAR},</if>
+                <if test="cwhcode != null">#{cwhcode,jdbcType=VARCHAR},</if>
+                <if test="ddate != null">#{ddate,jdbcType=TIMESTAMP},</if>
+                <if test="ccode != null">#{ccode,jdbcType=VARCHAR},</if>
+                <if test="crdcode != null">#{crdcode,jdbcType=VARCHAR},</if>
+                <if test="cdepcode != null">#{cdepcode,jdbcType=VARCHAR},</if>
+                <if test="cpersoncode != null">#{cpersoncode,jdbcType=VARCHAR},</if>
+                <if test="cptcode != null">#{cptcode,jdbcType=VARCHAR},</if>
+                <if test="cstcode != null">#{cstcode,jdbcType=VARCHAR},</if>
+                <if test="ccuscode != null">#{ccuscode,jdbcType=VARCHAR},</if>
+                <if test="cvencode != null">#{cvencode,jdbcType=VARCHAR},</if>
+                <if test="cordercode != null">#{cordercode,jdbcType=VARCHAR},</if>
+                <if test="carvcode != null">#{carvcode,jdbcType=VARCHAR},</if>
+                <if test="cbillcode != null">#{cbillcode,jdbcType=BIGINT},</if>
+                <if test="cdlcode != null">#{cdlcode,jdbcType=BIGINT},</if>
+                <if test="cprobatch != null">#{cprobatch,jdbcType=VARCHAR},</if>
+                <if test="chandler != null">#{chandler,jdbcType=VARCHAR},</if>
+                <if test="cmemo != null">#{cmemo,jdbcType=VARCHAR},</if>
+                <if test="btransflag != null">#{btransflag,jdbcType=BIT},</if>
+                <if test="caccounter != null">#{caccounter,jdbcType=VARCHAR},</if>
+                <if test="cmaker != null">#{cmaker,jdbcType=VARCHAR},</if>
+                <if test="cdefine1 != null">#{cdefine1,jdbcType=VARCHAR},</if>
+                <if test="cdefine2 != null">#{cdefine2,jdbcType=VARCHAR},</if>
+                <if test="cdefine3 != null">#{cdefine3,jdbcType=VARCHAR},</if>
+                <if test="cdefine4 != null">#{cdefine4,jdbcType=TIMESTAMP},</if>
+                <if test="cdefine5 != null">#{cdefine5,jdbcType=INTEGER},</if>
+                <if test="cdefine6 != null">#{cdefine6,jdbcType=TIMESTAMP},</if>
+                <if test="cdefine7 != null">#{cdefine7,jdbcType=FLOAT},</if>
+                <if test="cdefine8 != null">#{cdefine8,jdbcType=VARCHAR},</if>
+                <if test="cdefine9 != null">#{cdefine9,jdbcType=VARCHAR},</if>
+                <if test="cdefine10 != null">#{cdefine10,jdbcType=VARCHAR},</if>
+                <if test="dkeepdate != null">#{dkeepdate,jdbcType=VARCHAR},</if>
+                <if test="dveridate != null">#{dveridate,jdbcType=TIMESTAMP},</if>
+                <if test="bpufirst != null">#{bpufirst,jdbcType=BIT},</if>
+                <if test="biafirst != null">#{biafirst,jdbcType=BIT},</if>
+                <if test="imquantity != null">#{imquantity,jdbcType=FLOAT},</if>
+                <if test="darvdate != null">#{darvdate,jdbcType=TIMESTAMP},</if>
+                <if test="cchkcode != null">#{cchkcode,jdbcType=VARCHAR},</if>
+                <if test="dchkdate != null">#{dchkdate,jdbcType=TIMESTAMP},</if>
+                <if test="cchkperson != null">#{cchkperson,jdbcType=VARCHAR},</if>
+                <if test="vtId != null">#{vtId,jdbcType=INTEGER},</if>
+                <if test="bisstqc != null">#{bisstqc,jdbcType=BIT},</if>
+                <if test="cdefine11 != null">#{cdefine11,jdbcType=VARCHAR},</if>
+                <if test="cdefine12 != null">#{cdefine12,jdbcType=VARCHAR},</if>
+                <if test="cdefine13 != null">#{cdefine13,jdbcType=VARCHAR},</if>
+                <if test="cdefine14 != null">#{cdefine14,jdbcType=VARCHAR},</if>
+                <if test="cdefine15 != null">#{cdefine15,jdbcType=INTEGER},</if>
+                <if test="cdefine16 != null">#{cdefine16,jdbcType=FLOAT},</if>
+                <if test="gspcheck != null">#{gspcheck,jdbcType=VARCHAR},</if>
+                <if test="ufts != null">#{ufts,jdbcType=TIMESTAMP},</if>
+                <if test="iexchrate != null">#{iexchrate,jdbcType=FLOAT},</if>
+                <if test="cexchName != null">#{cexchName,jdbcType=VARCHAR},</if>
+                <if test="bomfirst != null">#{bomfirst,jdbcType=BIT},</if>
+                <if test="bfrompreyear != null">#{bfrompreyear,jdbcType=BIT},</if>
+                <if test="bislsquery != null">#{bislsquery,jdbcType=BIT},</if>
+                <if test="biscomplement != null">#{biscomplement,jdbcType=SMALLINT},</if>
+                <if test="idiscounttaxtype != null">#{idiscounttaxtype,jdbcType=TINYINT},</if>
+                <if test="ireturncount != null">#{ireturncount,jdbcType=INTEGER},</if>
+                <if test="iverifystate != null">#{iverifystate,jdbcType=INTEGER},</if>
+                <if test="iswfcontrolled != null">#{iswfcontrolled,jdbcType=INTEGER},</if>
+                <if test="cmodifyperson != null">#{cmodifyperson,jdbcType=VARCHAR},</if>
+                <if test="dmodifydate != null">#{dmodifydate,jdbcType=TIMESTAMP},</if>
+                <if test="dnmaketime != null">#{dnmaketime,jdbcType=TIMESTAMP},</if>
+                <if test="dnmodifytime != null">#{dnmodifytime,jdbcType=TIMESTAMP},</if>
+                <if test="dnverifytime != null">#{dnverifytime,jdbcType=TIMESTAMP},</if>
+                <if test="bredvouch != null">#{bredvouch,jdbcType=INTEGER},</if>
+                <if test="iflowid != null">#{iflowid,jdbcType=INTEGER},</if>
+                <if test="cpzid != null">#{cpzid,jdbcType=VARCHAR},</if>
+                <if test="csourcels != null">#{csourcels,jdbcType=VARCHAR},</if>
+                <if test="csourcecodels != null">#{csourcecodels,jdbcType=VARCHAR},</if>
+                <if test="iprintcount != null">#{iprintcount,jdbcType=INTEGER},</if>
+                <if test="ctransflag != null">#{ctransflag,jdbcType=VARCHAR},</if>
+                <if test="csysbarcode != null">#{csysbarcode,jdbcType=VARCHAR},</if>
+                <if test="ccurrentauditor != null">#{ccurrentauditor,jdbcType=VARCHAR},</if>
+                <if test="cchecksignflag != null">#{cchecksignflag,jdbcType=VARCHAR},</if>
+                <if test="csyssource != null">#{csyssource,jdbcType=VARCHAR},</if>
+                <if test="csyssourceid != null">#{csyssourceid,jdbcType=VARCHAR},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.espread.sys.model.Rdrecord08">
+        update RdRecord08
+        <set>
+                <if test="brdflag != null">
+                    bRdFlag = #{brdflag,jdbcType=TINYINT},
+                </if>
+                <if test="cvouchtype != null">
+                    cVouchType = #{cvouchtype,jdbcType=VARCHAR},
+                </if>
+                <if test="cbustype != null">
+                    cBusType = #{cbustype,jdbcType=VARCHAR},
+                </if>
+                <if test="csource != null">
+                    cSource = #{csource,jdbcType=VARCHAR},
+                </if>
+                <if test="cbuscode != null">
+                    cBusCode = #{cbuscode,jdbcType=VARCHAR},
+                </if>
+                <if test="cwhcode != null">
+                    cWhCode = #{cwhcode,jdbcType=VARCHAR},
+                </if>
+                <if test="ddate != null">
+                    dDate = #{ddate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="ccode != null">
+                    cCode = #{ccode,jdbcType=VARCHAR},
+                </if>
+                <if test="crdcode != null">
+                    cRdCode = #{crdcode,jdbcType=VARCHAR},
+                </if>
+                <if test="cdepcode != null">
+                    cDepCode = #{cdepcode,jdbcType=VARCHAR},
+                </if>
+                <if test="cpersoncode != null">
+                    cPersonCode = #{cpersoncode,jdbcType=VARCHAR},
+                </if>
+                <if test="cptcode != null">
+                    cPTCode = #{cptcode,jdbcType=VARCHAR},
+                </if>
+                <if test="cstcode != null">
+                    cSTCode = #{cstcode,jdbcType=VARCHAR},
+                </if>
+                <if test="ccuscode != null">
+                    cCusCode = #{ccuscode,jdbcType=VARCHAR},
+                </if>
+                <if test="cvencode != null">
+                    cVenCode = #{cvencode,jdbcType=VARCHAR},
+                </if>
+                <if test="cordercode != null">
+                    cOrderCode = #{cordercode,jdbcType=VARCHAR},
+                </if>
+                <if test="carvcode != null">
+                    cARVCode = #{carvcode,jdbcType=VARCHAR},
+                </if>
+                <if test="cbillcode != null">
+                    cBillCode = #{cbillcode,jdbcType=BIGINT},
+                </if>
+                <if test="cdlcode != null">
+                    cDLCode = #{cdlcode,jdbcType=BIGINT},
+                </if>
+                <if test="cprobatch != null">
+                    cProBatch = #{cprobatch,jdbcType=VARCHAR},
+                </if>
+                <if test="chandler != null">
+                    cHandler = #{chandler,jdbcType=VARCHAR},
+                </if>
+                <if test="cmemo != null">
+                    cMemo = #{cmemo,jdbcType=VARCHAR},
+                </if>
+                <if test="btransflag != null">
+                    bTransFlag = #{btransflag,jdbcType=BIT},
+                </if>
+                <if test="caccounter != null">
+                    cAccounter = #{caccounter,jdbcType=VARCHAR},
+                </if>
+                <if test="cmaker != null">
+                    cMaker = #{cmaker,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine1 != null">
+                    cDefine1 = #{cdefine1,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine2 != null">
+                    cDefine2 = #{cdefine2,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine3 != null">
+                    cDefine3 = #{cdefine3,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine4 != null">
+                    cDefine4 = #{cdefine4,jdbcType=TIMESTAMP},
+                </if>
+                <if test="cdefine5 != null">
+                    cDefine5 = #{cdefine5,jdbcType=INTEGER},
+                </if>
+                <if test="cdefine6 != null">
+                    cDefine6 = #{cdefine6,jdbcType=TIMESTAMP},
+                </if>
+                <if test="cdefine7 != null">
+                    cDefine7 = #{cdefine7,jdbcType=FLOAT},
+                </if>
+                <if test="cdefine8 != null">
+                    cDefine8 = #{cdefine8,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine9 != null">
+                    cDefine9 = #{cdefine9,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine10 != null">
+                    cDefine10 = #{cdefine10,jdbcType=VARCHAR},
+                </if>
+                <if test="dkeepdate != null">
+                    dKeepDate = #{dkeepdate,jdbcType=VARCHAR},
+                </if>
+                <if test="dveridate != null">
+                    dVeriDate = #{dveridate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="bpufirst != null">
+                    bpufirst = #{bpufirst,jdbcType=BIT},
+                </if>
+                <if test="biafirst != null">
+                    biafirst = #{biafirst,jdbcType=BIT},
+                </if>
+                <if test="imquantity != null">
+                    iMQuantity = #{imquantity,jdbcType=FLOAT},
+                </if>
+                <if test="darvdate != null">
+                    dARVDate = #{darvdate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="cchkcode != null">
+                    cChkCode = #{cchkcode,jdbcType=VARCHAR},
+                </if>
+                <if test="dchkdate != null">
+                    dChkDate = #{dchkdate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="cchkperson != null">
+                    cChkPerson = #{cchkperson,jdbcType=VARCHAR},
+                </if>
+                <if test="vtId != null">
+                    VT_ID = #{vtId,jdbcType=INTEGER},
+                </if>
+                <if test="bisstqc != null">
+                    bIsSTQc = #{bisstqc,jdbcType=BIT},
+                </if>
+                <if test="cdefine11 != null">
+                    cDefine11 = #{cdefine11,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine12 != null">
+                    cDefine12 = #{cdefine12,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine13 != null">
+                    cDefine13 = #{cdefine13,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine14 != null">
+                    cDefine14 = #{cdefine14,jdbcType=VARCHAR},
+                </if>
+                <if test="cdefine15 != null">
+                    cDefine15 = #{cdefine15,jdbcType=INTEGER},
+                </if>
+                <if test="cdefine16 != null">
+                    cDefine16 = #{cdefine16,jdbcType=FLOAT},
+                </if>
+                <if test="gspcheck != null">
+                    gspcheck = #{gspcheck,jdbcType=VARCHAR},
+                </if>
+                <if test="ufts != null">
+                    ufts = #{ufts,jdbcType=TIMESTAMP},
+                </if>
+                <if test="iexchrate != null">
+                    iExchRate = #{iexchrate,jdbcType=FLOAT},
+                </if>
+                <if test="cexchName != null">
+                    cExch_Name = #{cexchName,jdbcType=VARCHAR},
+                </if>
+                <if test="bomfirst != null">
+                    bOMFirst = #{bomfirst,jdbcType=BIT},
+                </if>
+                <if test="bfrompreyear != null">
+                    bFromPreYear = #{bfrompreyear,jdbcType=BIT},
+                </if>
+                <if test="bislsquery != null">
+                    bIsLsQuery = #{bislsquery,jdbcType=BIT},
+                </if>
+                <if test="biscomplement != null">
+                    bIsComplement = #{biscomplement,jdbcType=SMALLINT},
+                </if>
+                <if test="idiscounttaxtype != null">
+                    iDiscountTaxType = #{idiscounttaxtype,jdbcType=TINYINT},
+                </if>
+                <if test="ireturncount != null">
+                    ireturncount = #{ireturncount,jdbcType=INTEGER},
+                </if>
+                <if test="iverifystate != null">
+                    iverifystate = #{iverifystate,jdbcType=INTEGER},
+                </if>
+                <if test="iswfcontrolled != null">
+                    iswfcontrolled = #{iswfcontrolled,jdbcType=INTEGER},
+                </if>
+                <if test="cmodifyperson != null">
+                    cModifyPerson = #{cmodifyperson,jdbcType=VARCHAR},
+                </if>
+                <if test="dmodifydate != null">
+                    dModifyDate = #{dmodifydate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="dnmaketime != null">
+                    dnmaketime = #{dnmaketime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="dnmodifytime != null">
+                    dnmodifytime = #{dnmodifytime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="dnverifytime != null">
+                    dnverifytime = #{dnverifytime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="bredvouch != null">
+                    bredvouch = #{bredvouch,jdbcType=INTEGER},
+                </if>
+                <if test="iflowid != null">
+                    iFlowId = #{iflowid,jdbcType=INTEGER},
+                </if>
+                <if test="cpzid != null">
+                    cPZID = #{cpzid,jdbcType=VARCHAR},
+                </if>
+                <if test="csourcels != null">
+                    cSourceLs = #{csourcels,jdbcType=VARCHAR},
+                </if>
+                <if test="csourcecodels != null">
+                    cSourceCodeLs = #{csourcecodels,jdbcType=VARCHAR},
+                </if>
+                <if test="iprintcount != null">
+                    iPrintCount = #{iprintcount,jdbcType=INTEGER},
+                </if>
+                <if test="ctransflag != null">
+                    ctransflag = #{ctransflag,jdbcType=VARCHAR},
+                </if>
+                <if test="csysbarcode != null">
+                    csysbarcode = #{csysbarcode,jdbcType=VARCHAR},
+                </if>
+                <if test="ccurrentauditor != null">
+                    cCurrentAuditor = #{ccurrentauditor,jdbcType=VARCHAR},
+                </if>
+                <if test="cchecksignflag != null">
+                    cCheckSignFlag = #{cchecksignflag,jdbcType=VARCHAR},
+                </if>
+                <if test="csyssource != null">
+                    csyssource = #{csyssource,jdbcType=VARCHAR},
+                </if>
+                <if test="csyssourceid != null">
+                    csyssourceid = #{csyssourceid,jdbcType=VARCHAR},
+                </if>
+        </set>
+        where   ID = #{id,jdbcType=BIGINT} 
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.espread.sys.model.Rdrecord08">
+        update RdRecord08
+        set 
+            bRdFlag =  #{brdflag,jdbcType=TINYINT},
+            cVouchType =  #{cvouchtype,jdbcType=VARCHAR},
+            cBusType =  #{cbustype,jdbcType=VARCHAR},
+            cSource =  #{csource,jdbcType=VARCHAR},
+            cBusCode =  #{cbuscode,jdbcType=VARCHAR},
+            cWhCode =  #{cwhcode,jdbcType=VARCHAR},
+            dDate =  #{ddate,jdbcType=TIMESTAMP},
+            cCode =  #{ccode,jdbcType=VARCHAR},
+            cRdCode =  #{crdcode,jdbcType=VARCHAR},
+            cDepCode =  #{cdepcode,jdbcType=VARCHAR},
+            cPersonCode =  #{cpersoncode,jdbcType=VARCHAR},
+            cPTCode =  #{cptcode,jdbcType=VARCHAR},
+            cSTCode =  #{cstcode,jdbcType=VARCHAR},
+            cCusCode =  #{ccuscode,jdbcType=VARCHAR},
+            cVenCode =  #{cvencode,jdbcType=VARCHAR},
+            cOrderCode =  #{cordercode,jdbcType=VARCHAR},
+            cARVCode =  #{carvcode,jdbcType=VARCHAR},
+            cBillCode =  #{cbillcode,jdbcType=BIGINT},
+            cDLCode =  #{cdlcode,jdbcType=BIGINT},
+            cProBatch =  #{cprobatch,jdbcType=VARCHAR},
+            cHandler =  #{chandler,jdbcType=VARCHAR},
+            cMemo =  #{cmemo,jdbcType=VARCHAR},
+            bTransFlag =  #{btransflag,jdbcType=BIT},
+            cAccounter =  #{caccounter,jdbcType=VARCHAR},
+            cMaker =  #{cmaker,jdbcType=VARCHAR},
+            cDefine1 =  #{cdefine1,jdbcType=VARCHAR},
+            cDefine2 =  #{cdefine2,jdbcType=VARCHAR},
+            cDefine3 =  #{cdefine3,jdbcType=VARCHAR},
+            cDefine4 =  #{cdefine4,jdbcType=TIMESTAMP},
+            cDefine5 =  #{cdefine5,jdbcType=INTEGER},
+            cDefine6 =  #{cdefine6,jdbcType=TIMESTAMP},
+            cDefine7 =  #{cdefine7,jdbcType=FLOAT},
+            cDefine8 =  #{cdefine8,jdbcType=VARCHAR},
+            cDefine9 =  #{cdefine9,jdbcType=VARCHAR},
+            cDefine10 =  #{cdefine10,jdbcType=VARCHAR},
+            dKeepDate =  #{dkeepdate,jdbcType=VARCHAR},
+            dVeriDate =  #{dveridate,jdbcType=TIMESTAMP},
+            bpufirst =  #{bpufirst,jdbcType=BIT},
+            biafirst =  #{biafirst,jdbcType=BIT},
+            iMQuantity =  #{imquantity,jdbcType=FLOAT},
+            dARVDate =  #{darvdate,jdbcType=TIMESTAMP},
+            cChkCode =  #{cchkcode,jdbcType=VARCHAR},
+            dChkDate =  #{dchkdate,jdbcType=TIMESTAMP},
+            cChkPerson =  #{cchkperson,jdbcType=VARCHAR},
+            VT_ID =  #{vtId,jdbcType=INTEGER},
+            bIsSTQc =  #{bisstqc,jdbcType=BIT},
+            cDefine11 =  #{cdefine11,jdbcType=VARCHAR},
+            cDefine12 =  #{cdefine12,jdbcType=VARCHAR},
+            cDefine13 =  #{cdefine13,jdbcType=VARCHAR},
+            cDefine14 =  #{cdefine14,jdbcType=VARCHAR},
+            cDefine15 =  #{cdefine15,jdbcType=INTEGER},
+            cDefine16 =  #{cdefine16,jdbcType=FLOAT},
+            gspcheck =  #{gspcheck,jdbcType=VARCHAR},
+            ufts =  #{ufts,jdbcType=TIMESTAMP},
+            iExchRate =  #{iexchrate,jdbcType=FLOAT},
+            cExch_Name =  #{cexchName,jdbcType=VARCHAR},
+            bOMFirst =  #{bomfirst,jdbcType=BIT},
+            bFromPreYear =  #{bfrompreyear,jdbcType=BIT},
+            bIsLsQuery =  #{bislsquery,jdbcType=BIT},
+            bIsComplement =  #{biscomplement,jdbcType=SMALLINT},
+            iDiscountTaxType =  #{idiscounttaxtype,jdbcType=TINYINT},
+            ireturncount =  #{ireturncount,jdbcType=INTEGER},
+            iverifystate =  #{iverifystate,jdbcType=INTEGER},
+            iswfcontrolled =  #{iswfcontrolled,jdbcType=INTEGER},
+            cModifyPerson =  #{cmodifyperson,jdbcType=VARCHAR},
+            dModifyDate =  #{dmodifydate,jdbcType=TIMESTAMP},
+            dnmaketime =  #{dnmaketime,jdbcType=TIMESTAMP},
+            dnmodifytime =  #{dnmodifytime,jdbcType=TIMESTAMP},
+            dnverifytime =  #{dnverifytime,jdbcType=TIMESTAMP},
+            bredvouch =  #{bredvouch,jdbcType=INTEGER},
+            iFlowId =  #{iflowid,jdbcType=INTEGER},
+            cPZID =  #{cpzid,jdbcType=VARCHAR},
+            cSourceLs =  #{csourcels,jdbcType=VARCHAR},
+            cSourceCodeLs =  #{csourcecodels,jdbcType=VARCHAR},
+            iPrintCount =  #{iprintcount,jdbcType=INTEGER},
+            ctransflag =  #{ctransflag,jdbcType=VARCHAR},
+            csysbarcode =  #{csysbarcode,jdbcType=VARCHAR},
+            cCurrentAuditor =  #{ccurrentauditor,jdbcType=VARCHAR},
+            cCheckSignFlag =  #{cchecksignflag,jdbcType=VARCHAR},
+            csyssource =  #{csyssource,jdbcType=VARCHAR},
+            csyssourceid =  #{csyssourceid,jdbcType=VARCHAR}
+        where   ID = #{id,jdbcType=BIGINT} 
+    </update>
+    <select id="selectByALLSCRKQT" resultMap="BaseResultMap"
+            parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List" />
+        from Rdrecord08
+        where cWhCode = 'XS01' and isnull(cHandler,'')!='' and
+        isnull(cDefine8,'') ='' and dVeriDate >= '2020-12-28 00:00:00.000'
+    </select>
+    <update id="updateRdrecord08">
+        update dbo.Rdrecord08
+        set cDefine8
+            =#{cDefine8,jdbcType=NVARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

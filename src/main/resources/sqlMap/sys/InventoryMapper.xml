@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.InventoryMapper">
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.Inventory">
+        <result column="cInvCode" property="cinvcode" jdbcType="NVARCHAR"/>
+        <result column="cInvAddCode" property="cinvaddcode" jdbcType="NVARCHAR"/>
+        <result column="cInvName" property="cinvname" jdbcType="NVARCHAR"/>
+        <result column="cInvStd" property="cinvstd" jdbcType="NVARCHAR"/>
+        <result column="cInvCCode" property="cinvccode" jdbcType="NVARCHAR"/>
+        <result column="cVenCode" property="cvencode" jdbcType="NVARCHAR"/>
+        <result column="cReplaceItem" property="creplaceitem" jdbcType="NVARCHAR"/>
+        <result column="cPosition" property="cposition" jdbcType="NVARCHAR"/>
+        <result column="bSale" property="bsale" jdbcType="BIT"/>
+        <result column="bPurchase" property="bpurchase" jdbcType="BIT"/>
+        <result column="bSelf" property="bself" jdbcType="BIT"/>
+        <result column="bComsume" property="bcomsume" jdbcType="BIT"/>
+        <result column="bProducing" property="bproducing" jdbcType="BIT"/>
+        <result column="bService" property="bservice" jdbcType="BIT"/>
+        <result column="bAccessary" property="baccessary" jdbcType="BIT"/>
+        <result column="iTaxRate" property="itaxrate" jdbcType="DOUBLE"/>
+        <result column="iInvWeight" property="iinvweight" jdbcType="DOUBLE"/>
+        <result column="iVolume" property="ivolume" jdbcType="DOUBLE"/>
+        <result column="iInvRCost" property="iinvrcost" jdbcType="DOUBLE"/>
+        <result column="iInvSPrice" property="iinvsprice" jdbcType="DOUBLE"/>
+        <result column="iInvSCost" property="iinvscost" jdbcType="DOUBLE"/>
+        <result column="iInvLSCost" property="iinvlscost" jdbcType="DOUBLE"/>
+        <result column="iInvNCost" property="iinvncost" jdbcType="DOUBLE"/>
+        <result column="iInvAdvance" property="iinvadvance" jdbcType="DOUBLE"/>
+        <result column="iInvBatch" property="iinvbatch" jdbcType="DOUBLE"/>
+        <result column="iSafeNum" property="isafenum" jdbcType="DOUBLE"/>
+        <result column="iTopSum" property="itopsum" jdbcType="DOUBLE"/>
+        <result column="iLowSum" property="ilowsum" jdbcType="DOUBLE"/>
+        <result column="iOverStock" property="ioverstock" jdbcType="DOUBLE"/>
+        <result column="cInvABC" property="cinvabc" jdbcType="NVARCHAR"/>
+        <result column="bInvQuality" property="binvquality" jdbcType="BIT"/>
+        <result column="bInvBatch" property="binvbatch" jdbcType="BIT"/>
+        <result column="bInvEntrust" property="binventrust" jdbcType="BIT"/>
+        <result column="bInvOverStock" property="binvoverstock" jdbcType="BIT"/>
+        <result column="dSDate" property="dsdate" jdbcType="TIMESTAMP"/>
+        <result column="dEDate" property="dedate" jdbcType="TIMESTAMP"/>
+        <result column="bFree1" property="bfree1" jdbcType="BIT"/>
+        <result column="bFree2" property="bfree2" jdbcType="BIT"/>
+        <result column="cInvDefine1" property="cinvdefine1" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine2" property="cinvdefine2" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine3" property="cinvdefine3" jdbcType="NVARCHAR"/>
+        <result column="I_id" property="iId" jdbcType="INTEGER"/>
+        <result column="bInvType" property="binvtype" jdbcType="BIT"/>
+        <result column="iInvMPCost" property="iinvmpcost" jdbcType="DOUBLE"/>
+        <result column="cQuality" property="cquality" jdbcType="NVARCHAR"/>
+        <result column="iInvSaleCost" property="iinvsalecost" jdbcType="DOUBLE"/>
+        <result column="iInvSCost1" property="iinvscost1" jdbcType="DOUBLE"/>
+        <result column="iInvSCost2" property="iinvscost2" jdbcType="DOUBLE"/>
+        <result column="iInvSCost3" property="iinvscost3" jdbcType="DOUBLE"/>
+        <result column="bFree3" property="bfree3" jdbcType="BIT"/>
+        <result column="bFree4" property="bfree4" jdbcType="BIT"/>
+        <result column="bFree5" property="bfree5" jdbcType="BIT"/>
+        <result column="bFree6" property="bfree6" jdbcType="BIT"/>
+        <result column="bFree7" property="bfree7" jdbcType="BIT"/>
+        <result column="bFree8" property="bfree8" jdbcType="BIT"/>
+        <result column="bFree9" property="bfree9" jdbcType="BIT"/>
+        <result column="bFree10" property="bfree10" jdbcType="BIT"/>
+        <result column="cCreatePerson" property="ccreateperson" jdbcType="NVARCHAR"/>
+        <result column="cModifyPerson" property="cmodifyperson" jdbcType="NVARCHAR"/>
+        <result column="dModifyDate" property="dmodifydate" jdbcType="TIMESTAMP"/>
+        <result column="fSubscribePoint" property="fsubscribepoint" jdbcType="DOUBLE"/>
+        <result column="fVagQuantity" property="fvagquantity" jdbcType="DOUBLE"/>
+        <result column="cValueType" property="cvaluetype" jdbcType="NVARCHAR"/>
+        <result column="bFixExch" property="bfixexch" jdbcType="BIT"/>
+        <result column="fOutExcess" property="foutexcess" jdbcType="DOUBLE"/>
+        <result column="fInExcess" property="finexcess" jdbcType="DOUBLE"/>
+        <result column="iMassDate" property="imassdate" jdbcType="SMALLINT"/>
+        <result column="iWarnDays" property="iwarndays" jdbcType="SMALLINT"/>
+        <result column="fExpensesExch" property="fexpensesexch" jdbcType="DOUBLE"/>
+        <result column="bTrack" property="btrack" jdbcType="BIT"/>
+        <result column="bSerial" property="bserial" jdbcType="BIT"/>
+        <result column="bBarCode" property="bbarcode" jdbcType="BIT"/>
+        <result column="iId" property="iid" jdbcType="INTEGER"/>
+        <result column="cBarCode" property="cbarcode" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine4" property="cinvdefine4" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine5" property="cinvdefine5" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine6" property="cinvdefine6" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine7" property="cinvdefine7" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine8" property="cinvdefine8" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine9" property="cinvdefine9" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine10" property="cinvdefine10" jdbcType="NVARCHAR"/>
+        <result column="cInvDefine11" property="cinvdefine11" jdbcType="INTEGER"/>
+        <result column="cInvDefine12" property="cinvdefine12" jdbcType="INTEGER"/>
+        <result column="cInvDefine13" property="cinvdefine13" jdbcType="DOUBLE"/>
+        <result column="cInvDefine14" property="cinvdefine14" jdbcType="DOUBLE"/>
+        <result column="cInvDefine15" property="cinvdefine15" jdbcType="TIMESTAMP"/>
+        <result column="cInvDefine16" property="cinvdefine16" jdbcType="TIMESTAMP"/>
+        <result column="iGroupType" property="igrouptype" jdbcType="TINYINT"/>
+        <result column="cGroupCode" property="cgroupcode" jdbcType="NVARCHAR"/>
+        <result column="cComUnitCode" property="ccomunitcode" jdbcType="NVARCHAR"/>
+        <result column="cAssComUnitCode" property="casscomunitcode" jdbcType="NVARCHAR"/>
+        <result column="cSAComUnitCode" property="csacomunitcode" jdbcType="NVARCHAR"/>
+        <result column="cPUComUnitCode" property="cpucomunitcode" jdbcType="NVARCHAR"/>
+        <result column="cSTComUnitCode" property="cstcomunitcode" jdbcType="NVARCHAR"/>
+        <result column="cCAComUnitCode" property="ccacomunitcode" jdbcType="NVARCHAR"/>
+        <result column="cFrequency" property="cfrequency" jdbcType="NVARCHAR"/>
+        <result column="iFrequency" property="ifrequency" jdbcType="SMALLINT"/>
+        <result column="iDays" property="idays" jdbcType="SMALLINT"/>
+        <result column="dLastDate" property="dlastdate" jdbcType="TIMESTAMP"/>
+        <result column="iWastage" property="iwastage" jdbcType="DOUBLE"/>
+        <result column="bSolitude" property="bsolitude" jdbcType="BIT"/>
+        <result column="cEnterprise" property="centerprise" jdbcType="NVARCHAR"/>
+        <result column="cAddress" property="caddress" jdbcType="NVARCHAR"/>
+        <result column="cFile" property="cfile" jdbcType="NVARCHAR"/>
+        <result column="cLabel" property="clabel" jdbcType="NVARCHAR"/>
+        <result column="cCheckOut" property="ccheckout" jdbcType="NVARCHAR"/>
+        <result column="cLicence" property="clicence" jdbcType="NVARCHAR"/>
+        <result column="bSpecialties" property="bspecialties" jdbcType="BIT"/>
+        <result column="cDefWareHouse" property="cdefwarehouse" jdbcType="NVARCHAR"/>
+        <result column="iHighPrice" property="ihighprice" jdbcType="DOUBLE"/>
+        <result column="iExpSaleRate" property="iexpsalerate" jdbcType="DOUBLE"/>
+        <result column="cPriceGroup" property="cpricegroup" jdbcType="NVARCHAR"/>
+        <result column="cOfferGrade" property="coffergrade" jdbcType="NVARCHAR"/>
+        <result column="iOfferRate" property="iofferrate" jdbcType="DOUBLE"/>
+        <result column="cMonth" property="cmonth" jdbcType="NVARCHAR"/>
+        <result column="iAdvanceDate" property="iadvancedate" jdbcType="SMALLINT"/>
+        <result column="cCurrencyName" property="ccurrencyname" jdbcType="NVARCHAR"/>
+        <result column="cProduceAddress" property="cproduceaddress" jdbcType="NVARCHAR"/>
+        <result column="cProduceNation" property="cproducenation" jdbcType="NVARCHAR"/>
+        <result column="cRegisterNo" property="cregisterno" jdbcType="NVARCHAR"/>
+        <result column="cEnterNo" property="centerno" jdbcType="NVARCHAR"/>
+        <result column="cPackingType" property="cpackingtype" jdbcType="NVARCHAR"/>
+        <result column="cEnglishName" property="cenglishname" jdbcType="NVARCHAR"/>
+        <result column="bPropertyCheck" property="bpropertycheck" jdbcType="BIT"/>
+        <result column="cPreparationType" property="cpreparationtype" jdbcType="NVARCHAR"/>
+        <result column="cCommodity" property="ccommodity" jdbcType="NVARCHAR"/>
+        <result column="iRecipeBatch" property="irecipebatch" jdbcType="TINYINT"/>
+        <result column="cNotPatentName" property="cnotpatentname" jdbcType="NVARCHAR"/>
+        <result column="bPromotSales" property="bpromotsales" jdbcType="BIT"/>
+        <result column="iPlanPolicy" property="iplanpolicy" jdbcType="SMALLINT"/>
+        <result column="iROPMethod" property="iropmethod" jdbcType="SMALLINT"/>
+        <result column="iBatchRule" property="ibatchrule" jdbcType="SMALLINT"/>
+        <result column="fBatchIncrement" property="fbatchincrement" jdbcType="DOUBLE"/>
+        <result column="iAssureProvideDays" property="iassureprovidedays" jdbcType="INTEGER"/>
+        <result column="iTestStyle" property="iteststyle" jdbcType="SMALLINT"/>
+        <result column="iDTMethod" property="idtmethod" jdbcType="SMALLINT"/>
+        <result column="fDTRate" property="fdtrate" jdbcType="DOUBLE"/>
+        <result column="fDTNum" property="fdtnum" jdbcType="DOUBLE"/>
+        <result column="cDTUnit" property="cdtunit" jdbcType="NVARCHAR"/>
+        <result column="iDTStyle" property="idtstyle" jdbcType="SMALLINT"/>
+        <result column="iQTMethod" property="iqtmethod" jdbcType="INTEGER"/>
+        <result column="PictureGUID" property="pictureguid" jdbcType="CHAR"/>
+        <result column="bPlanInv" property="bplaninv" jdbcType="BIT"/>
+        <result column="bProxyForeign" property="bproxyforeign" jdbcType="BIT"/>
+        <result column="bATOModel" property="batomodel" jdbcType="BIT"/>
+        <result column="bCheckItem" property="bcheckitem" jdbcType="BIT"/>
+        <result column="bPTOModel" property="bptomodel" jdbcType="BIT"/>
+        <result column="bEquipment" property="bequipment" jdbcType="BIT"/>
+        <result column="cProductUnit" property="cproductunit" jdbcType="NVARCHAR"/>
+        <result column="fOrderUpLimit" property="forderuplimit" jdbcType="DOUBLE"/>
+        <result column="cMassUnit" property="cmassunit" jdbcType="SMALLINT"/>
+        <result column="fRetailPrice" property="fretailprice" jdbcType="DOUBLE"/>
+        <result column="cInvDepCode" property="cinvdepcode" jdbcType="NVARCHAR"/>
+        <result column="iAlterAdvance" property="ialteradvance" jdbcType="INTEGER"/>
+        <result column="fAlterBaseNum" property="falterbasenum" jdbcType="DOUBLE"/>
+        <result column="cPlanMethod" property="cplanmethod" jdbcType="NVARCHAR"/>
+        <result column="bMPS" property="bmps" jdbcType="BIT"/>
+        <result column="bROP" property="brop" jdbcType="BIT"/>
+        <result column="bRePlan" property="breplan" jdbcType="BIT"/>
+        <result column="cSRPolicy" property="csrpolicy" jdbcType="NVARCHAR"/>
+        <result column="bBillUnite" property="bbillunite" jdbcType="BIT"/>
+        <result column="iSupplyDay" property="isupplyday" jdbcType="INTEGER"/>
+        <result column="fSupplyMulti" property="fsupplymulti" jdbcType="DOUBLE"/>
+        <result column="fMinSupply" property="fminsupply" jdbcType="DOUBLE"/>
+        <result column="bCutMantissa" property="bcutmantissa" jdbcType="BIT"/>
+        <result column="cInvPersonCode" property="cinvpersoncode" jdbcType="NVARCHAR"/>
+        <result column="iInvTfId" property="iinvtfid" jdbcType="INTEGER"/>
+        <result column="cEngineerFigNo" property="cengineerfigno" jdbcType="NVARCHAR"/>
+        <result column="bInTotalCost" property="bintotalcost" jdbcType="BIT"/>
+        <result column="iSupplyType" property="isupplytype" jdbcType="SMALLINT"/>
+        <result column="bConfigFree1" property="bconfigfree1" jdbcType="BIT"/>
+        <result column="bConfigFree2" property="bconfigfree2" jdbcType="BIT"/>
+        <result column="bConfigFree3" property="bconfigfree3" jdbcType="BIT"/>
+        <result column="bConfigFree4" property="bconfigfree4" jdbcType="BIT"/>
+        <result column="bConfigFree5" property="bconfigfree5" jdbcType="BIT"/>
+        <result column="bConfigFree6" property="bconfigfree6" jdbcType="BIT"/>
+        <result column="bConfigFree7" property="bconfigfree7" jdbcType="BIT"/>
+        <result column="bConfigFree8" property="bconfigfree8" jdbcType="BIT"/>
+        <result column="bConfigFree9" property="bconfigfree9" jdbcType="BIT"/>
+        <result column="bConfigFree10" property="bconfigfree10" jdbcType="BIT"/>
+        <result column="iDTLevel" property="idtlevel" jdbcType="SMALLINT"/>
+        <result column="cDTAQL" property="cdtaql" jdbcType="NVARCHAR"/>
+        <result column="bPeriodDT" property="bperioddt" jdbcType="BIT"/>
+        <result column="cDTPeriod" property="cdtperiod" jdbcType="NVARCHAR"/>
+        <result column="iBigMonth" property="ibigmonth" jdbcType="INTEGER"/>
+        <result column="iBigDay" property="ibigday" jdbcType="INTEGER"/>
+        <result column="iSmallMonth" property="ismallmonth" jdbcType="INTEGER"/>
+        <result column="iSmallDay" property="ismallday" jdbcType="INTEGER"/>
+        <result column="bOutInvDT" property="boutinvdt" jdbcType="BIT"/>
+        <result column="bBackInvDT" property="bbackinvdt" jdbcType="BIT"/>
+        <result column="iEndDTStyle" property="ienddtstyle" jdbcType="SMALLINT"/>
+        <result column="bDTWarnInv" property="bdtwarninv" jdbcType="BIT"/>
+        <result column="fBackTaxRate" property="fbacktaxrate" jdbcType="DOUBLE"/>
+        <result column="cCIQCode" property="cciqcode" jdbcType="NVARCHAR"/>
+        <result column="cWGroupCode" property="cwgroupcode" jdbcType="NVARCHAR"/>
+        <result column="cWUnit" property="cwunit" jdbcType="NVARCHAR"/>
+        <result column="fGrossW" property="fgrossw" jdbcType="DOUBLE"/>
+        <result column="cVGroupCode" property="cvgroupcode" jdbcType="NVARCHAR"/>
+        <result column="cVUnit" property="cvunit" jdbcType="NVARCHAR"/>
+        <result column="fLength" property="flength" jdbcType="DOUBLE"/>
+        <result column="fWidth" property="fwidth" jdbcType="DOUBLE"/>
+        <result column="fHeight" property="fheight" jdbcType="DOUBLE"/>
+        <result column="iDTUCounter" property="idtucounter" jdbcType="INTEGER"/>
+        <result column="iDTDCounter" property="idtdcounter" jdbcType="INTEGER"/>
+        <result column="iBatchCounter" property="ibatchcounter" jdbcType="INTEGER"/>
+        <result column="cShopUnit" property="cshopunit" jdbcType="NVARCHAR"/>
+        <result column="cPurPersonCode" property="cpurpersoncode" jdbcType="NVARCHAR"/>
+        <result column="bImportMedicine" property="bimportmedicine" jdbcType="BIT"/>
+        <result column="bFirstBusiMedicine" property="bfirstbusimedicine" jdbcType="BIT"/>
+        <result column="bForeExpland" property="bforeexpland" jdbcType="BIT"/>
+        <result column="cInvPlanCode" property="cinvplancode" jdbcType="NVARCHAR"/>
+        <result column="fConvertRate" property="fconvertrate" jdbcType="DOUBLE"/>
+        <result column="dReplaceDate" property="dreplacedate" jdbcType="TIMESTAMP"/>
+        <result column="bInvModel" property="binvmodel" jdbcType="BIT"/>
+        <result column="bKCCutMantissa" property="bkccutmantissa" jdbcType="BIT"/>
+        <result column="bReceiptByDT" property="breceiptbydt" jdbcType="BIT"/>
+        <result column="iImpTaxRate" property="iimptaxrate" jdbcType="DOUBLE"/>
+        <result column="iExpTaxRate" property="iexptaxrate" jdbcType="DOUBLE"/>
+        <result column="bExpSale" property="bexpsale" jdbcType="BIT"/>
+        <result column="iDrawBatch" property="idrawbatch" jdbcType="DOUBLE"/>
+        <result column="bCheckBSATP" property="bcheckbsatp" jdbcType="BIT"/>
+        <result column="cInvProjectCode" property="cinvprojectcode" jdbcType="NVARCHAR"/>
+        <result column="iTestRule" property="itestrule" jdbcType="SMALLINT"/>
+        <result column="cRuleCode" property="crulecode" jdbcType="NVARCHAR"/>
+        <result column="bCheckFree1" property="bcheckfree1" jdbcType="BIT"/>
+        <result column="bCheckFree2" property="bcheckfree2" jdbcType="BIT"/>
+        <result column="bCheckFree3" property="bcheckfree3" jdbcType="BIT"/>
+        <result column="bCheckFree4" property="bcheckfree4" jdbcType="BIT"/>
+        <result column="bCheckFree5" property="bcheckfree5" jdbcType="BIT"/>
+        <result column="bCheckFree6" property="bcheckfree6" jdbcType="BIT"/>
+        <result column="bCheckFree7" property="bcheckfree7" jdbcType="BIT"/>
+        <result column="bCheckFree8" property="bcheckfree8" jdbcType="BIT"/>
+        <result column="bCheckFree9" property="bcheckfree9" jdbcType="BIT"/>
+        <result column="bCheckFree10" property="bcheckfree10" jdbcType="BIT"/>
+        <result column="bBomMain" property="bbommain" jdbcType="BIT"/>
+        <result column="bBomSub" property="bbomsub" jdbcType="BIT"/>
+        <result column="bProductBill" property="bproductbill" jdbcType="BIT"/>
+        <result column="iCheckATP" property="icheckatp" jdbcType="SMALLINT"/>
+        <result column="iInvATPId" property="iinvatpid" jdbcType="INTEGER"/>
+        <result column="iPlanTfDay" property="iplantfday" jdbcType="INTEGER"/>
+        <result column="iOverlapDay" property="ioverlapday" jdbcType="INTEGER"/>
+        <result column="bPiece" property="bpiece" jdbcType="BIT"/>
+        <result column="bSrvItem" property="bsrvitem" jdbcType="BIT"/>
+        <result column="bSrvFittings" property="bsrvfittings" jdbcType="BIT"/>
+        <result column="fMaxSupply" property="fmaxsupply" jdbcType="DOUBLE"/>
+        <result column="fMinSplit" property="fminsplit" jdbcType="DOUBLE"/>
+        <result column="bSpecialOrder" property="bspecialorder" jdbcType="BIT"/>
+        <result column="bTrackSaleBill" property="btracksalebill" jdbcType="BIT"/>
+        <result column="cInvMnemCode" property="cinvmnemcode" jdbcType="NVARCHAR"/>
+        <result column="iPlanDefault" property="iplandefault" jdbcType="SMALLINT"/>
+        <result column="iPFBatchQty" property="ipfbatchqty" jdbcType="DOUBLE"/>
+        <result column="iAllocatePrintDgt" property="iallocateprintdgt" jdbcType="INTEGER"/>
+        <result column="bCheckBatch" property="bcheckbatch" jdbcType="BIT"/>
+        <result column="bMngOldpart" property="bmngoldpart" jdbcType="BIT"/>
+        <result column="iOldpartMngRule" property="ioldpartmngrule" jdbcType="SMALLINT"/>
+        <result column="ttype" property="ttype" jdbcType="NVARCHAR"/>
+        <result column="tstatus" property="tstatus" jdbcType="NVARCHAR"/>
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.Inventory" extends="BaseResultMap">
+        <result column="pubufts" property="pubufts" jdbcType="BINARY"/>
+        <result column="cInvCName" property="cInvCName" jdbcType="NVARCHAR"/>
+        <result column="cComUnitName" property="cComUnitName" jdbcType="NVARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        a
+        .
+        I_id
+        ,a.cInvCode,a.cInvAddCode,a.cInvName,a.cInvStd,a.cInvCCode,a.cVenCode,a.cReplaceItem,a.cPosition,a.bSale,a.bPurchase,a.bSelf,a.bComsume,a.bProducing,a.bService,a.bAccessary,a.iTaxRate,a.iInvWeight,a.iVolume,a.iInvRCost,a.iInvSPrice,a.iInvSCost,a.iInvLSCost,a.iInvNCost,a.iInvAdvance,a.iInvBatch,a.iSafeNum,a.iTopSum,a.iLowSum,a.iOverStock,a.cInvABC,a.bInvQuality,a.bInvBatch,a.bInvEntrust,a.bInvOverStock,a.dSDate,a.dEDate,a.bFree1,a.bFree2,a.cInvDefine1,a.cInvDefine2,a.cInvDefine3,a.bInvType,a.iInvMPCost,a.cQuality,a.bFree3,a.bFree4,a.bFree5,a.bFree6,a.bFree7,a.bFree8,a.bFree9,a.bFree10,a.cCreatePerson,a.cModifyPerson,a.dModifyDate,a.fSubscribePoint,a.fVagQuantity,a.cValueType,a.fOutExcess,a.fInExcess,a.iMassDate,a.iWarnDays,a.fExpensesExch,a.bTrack,a.bSerial,a.bBarCode,a.cBarCode,a.cInvDefine4,a.cInvDefine5,a.cInvDefine6,a.cInvDefine7,a.cInvDefine8,a.cInvDefine9,a.cInvDefine10,a.cInvDefine11,a.cInvDefine12,a.cInvDefine13,a.cInvDefine14,a.cInvDefine15,a.cInvDefine16,a.iGroupType,a.cGroupCode,a.cComUnitCode,a.cAssComUnitCode,a.cSAComUnitCode,a.cPUComUnitCode,a.cSTComUnitCode,a.cCAComUnitCode,a.cFrequency,a.iFrequency,a.iDays,a.dLastDate,a.iWastage,a.bSolitude,a.cEnterprise,a.cAddress,a.cFile,a.cLabel,a.cCheckOut,a.cLicence,a.bSpecialties,a.cDefWareHouse,a.iHighPrice,a.iExpSaleRate,a.cPriceGroup,a.cOfferGrade,a.iOfferRate,a.cCurrencyName,a.cProduceAddress,a.cProduceNation,a.cRegisterNo,a.cEnterNo,a.cPackingType,a.cEnglishName,a.bPropertyCheck,a.cPreparationType,a.cCommodity,a.iRecipeBatch,a.cNotPatentName,a.iROPMethod,a.iBatchRule,a.iAssureProvideDays,a.iTestStyle,a.iDTMethod,a.fDTRate,a.fDTNum,a.cDTUnit,a.iDTStyle,a.iQTMethod,a.bPlanInv,a.bProxyForeign,a.bATOModel,a.bCheckItem,a.bPTOModel,a.bEquipment,a.cProductUnit,a.fOrderUpLimit,a.cMassUnit,a.fRetailPrice,a.cInvDepCode,a.iAlterAdvance,a.fAlterBaseNum,a.cPlanMethod,a.bMPS,a.bROP,a.bRePlan,a.cSRPolicy,a.bBillUnite,a.iSupplyDay,a.fSupplyMulti,a.fMinSupply,a.bCutMantissa,a.cInvPersonCode,a.iInvTfId,a.cEngineerFigNo,a.bInTotalCost,a.iSupplyType,a.bConfigFree1,a.bConfigFree2,a.bConfigFree3,a.bConfigFree4,a.bConfigFree5,a.bConfigFree6,a.bConfigFree7,a.bConfigFree8,a.bConfigFree9,a.bConfigFree10,a.iDTLevel,a.cDTAQL,a.bPeriodDT,a.cDTPeriod,a.iBigMonth,a.iBigDay,a.iSmallMonth,a.iSmallDay,a.bOutInvDT,a.bBackInvDT,a.iEndDTStyle,a.bDTWarnInv,a.cCIQCode,a.cWGroupCode,a.cWUnit,a.fGrossW,a.cVGroupCode,a.cVUnit,a.fLength,a.fWidth,a.fHeight,a.cShopUnit,a.cPurPersonCode,a.bImportMedicine,a.bFirstBusiMedicine,a.bForeExpland,a.cInvPlanCode,a.fConvertRate,a.dReplaceDate,a.bInvModel,a.bKCCutMantissa,a.bReceiptByDT,a.iImpTaxRate,a.bExpSale,a.iDrawBatch,a.bCheckBSATP,a.cInvProjectCode,a.iTestRule,a.cRuleCode,a.bCheckFree1,a.bCheckFree2,a.bCheckFree3,a.bCheckFree4,a.bCheckFree5,a.bCheckFree6,a.bCheckFree7,a.bCheckFree8,a.bCheckFree9,a.bCheckFree10,a.bBomMain,a.bBomSub,a.bProductBill,a.iCheckATP,a.iInvATPId,a.iPlanTfDay,a.iOverlapDay,a.bPiece,a.bSrvItem,a.bSrvFittings,a.fMaxSupply,a.fMinSplit,a.bSpecialOrder,a.bTrackSaleBill,a.cInvMnemCode,a.iPlanDefault,a.iPFBatchQty,a.iAllocatePrintDgt,a.bCheckBatch,a.bMngOldpart,a.iOldpartMngRule,a.bFixExch,a.bPromotSales,a.ttype,a.tstatus
+    </sql>
+    <sql id="Blob_Column_List">
+        pubufts
+    </sql>
+    <sql id="Base_Column_List1">
+        I_id
+        ,cInvCode,cInvAddCode,cInvName,cInvStd,cInvCCode,cVenCode,cReplaceItem,cPosition,bSale,bPurchase,bSelf,bComsume,bProducing,bService,bAccessary,iTaxRate,iInvWeight,iVolume,iInvRCost,iInvSPrice,iInvSCost,iInvLSCost,iInvNCost,iInvAdvance,iInvBatch,iSafeNum,iTopSum,iLowSum,iOverStock,cInvABC,bInvQuality,bInvBatch,bInvEntrust,bInvOverStock,dSDate,dEDate,bFree1,bFree2,cInvDefine1,cInvDefine2,cInvDefine3,bInvType,iInvMPCost,cQuality,bFree3,bFree4,bFree5,bFree6,bFree7,bFree8,bFree9,bFree10,cCreatePerson,cModifyPerson,dModifyDate,fSubscribePoint,fVagQuantity,cValueType,fOutExcess,fInExcess,iMassDate,iWarnDays,fExpensesExch,bTrack,bSerial,bBarCode,cBarCode,cInvDefine4,cInvDefine5,cInvDefine6,cInvDefine7,cInvDefine8,cInvDefine9,cInvDefine10,cInvDefine11,cInvDefine12,cInvDefine13,cInvDefine14,cInvDefine15,cInvDefine16,iGroupType,cGroupCode,cComUnitCode,cAssComUnitCode,cSAComUnitCode,cPUComUnitCode,cSTComUnitCode,cCAComUnitCode,cFrequency,iFrequency,iDays,dLastDate,iWastage,bSolitude,cEnterprise,cAddress,cFile,cLabel,cCheckOut,cLicence,bSpecialties,cDefWareHouse,iHighPrice,iExpSaleRate,cPriceGroup,cOfferGrade,iOfferRate,cCurrencyName,cProduceAddress,cProduceNation,cRegisterNo,cEnterNo,cPackingType,cEnglishName,bPropertyCheck,cPreparationType,cCommodity,iRecipeBatch,cNotPatentName,iROPMethod,iBatchRule,iAssureProvideDays,iTestStyle,iDTMethod,fDTRate,fDTNum,cDTUnit,iDTStyle,iQTMethod,bPlanInv,bProxyForeign,bATOModel,bCheckItem,bPTOModel,bEquipment,cProductUnit,fOrderUpLimit,cMassUnit,fRetailPrice,cInvDepCode,iAlterAdvance,fAlterBaseNum,cPlanMethod,bMPS,bROP,bRePlan,cSRPolicy,bBillUnite,iSupplyDay,fSupplyMulti,fMinSupply,bCutMantissa,cInvPersonCode,iInvTfId,cEngineerFigNo,bInTotalCost,iSupplyType,bConfigFree1,bConfigFree2,bConfigFree3,bConfigFree4,bConfigFree5,bConfigFree6,bConfigFree7,bConfigFree8,bConfigFree9,bConfigFree10,iDTLevel,cDTAQL,bPeriodDT,cDTPeriod,iBigMonth,iBigDay,iSmallMonth,iSmallDay,bOutInvDT,bBackInvDT,iEndDTStyle,bDTWarnInv,cCIQCode,cWGroupCode,cWUnit,fGrossW,cVGroupCode,cVUnit,fLength,fWidth,fHeight,cShopUnit,cPurPersonCode,bImportMedicine,bFirstBusiMedicine,bForeExpland,cInvPlanCode,fConvertRate,dReplaceDate,bInvModel,bKCCutMantissa,bReceiptByDT,iImpTaxRate,bExpSale,iDrawBatch,bCheckBSATP,cInvProjectCode,iTestRule,cRuleCode,bCheckFree1,bCheckFree2,bCheckFree3,bCheckFree4,bCheckFree5,bCheckFree6,bCheckFree7,bCheckFree8,bCheckFree9,bCheckFree10,bBomMain,bBomSub,bProductBill,iCheckATP,iInvATPId,iPlanTfDay,iOverlapDay,bPiece,bSrvItem,bSrvFittings,fMaxSupply,fMinSplit,bSpecialOrder,bTrackSaleBill,cInvMnemCode,iPlanDefault,iPFBatchQty,iAllocatePrintDgt,bCheckBatch,bMngOldpart,iOldpartMngRule,bFixExch,bPromotSales
+    </sql>
+
+
+    <select id="selectByALL" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        b.cInvCName,c.cComUnitName
+        from xzys_ha_Inventory a LEFT JOIN InventoryClass b ON a.cInvCCode=b.cInvCCode
+        left join ComputationUnit c on a.cComUnitCode=c.cComUnitCode
+        where a.tstatus='0' and ( a.cInvCCode like '1%' or a.cInvCCode like '2%' or a.cInvCCode like '502%' or
+        a.cInvCCode like '507%' or a.cInvCCode like '509%' or a.cInvCCode like '6%' or a.cInvCCode like '7%') order by
+        a.ttype
+    </select>
+
+
+    <update id="updateInventory">
+        update xzys_ha_Inventory
+        set tstatus =#{tstatus,jdbcType=NVARCHAR}
+        where i_id = #{i_id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByCinvcode" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List1"/>
+        from inventory
+        where
+        cInvCode = #{cinvcode,jdbcType=VARCHAR}
+    </select>
+
+
+</mapper>

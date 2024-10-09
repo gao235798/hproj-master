@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.MomMoallocateMapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.MomMoallocate" >
+    <id column="AllocateId" property="allocateid" jdbcType="INTEGER" />
+    <result column="MoDId" property="modid" jdbcType="INTEGER" />
+    <result column="SortSeq" property="sortseq" jdbcType="INTEGER" />
+    <result column="OpSeq" property="opseq" jdbcType="NCHAR" />
+    <result column="ComponentId" property="componentid" jdbcType="INTEGER" />
+    <result column="FVFlag" property="fvflag" jdbcType="TINYINT" />
+    <result column="BaseQtyN" property="baseqtyn" jdbcType="DECIMAL" />
+    <result column="BaseQtyD" property="baseqtyd" jdbcType="DECIMAL" />
+    <result column="ParentScrap" property="parentscrap" jdbcType="DECIMAL" />
+    <result column="CompScrap" property="compscrap" jdbcType="DECIMAL" />
+    <result column="Qty" property="qty" jdbcType="DECIMAL" />
+    <result column="IssQty" property="issqty" jdbcType="DECIMAL" />
+    <result column="DeclaredQty" property="declaredqty" jdbcType="DECIMAL" />
+    <result column="StartDemDate" property="startdemdate" jdbcType="TIMESTAMP" />
+    <result column="EndDemDate" property="enddemdate" jdbcType="TIMESTAMP" />
+    <result column="WhCode" property="whcode" jdbcType="NVARCHAR" />
+    <result column="LotNo" property="lotno" jdbcType="NVARCHAR" />
+    <result column="WIPType" property="wiptype" jdbcType="TINYINT" />
+    <result column="ByproductFlag" property="byproductflag" jdbcType="BIT" />
+    <result column="QcFlag" property="qcflag" jdbcType="BIT" />
+    <result column="Offset" property="offset" jdbcType="SMALLINT" />
+    <result column="InvCode" property="invcode" jdbcType="NVARCHAR" />
+    <result column="Free1" property="free1" jdbcType="NVARCHAR" />
+    <result column="Free2" property="free2" jdbcType="NVARCHAR" />
+    <result column="Free3" property="free3" jdbcType="NVARCHAR" />
+    <result column="Free4" property="free4" jdbcType="NVARCHAR" />
+    <result column="Free5" property="free5" jdbcType="NVARCHAR" />
+    <result column="Free6" property="free6" jdbcType="NVARCHAR" />
+    <result column="Free7" property="free7" jdbcType="NVARCHAR" />
+    <result column="Free8" property="free8" jdbcType="NVARCHAR" />
+    <result column="Free9" property="free9" jdbcType="NVARCHAR" />
+    <result column="Free10" property="free10" jdbcType="NVARCHAR" />
+    <result column="OpComponentId" property="opcomponentid" jdbcType="INTEGER" />
+    <result column="Define22" property="define22" jdbcType="NVARCHAR" />
+    <result column="Define23" property="define23" jdbcType="NVARCHAR" />
+    <result column="Define24" property="define24" jdbcType="NVARCHAR" />
+    <result column="Define25" property="define25" jdbcType="NVARCHAR" />
+    <result column="Define26" property="define26" jdbcType="DOUBLE" />
+    <result column="Define27" property="define27" jdbcType="DOUBLE" />
+    <result column="Define28" property="define28" jdbcType="NVARCHAR" />
+    <result column="Define29" property="define29" jdbcType="NVARCHAR" />
+    <result column="Define30" property="define30" jdbcType="NVARCHAR" />
+    <result column="Define31" property="define31" jdbcType="NVARCHAR" />
+    <result column="Define32" property="define32" jdbcType="NVARCHAR" />
+    <result column="Define33" property="define33" jdbcType="NVARCHAR" />
+    <result column="Define34" property="define34" jdbcType="INTEGER" />
+    <result column="Define35" property="define35" jdbcType="INTEGER" />
+    <result column="Define36" property="define36" jdbcType="TIMESTAMP" />
+    <result column="Define37" property="define37" jdbcType="TIMESTAMP" />
+    <result column="AuxUnitCode" property="auxunitcode" jdbcType="NVARCHAR" />
+    <result column="ChangeRate" property="changerate" jdbcType="DECIMAL" />
+    <result column="AuxBaseQtyN" property="auxbaseqtyn" jdbcType="DECIMAL" />
+    <result column="AuxQty" property="auxqty" jdbcType="DECIMAL" />
+    <result column="ReplenishQty" property="replenishqty" jdbcType="DECIMAL" />
+    <result column="Remark" property="remark" jdbcType="NVARCHAR" />
+    <result column="TransQty" property="transqty" jdbcType="DECIMAL" />
+    <result column="ProductType" property="producttype" jdbcType="TINYINT" />
+    <result column="SoType" property="sotype" jdbcType="TINYINT" />
+    <result column="SoDId" property="sodid" jdbcType="NVARCHAR" />
+    <result column="SoCode" property="socode" jdbcType="NVARCHAR" />
+    <result column="SoSeq" property="soseq" jdbcType="INTEGER" />
+    <result column="DemandCode" property="demandcode" jdbcType="NVARCHAR" />
+    <result column="QmFlag" property="qmflag" jdbcType="BIT" />
+    <result column="OrgQty" property="orgqty" jdbcType="DECIMAL" />
+    <result column="OrgAuxQty" property="orgauxqty" jdbcType="DECIMAL" />
+    <result column="CostItemCode" property="costitemcode" jdbcType="NVARCHAR" />
+    <result column="CostItemName" property="costitemname" jdbcType="NVARCHAR" />
+    <result column="RequisitionFlag" property="requisitionflag" jdbcType="BIT" />
+    <result column="RequisitionQty" property="requisitionqty" jdbcType="DECIMAL" />
+    <result column="RequisitionIssQty" property="requisitionissqty" jdbcType="DECIMAL" />
+    <result column="CostWIPRel" property="costwiprel" jdbcType="BIT" />
+    <result column="MoallocateSubId" property="moallocatesubid" jdbcType="CHAR" />
+    <result column="cSubSysBarCode" property="csubsysbarcode" jdbcType="NVARCHAR" />
+    <result column="PickingQty" property="pickingqty" jdbcType="DECIMAL" />
+    <result column="PickingAuxQty" property="pickingauxqty" jdbcType="DECIMAL" />
+    <result column="UpperMoQty" property="uppermoqty" jdbcType="DECIMAL" />
+    <result column="InvAlloeFlag" property="invalloeflag" jdbcType="BIT" />
+    <result column="FactoryCode" property="factorycode" jdbcType="NVARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.MomMoallocate" extends="BaseResultMap" >
+    <result column="Ufts" property="ufts" jdbcType="BINARY" />
+     <result column="cComUnitName" property="ccomunitname" jdbcType="NVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    a.AllocateId,a.MoDId,a.SortSeq,a.OpSeq,a.ComponentId,a.FVFlag,a.BaseQtyN,a.BaseQtyD,a.ParentScrap,
+a.CompScrap,a.Qty,a.IssQty,a.DeclaredQty,a.StartDemDate,a.EndDemDate,a.WhCode,a.LotNo,a.WIPType,
+a.ByproductFlag,a.QcFlag,a.Offset,a.InvCode,a.Free1,a.Free2,a.Free3,a.Free4,a.Free5,a.Free6,
+a.Free7,a.Free8,a.Free9,a.Free10,a.OpComponentId,a.Define22,a.Define23,a.Define24,a.Define25,
+a.Define26,a.Define27,a.Define28,a.Define29,a.Define30,a.Define31,a.Define32,a.Define33,a.Define34,
+a.Define35,a.Define36,a.Define37,a.AuxUnitCode,a.ChangeRate,a.AuxBaseQtyN,a.AuxQty,a.ReplenishQty,
+a.Remark,a.TransQty,a.ProductType,a.SoType,a.SoDId,a.SoCode,a.SoSeq,a.DemandCode,a.QmFlag,
+a.OrgQty,a.OrgAuxQty,a.CostItemCode,a.CostItemName,a.RequisitionFlag,a.RequisitionQty,a.RequisitionIssQty,
+a.CostWIPRel,a.MoallocateSubId,a.cSubSysBarCode,a.PickingQty,a.PickingAuxQty,a.UpperMoQty,
+a.InvAlloeFlag,a.FactoryCode
+    InvAlloeFlag, FactoryCode
+  </sql>
+  <sql id="Blob_Column_List" >
+    a.Ufts ,e.cComUnitName
+  </sql>
+  <select id="selectByALLMomMoallocate" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from mom_moallocate a left join inventory d on  a.InvCode = d.cinvcode  left join ComputationUnit   e 
+  on d.cComUnitCode  =e.cComunitCode 
+      where a.modid = #{modid,jdbcType=INTEGER}
+  </select>
+  
+</mapper>

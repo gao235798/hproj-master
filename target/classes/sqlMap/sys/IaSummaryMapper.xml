@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.espread.sys.mapper.IaSummaryMapper">
+
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.IaSummary">
+            <id property="autoid" column="AutoID" jdbcType="INTEGER"/>
+            <result property="cwhcode" column="cWhCode" jdbcType="VARCHAR"/>
+            <result property="cinvcode" column="cInvCode" jdbcType="VARCHAR"/>
+            <result property="cdepcode" column="cDepCode" jdbcType="VARCHAR"/>
+            <result property="imonth" column="iMonth" jdbcType="TINYINT"/>
+            <result property="iinum" column="iINum" jdbcType="DECIMAL"/>
+            <result property="ionum" column="iONum" jdbcType="DECIMAL"/>
+            <result property="inum" column="iNum" jdbcType="DECIMAL"/>
+            <result property="iimoney" column="iIMoney" jdbcType="OTHER"/>
+            <result property="iomoney" column="iOMoney" jdbcType="OTHER"/>
+            <result property="imoney" column="iMoney" jdbcType="OTHER"/>
+            <result property="iunitprice" column="iUnitPrice" jdbcType="DECIMAL"/>
+            <result property="idifrate" column="iDifRate" jdbcType="DECIMAL"/>
+            <result property="iidif" column="iIDif" jdbcType="OTHER"/>
+            <result property="iodif" column="iODif" jdbcType="OTHER"/>
+            <result property="idif" column="iDif" jdbcType="OTHER"/>
+            <result property="fminincost" column="fMinInCost" jdbcType="DECIMAL"/>
+            <result property="fmaxincost" column="fMaxInCost" jdbcType="DECIMAL"/>
+            <result property="idirect" column="iDirect" jdbcType="INTEGER"/>
+            <result property="cfree1" column="cFree1" jdbcType="VARCHAR"/>
+            <result property="cfree2" column="cFree2" jdbcType="VARCHAR"/>
+            <result property="cfree3" column="cFree3" jdbcType="VARCHAR"/>
+            <result property="cfree4" column="cFree4" jdbcType="VARCHAR"/>
+            <result property="cfree5" column="cFree5" jdbcType="VARCHAR"/>
+            <result property="cfree6" column="cFree6" jdbcType="VARCHAR"/>
+            <result property="cfree7" column="cFree7" jdbcType="VARCHAR"/>
+            <result property="cfree8" column="cFree8" jdbcType="VARCHAR"/>
+            <result property="cfree9" column="cFree9" jdbcType="VARCHAR"/>
+            <result property="cfree10" column="cFree10" jdbcType="VARCHAR"/>
+            <result property="bmanual" column="bManual" jdbcType="TINYINT"/>
+            <result property="iperiod" column="iperiod" jdbcType="TINYINT"/>
+            <result property="itrans" column="iTrans" jdbcType="INTEGER"/>
+            <result property="flaborstdcoste" column="fLaborStdCostE" jdbcType="OTHER"/>
+            <result property="fmanufixstdcoste" column="fManuFixStdCostE" jdbcType="OTHER"/>
+            <result property="fmanuvarstdcoste" column="fManuVarStdCostE" jdbcType="OTHER"/>
+            <result property="fomcoste" column="fOmCostE" jdbcType="OTHER"/>
+            <result property="iyear" column="iYear" jdbcType="SMALLINT"/>
+            <result property="dcreatedate" column="dCreateDate" jdbcType="TIMESTAMP"/>
+            <result property="cbatchia" column="cbatchia" jdbcType="VARCHAR"/>
+            <result property="iabsnum" column="iAbsNum" jdbcType="DECIMAL"/>
+            <result property="iabsmoney" column="iAbsMoney" jdbcType="OTHER"/>
+            <result property="iabsinum" column="iAbsINum" jdbcType="DECIMAL"/>
+            <result property="iabsimoney" column="iAbsIMoney" jdbcType="OTHER"/>
+            <result property="iabsonum" column="iAbsONum" jdbcType="DECIMAL"/>
+            <result property="iabsomoney" column="iAbsOMoney" jdbcType="OTHER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        AutoID,cWhCode,cInvCode,
+        cDepCode,iMonth,iINum,
+        iONum,iNum,iIMoney,
+        iOMoney,iMoney,iUnitPrice,
+        iDifRate,iIDif,iODif,
+        iDif,fMinInCost,fMaxInCost,
+        iDirect,cFree1,cFree2,
+        cFree3,cFree4,cFree5,
+        cFree6,cFree7,cFree8,
+        cFree9,cFree10,bManual,
+        iperiod,iTrans,fLaborStdCostE,
+        fManuFixStdCostE,fManuVarStdCostE,fOmCostE,
+        iYear,dCreateDate,cbatchia,
+        iAbsNum,iAbsMoney,iAbsINum,
+        iAbsIMoney,iAbsONum,iAbsOMoney
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from IA_Summary
+        where  AutoID = #{autoid,jdbcType=INTEGER} 
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from IA_Summary
+        where  AutoID = #{autoid,jdbcType=INTEGER} 
+    </delete>
+    <insert id="insert" keyColumn="AutoID" keyProperty="autoid" parameterType="com.espread.sys.model.IaSummary" useGeneratedKeys="true">
+        insert into IA_Summary
+        ( AutoID,cWhCode,cInvCode
+        ,cDepCode,iMonth,iINum
+        ,iONum,iNum,iIMoney
+        ,iOMoney,iMoney,iUnitPrice
+        ,iDifRate,iIDif,iODif
+        ,iDif,fMinInCost,fMaxInCost
+        ,iDirect,cFree1,cFree2
+        ,cFree3,cFree4,cFree5
+        ,cFree6,cFree7,cFree8
+        ,cFree9,cFree10,bManual
+        ,iperiod,iTrans,fLaborStdCostE
+        ,fManuFixStdCostE,fManuVarStdCostE,fOmCostE
+        ,iYear,dCreateDate,cbatchia
+        ,iAbsNum,iAbsMoney,iAbsINum
+        ,iAbsIMoney,iAbsONum,iAbsOMoney
+        )
+        values (#{autoid,jdbcType=INTEGER},#{cwhcode,jdbcType=VARCHAR},#{cinvcode,jdbcType=VARCHAR}
+        ,#{cdepcode,jdbcType=VARCHAR},#{imonth,jdbcType=TINYINT},#{iinum,jdbcType=DECIMAL}
+        ,#{ionum,jdbcType=DECIMAL},#{inum,jdbcType=DECIMAL},#{iimoney,jdbcType=OTHER}
+        ,#{iomoney,jdbcType=OTHER},#{imoney,jdbcType=OTHER},#{iunitprice,jdbcType=DECIMAL}
+        ,#{idifrate,jdbcType=DECIMAL},#{iidif,jdbcType=OTHER},#{iodif,jdbcType=OTHER}
+        ,#{idif,jdbcType=OTHER},#{fminincost,jdbcType=DECIMAL},#{fmaxincost,jdbcType=DECIMAL}
+        ,#{idirect,jdbcType=INTEGER},#{cfree1,jdbcType=VARCHAR},#{cfree2,jdbcType=VARCHAR}
+        ,#{cfree3,jdbcType=VARCHAR},#{cfree4,jdbcType=VARCHAR},#{cfree5,jdbcType=VARCHAR}
+        ,#{cfree6,jdbcType=VARCHAR},#{cfree7,jdbcType=VARCHAR},#{cfree8,jdbcType=VARCHAR}
+        ,#{cfree9,jdbcType=VARCHAR},#{cfree10,jdbcType=VARCHAR},#{bmanual,jdbcType=TINYINT}
+        ,#{iperiod,jdbcType=TINYINT},#{itrans,jdbcType=INTEGER},#{flaborstdcoste,jdbcType=OTHER}
+        ,#{fmanufixstdcoste,jdbcType=OTHER},#{fmanuvarstdcoste,jdbcType=OTHER},#{fomcoste,jdbcType=OTHER}
+        ,#{iyear,jdbcType=SMALLINT},#{dcreatedate,jdbcType=TIMESTAMP},#{cbatchia,jdbcType=VARCHAR}
+        ,#{iabsnum,jdbcType=DECIMAL},#{iabsmoney,jdbcType=OTHER},#{iabsinum,jdbcType=DECIMAL}
+        ,#{iabsimoney,jdbcType=OTHER},#{iabsonum,jdbcType=DECIMAL},#{iabsomoney,jdbcType=OTHER}
+        )
+    </insert>
+    <insert id="insertSelective" keyColumn="AutoID" keyProperty="autoid" parameterType="com.espread.sys.model.IaSummary" useGeneratedKeys="true">
+        insert into IA_Summary
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="autoid != null">AutoID,</if>
+                <if test="cwhcode != null">cWhCode,</if>
+                <if test="cinvcode != null">cInvCode,</if>
+                <if test="cdepcode != null">cDepCode,</if>
+                <if test="imonth != null">iMonth,</if>
+                <if test="iinum != null">iINum,</if>
+                <if test="ionum != null">iONum,</if>
+                <if test="inum != null">iNum,</if>
+                <if test="iimoney != null">iIMoney,</if>
+                <if test="iomoney != null">iOMoney,</if>
+                <if test="imoney != null">iMoney,</if>
+                <if test="iunitprice != null">iUnitPrice,</if>
+                <if test="idifrate != null">iDifRate,</if>
+                <if test="iidif != null">iIDif,</if>
+                <if test="iodif != null">iODif,</if>
+                <if test="idif != null">iDif,</if>
+                <if test="fminincost != null">fMinInCost,</if>
+                <if test="fmaxincost != null">fMaxInCost,</if>
+                <if test="idirect != null">iDirect,</if>
+                <if test="cfree1 != null">cFree1,</if>
+                <if test="cfree2 != null">cFree2,</if>
+                <if test="cfree3 != null">cFree3,</if>
+                <if test="cfree4 != null">cFree4,</if>
+                <if test="cfree5 != null">cFree5,</if>
+                <if test="cfree6 != null">cFree6,</if>
+                <if test="cfree7 != null">cFree7,</if>
+                <if test="cfree8 != null">cFree8,</if>
+                <if test="cfree9 != null">cFree9,</if>
+                <if test="cfree10 != null">cFree10,</if>
+                <if test="bmanual != null">bManual,</if>
+                <if test="iperiod != null">iperiod,</if>
+                <if test="itrans != null">iTrans,</if>
+                <if test="flaborstdcoste != null">fLaborStdCostE,</if>
+                <if test="fmanufixstdcoste != null">fManuFixStdCostE,</if>
+                <if test="fmanuvarstdcoste != null">fManuVarStdCostE,</if>
+                <if test="fomcoste != null">fOmCostE,</if>
+                <if test="iyear != null">iYear,</if>
+                <if test="dcreatedate != null">dCreateDate,</if>
+                <if test="cbatchia != null">cbatchia,</if>
+                <if test="iabsnum != null">iAbsNum,</if>
+                <if test="iabsmoney != null">iAbsMoney,</if>
+                <if test="iabsinum != null">iAbsINum,</if>
+                <if test="iabsimoney != null">iAbsIMoney,</if>
+                <if test="iabsonum != null">iAbsONum,</if>
+                <if test="iabsomoney != null">iAbsOMoney,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="autoid != null">#{autoid,jdbcType=INTEGER},</if>
+                <if test="cwhcode != null">#{cwhcode,jdbcType=VARCHAR},</if>
+                <if test="cinvcode != null">#{cinvcode,jdbcType=VARCHAR},</if>
+                <if test="cdepcode != null">#{cdepcode,jdbcType=VARCHAR},</if>
+                <if test="imonth != null">#{imonth,jdbcType=TINYINT},</if>
+                <if test="iinum != null">#{iinum,jdbcType=DECIMAL},</if>
+                <if test="ionum != null">#{ionum,jdbcType=DECIMAL},</if>
+                <if test="inum != null">#{inum,jdbcType=DECIMAL},</if>
+                <if test="iimoney != null">#{iimoney,jdbcType=OTHER},</if>
+                <if test="iomoney != null">#{iomoney,jdbcType=OTHER},</if>
+                <if test="imoney != null">#{imoney,jdbcType=OTHER},</if>
+                <if test="iunitprice != null">#{iunitprice,jdbcType=DECIMAL},</if>
+                <if test="idifrate != null">#{idifrate,jdbcType=DECIMAL},</if>
+                <if test="iidif != null">#{iidif,jdbcType=OTHER},</if>
+                <if test="iodif != null">#{iodif,jdbcType=OTHER},</if>
+                <if test="idif != null">#{idif,jdbcType=OTHER},</if>
+                <if test="fminincost != null">#{fminincost,jdbcType=DECIMAL},</if>
+                <if test="fmaxincost != null">#{fmaxincost,jdbcType=DECIMAL},</if>
+                <if test="idirect != null">#{idirect,jdbcType=INTEGER},</if>
+                <if test="cfree1 != null">#{cfree1,jdbcType=VARCHAR},</if>
+                <if test="cfree2 != null">#{cfree2,jdbcType=VARCHAR},</if>
+                <if test="cfree3 != null">#{cfree3,jdbcType=VARCHAR},</if>
+                <if test="cfree4 != null">#{cfree4,jdbcType=VARCHAR},</if>
+                <if test="cfree5 != null">#{cfree5,jdbcType=VARCHAR},</if>
+                <if test="cfree6 != null">#{cfree6,jdbcType=VARCHAR},</if>
+                <if test="cfree7 != null">#{cfree7,jdbcType=VARCHAR},</if>
+                <if test="cfree8 != null">#{cfree8,jdbcType=VARCHAR},</if>
+                <if test="cfree9 != null">#{cfree9,jdbcType=VARCHAR},</if>
+                <if test="cfree10 != null">#{cfree10,jdbcType=VARCHAR},</if>
+                <if test="bmanual != null">#{bmanual,jdbcType=TINYINT},</if>
+                <if test="iperiod != null">#{iperiod,jdbcType=TINYINT},</if>
+                <if test="itrans != null">#{itrans,jdbcType=INTEGER},</if>
+                <if test="flaborstdcoste != null">#{flaborstdcoste,jdbcType=OTHER},</if>
+                <if test="fmanufixstdcoste != null">#{fmanufixstdcoste,jdbcType=OTHER},</if>
+                <if test="fmanuvarstdcoste != null">#{fmanuvarstdcoste,jdbcType=OTHER},</if>
+                <if test="fomcoste != null">#{fomcoste,jdbcType=OTHER},</if>
+                <if test="iyear != null">#{iyear,jdbcType=SMALLINT},</if>
+                <if test="dcreatedate != null">#{dcreatedate,jdbcType=TIMESTAMP},</if>
+                <if test="cbatchia != null">#{cbatchia,jdbcType=VARCHAR},</if>
+                <if test="iabsnum != null">#{iabsnum,jdbcType=DECIMAL},</if>
+                <if test="iabsmoney != null">#{iabsmoney,jdbcType=OTHER},</if>
+                <if test="iabsinum != null">#{iabsinum,jdbcType=DECIMAL},</if>
+                <if test="iabsimoney != null">#{iabsimoney,jdbcType=OTHER},</if>
+                <if test="iabsonum != null">#{iabsonum,jdbcType=DECIMAL},</if>
+                <if test="iabsomoney != null">#{iabsomoney,jdbcType=OTHER},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.espread.sys.model.IaSummary">
+        update IA_Summary
+        <set>
+                <if test="cwhcode != null">
+                    cWhCode = #{cwhcode,jdbcType=VARCHAR},
+                </if>
+                <if test="cinvcode != null">
+                    cInvCode = #{cinvcode,jdbcType=VARCHAR},
+                </if>
+                <if test="cdepcode != null">
+                    cDepCode = #{cdepcode,jdbcType=VARCHAR},
+                </if>
+                <if test="imonth != null">
+                    iMonth = #{imonth,jdbcType=TINYINT},
+                </if>
+                <if test="iinum != null">
+                    iINum = #{iinum,jdbcType=DECIMAL},
+                </if>
+                <if test="ionum != null">
+                    iONum = #{ionum,jdbcType=DECIMAL},
+                </if>
+                <if test="inum != null">
+                    iNum = #{inum,jdbcType=DECIMAL},
+                </if>
+                <if test="iimoney != null">
+                    iIMoney = #{iimoney,jdbcType=OTHER},
+                </if>
+                <if test="iomoney != null">
+                    iOMoney = #{iomoney,jdbcType=OTHER},
+                </if>
+                <if test="imoney != null">
+                    iMoney = #{imoney,jdbcType=OTHER},
+                </if>
+                <if test="iunitprice != null">
+                    iUnitPrice = #{iunitprice,jdbcType=DECIMAL},
+                </if>
+                <if test="idifrate != null">
+                    iDifRate = #{idifrate,jdbcType=DECIMAL},
+                </if>
+                <if test="iidif != null">
+                    iIDif = #{iidif,jdbcType=OTHER},
+                </if>
+                <if test="iodif != null">
+                    iODif = #{iodif,jdbcType=OTHER},
+                </if>
+                <if test="idif != null">
+                    iDif = #{idif,jdbcType=OTHER},
+                </if>
+                <if test="fminincost != null">
+                    fMinInCost = #{fminincost,jdbcType=DECIMAL},
+                </if>
+                <if test="fmaxincost != null">
+                    fMaxInCost = #{fmaxincost,jdbcType=DECIMAL},
+                </if>
+                <if test="idirect != null">
+                    iDirect = #{idirect,jdbcType=INTEGER},
+                </if>
+                <if test="cfree1 != null">
+                    cFree1 = #{cfree1,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree2 != null">
+                    cFree2 = #{cfree2,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree3 != null">
+                    cFree3 = #{cfree3,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree4 != null">
+                    cFree4 = #{cfree4,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree5 != null">
+                    cFree5 = #{cfree5,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree6 != null">
+                    cFree6 = #{cfree6,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree7 != null">
+                    cFree7 = #{cfree7,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree8 != null">
+                    cFree8 = #{cfree8,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree9 != null">
+                    cFree9 = #{cfree9,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree10 != null">
+                    cFree10 = #{cfree10,jdbcType=VARCHAR},
+                </if>
+                <if test="bmanual != null">
+                    bManual = #{bmanual,jdbcType=TINYINT},
+                </if>
+                <if test="iperiod != null">
+                    iperiod = #{iperiod,jdbcType=TINYINT},
+                </if>
+                <if test="itrans != null">
+                    iTrans = #{itrans,jdbcType=INTEGER},
+                </if>
+                <if test="flaborstdcoste != null">
+                    fLaborStdCostE = #{flaborstdcoste,jdbcType=OTHER},
+                </if>
+                <if test="fmanufixstdcoste != null">
+                    fManuFixStdCostE = #{fmanufixstdcoste,jdbcType=OTHER},
+                </if>
+                <if test="fmanuvarstdcoste != null">
+                    fManuVarStdCostE = #{fmanuvarstdcoste,jdbcType=OTHER},
+                </if>
+                <if test="fomcoste != null">
+                    fOmCostE = #{fomcoste,jdbcType=OTHER},
+                </if>
+                <if test="iyear != null">
+                    iYear = #{iyear,jdbcType=SMALLINT},
+                </if>
+                <if test="dcreatedate != null">
+                    dCreateDate = #{dcreatedate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="cbatchia != null">
+                    cbatchia = #{cbatchia,jdbcType=VARCHAR},
+                </if>
+                <if test="iabsnum != null">
+                    iAbsNum = #{iabsnum,jdbcType=DECIMAL},
+                </if>
+                <if test="iabsmoney != null">
+                    iAbsMoney = #{iabsmoney,jdbcType=OTHER},
+                </if>
+                <if test="iabsinum != null">
+                    iAbsINum = #{iabsinum,jdbcType=DECIMAL},
+                </if>
+                <if test="iabsimoney != null">
+                    iAbsIMoney = #{iabsimoney,jdbcType=OTHER},
+                </if>
+                <if test="iabsonum != null">
+                    iAbsONum = #{iabsonum,jdbcType=DECIMAL},
+                </if>
+                <if test="iabsomoney != null">
+                    iAbsOMoney = #{iabsomoney,jdbcType=OTHER},
+                </if>
+        </set>
+        where   AutoID = #{autoid,jdbcType=INTEGER} 
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.espread.sys.model.IaSummary">
+        update IA_Summary
+        set 
+            cWhCode =  #{cwhcode,jdbcType=VARCHAR},
+            cInvCode =  #{cinvcode,jdbcType=VARCHAR},
+            cDepCode =  #{cdepcode,jdbcType=VARCHAR},
+            iMonth =  #{imonth,jdbcType=TINYINT},
+            iINum =  #{iinum,jdbcType=DECIMAL},
+            iONum =  #{ionum,jdbcType=DECIMAL},
+            iNum =  #{inum,jdbcType=DECIMAL},
+            iIMoney =  #{iimoney,jdbcType=OTHER},
+            iOMoney =  #{iomoney,jdbcType=OTHER},
+            iMoney =  #{imoney,jdbcType=OTHER},
+            iUnitPrice =  #{iunitprice,jdbcType=DECIMAL},
+            iDifRate =  #{idifrate,jdbcType=DECIMAL},
+            iIDif =  #{iidif,jdbcType=OTHER},
+            iODif =  #{iodif,jdbcType=OTHER},
+            iDif =  #{idif,jdbcType=OTHER},
+            fMinInCost =  #{fminincost,jdbcType=DECIMAL},
+            fMaxInCost =  #{fmaxincost,jdbcType=DECIMAL},
+            iDirect =  #{idirect,jdbcType=INTEGER},
+            cFree1 =  #{cfree1,jdbcType=VARCHAR},
+            cFree2 =  #{cfree2,jdbcType=VARCHAR},
+            cFree3 =  #{cfree3,jdbcType=VARCHAR},
+            cFree4 =  #{cfree4,jdbcType=VARCHAR},
+            cFree5 =  #{cfree5,jdbcType=VARCHAR},
+            cFree6 =  #{cfree6,jdbcType=VARCHAR},
+            cFree7 =  #{cfree7,jdbcType=VARCHAR},
+            cFree8 =  #{cfree8,jdbcType=VARCHAR},
+            cFree9 =  #{cfree9,jdbcType=VARCHAR},
+            cFree10 =  #{cfree10,jdbcType=VARCHAR},
+            bManual =  #{bmanual,jdbcType=TINYINT},
+            iperiod =  #{iperiod,jdbcType=TINYINT},
+            iTrans =  #{itrans,jdbcType=INTEGER},
+            fLaborStdCostE =  #{flaborstdcoste,jdbcType=OTHER},
+            fManuFixStdCostE =  #{fmanufixstdcoste,jdbcType=OTHER},
+            fManuVarStdCostE =  #{fmanuvarstdcoste,jdbcType=OTHER},
+            fOmCostE =  #{fomcoste,jdbcType=OTHER},
+            iYear =  #{iyear,jdbcType=SMALLINT},
+            dCreateDate =  #{dcreatedate,jdbcType=TIMESTAMP},
+            cbatchia =  #{cbatchia,jdbcType=VARCHAR},
+            iAbsNum =  #{iabsnum,jdbcType=DECIMAL},
+            iAbsMoney =  #{iabsmoney,jdbcType=OTHER},
+            iAbsINum =  #{iabsinum,jdbcType=DECIMAL},
+            iAbsIMoney =  #{iabsimoney,jdbcType=OTHER},
+            iAbsONum =  #{iabsonum,jdbcType=DECIMAL},
+            iAbsOMoney =  #{iabsomoney,jdbcType=OTHER}
+        where   AutoID = #{autoid,jdbcType=INTEGER} 
+    </update>
+</mapper>

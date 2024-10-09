@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.espread.sys.mapper.ComputationunitMapper">
+
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.Computationunit">
+            <id property="ccomunitcode" column="cComunitCode" jdbcType="VARCHAR"/>
+            <result property="ccomunitname" column="cComUnitName" jdbcType="VARCHAR"/>
+            <result property="cgroupcode" column="cGroupCode" jdbcType="VARCHAR"/>
+            <result property="cbarcode" column="cBarCode" jdbcType="VARCHAR"/>
+            <result property="bmainunit" column="bMainUnit" jdbcType="BIT"/>
+            <result property="ichangrate" column="iChangRate" jdbcType="DECIMAL"/>
+            <result property="iproportion" column="iProportion" jdbcType="FLOAT"/>
+            <result property="inumber" column="iNumber" jdbcType="SMALLINT"/>
+            <result property="pubufts" column="pubufts" jdbcType="TIMESTAMP"/>
+            <result property="censingular" column="cEnSingular" jdbcType="VARCHAR"/>
+            <result property="cenplural" column="cEnPlural" jdbcType="VARCHAR"/>
+            <result property="cunitrefinvcode" column="cUnitRefInvCode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        cComunitCode,cComUnitName,cGroupCode,
+        cBarCode,bMainUnit,iChangRate,
+        iProportion,iNumber,
+        cEnSingular,cEnPlural,cUnitRefInvCode
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from ComputationUnit
+        where  cComunitCode = #{ccomunitcode,jdbcType=VARCHAR} 
+    </select>
+
+</mapper>

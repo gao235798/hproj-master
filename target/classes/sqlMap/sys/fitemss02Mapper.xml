@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.fitemss02Mapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.fitemss02" >
+    <result column="I_id" property="iId" jdbcType="INTEGER" />
+    <result column="citemcode" property="citemcode" jdbcType="NVARCHAR" />
+    <result column="citemname" property="citemname" jdbcType="NVARCHAR" />
+    <result column="bclose" property="bclose" jdbcType="BIT" />
+    <result column="citemccode" property="citemccode" jdbcType="NVARCHAR" />
+    <result column="iotherused" property="iotherused" jdbcType="INTEGER" />
+    <result column="citemcname" property="citemcname" jdbcType="NVARCHAR" />
+    <result column="ttype" property="ttype" jdbcType="NVARCHAR" />
+    <result column="tstatus" property="tstatus" jdbcType="NVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    a.I_id, a.citemcode, a.citemname, a.bclose, a.citemccode, a.iotherused,b.citemcname,a.ttype,a.tstatus
+  </sql>
+  <select id="selectByALL" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+     from xzys_ha_fitemss02 a ,fitemss02class b where a.cItemCcode=b.cItemCcode
+         and   a.tstatus='0'   order by  a.ttype
+ 
+  </select>
+ 
+   <update id="updateFitemss02"  >
+    update xzys_ha_fitemss02 
+    	set tstatus =#{tstatus,jdbcType=NVARCHAR} 
+    	where i_id =   #{i_id,jdbcType=INTEGER} 
+    </update>
+</mapper>

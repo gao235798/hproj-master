@@ -1,0 +1,49 @@
+/**	common/icons */
+.icon-add{
+	background:url('common/icons/add.png') no-repeat center center;
+}
+.icon-btn{
+	background:url('common/icons/btn.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('common/icons/cancel.png') no-repeat center center;
+}
+.icon-company{
+	background:url('common/icons/company.png') no-repeat center center;
+}
+.icon-del{
+	background:url('common/icons/del.png') no-repeat center center;
+}
+.icon-folder{
+	background:url('common/icons/folder.png') no-repeat center center;
+}
+.icon-home{
+	background:url('common/icons/home.png') no-repeat center center;
+}
+.icon-list{
+	background:url('common/icons/list.png') no-repeat center center;
+}
+.icon-refresh{
+	background:url('common/icons/refresh.png') no-repeat center center;
+}
+ 
+ 
+
+/** common/tabicons.gif */
+.menu_icon_datadeal {
+    border: 0px;
+    padding: 2px 8px;
+    margin-right: 5px;
+    width: 0px;
+
+    background: url(common/tabicons.gif) no-repeat -380px -60px;
+}
+
+.menu_icon_service{
+    border: 0px;
+    padding:2px 8px;
+    margin-right:5px;
+    width:0px;
+
+    background: url(common/tabicons.gif)  no-repeat -100px -480px;
+}

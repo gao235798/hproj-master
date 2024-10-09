@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.SysQrtzLogMapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.SysQrtzLog" >
+     <id column="log_id" property="logId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="NVARCHAR" />
+    <result column="login_name" property="loginName" jdbcType="NVARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="log_type" property="logType" jdbcType="NVARCHAR" />
+    <result column="code_no" property="codeNo" jdbcType="NVARCHAR" />
+    <result column="log_status" property="logStatus" jdbcType="NVARCHAR" />
+    <result column="log_message" property="logMessage" jdbcType="NVARCHAR" />
+    <result column="request_param" property="requestParam" jdbcType="NVARCHAR" />
+    <result column="execute_time" property="executeTime" jdbcType="BIGINT" />
+    <result column="description" property="description" jdbcType="NVARCHAR" />
+    <result column="os" property="os" jdbcType="NVARCHAR" />
+    <result column="browser" property="browser" jdbcType="NVARCHAR" />
+    <result column="ip" property="ip" jdbcType="NVARCHAR" />
+    <result column="mac" property="mac" jdbcType="NVARCHAR" />
+    <result column="field_1" property="field1" jdbcType="NVARCHAR" />
+    <result column="field_2" property="field2" jdbcType="NVARCHAR" />
+    <result column="field_3" property="field3" jdbcType="NVARCHAR" />
+  </resultMap>
+  <resultMap id="sysQrtzLogVoResultMap" type="com.espread.sys.model.result.SysQrtzLogVo" extends="BaseResultMap">
+        <result column="dict_name" property="logTypeName" jdbcType="VARCHAR"/>
+    </resultMap>
+<!-- 查询日志列表 -->
+    <select id="findLogPageCondition" resultMap="sysQrtzLogVoResultMap">
+        SELECT
+        l.log_id, l.user_id, l.login_name, 
+      l.create_date, l.log_type, l.code_no, 
+      case when l.log_status='1' then '成功' else '失败' end as log_status, l.log_message, l.request_param, 
+      l.execute_time, l.description, l.os, 
+      l.browser, l.ip, l.mac, 
+      l.field_1, l.field_2, l.field_3
+        
+        , d.dict_name
+        from
+        sys_qrtz_log l
+        LEFT JOIN sys_dict d ON d.dict_code = l.log_type and d.dict_type = 'logQtrzType'
+        <where>
+           
+            <if test=" condition.logStatus != null">
+                and l.log_status like  '%'+'${condition.logStatus}'+'%' 
+            </if>
+            <if test=" condition.operateCode != null">
+                and l.code_no like  '%'+'${condition.operateCode}'+'%' 
+            </if>
+            <if test=" condition.logType != null">
+                and l.log_type in
+                <foreach item="item" index="index" collection="condition.logType" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="condition.createDateStart != null">
+                <![CDATA[
+            	and l.create_date >= #{condition.createDateStart}
+           		]]>
+            </if>
+            <if test="condition.createDateEnd != null">
+                <![CDATA[
+            	and l.create_date <  DATEADD(DAY,1,CAST(#{condition.createDateEnd} AS datetime))
+       			 ]]>
+            </if>
+        </where>
+        <if test="pageInfo.sort != null and pageInfo.sort != ''">
+            order by ${pageInfo.sort} ${pageInfo.order}
+        </if>
+    </select>
+    
+    <!-- 查询日志列表 -->
+    <select id="findall" resultMap="sysQrtzLogVoResultMap">
+        SELECT
+        l.log_id, l.user_id, l.login_name, 
+      l.create_date, l.log_type, l.code_no, 
+      l.log_status, l.log_message, l.request_param, 
+      l.execute_time, l.description, l.os, 
+      l.browser, l.ip, l.mac, 
+      l.field_1, l.field_2, l.field_3
+        
+        , d.dict_name
+        from
+        sys_qrtz_log l
+        LEFT JOIN sys_dict d ON d.dict_code = l.log_type and d.dict_type = 'logQtrzType'
+       
+    </select>
+</mapper>

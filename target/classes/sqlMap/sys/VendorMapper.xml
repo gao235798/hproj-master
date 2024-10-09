@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.VendorMapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.Vendor" >
+    <id column="cVenCode" property="cvencode" jdbcType="NVARCHAR" />
+    <result column="cVenName" property="cvenname" jdbcType="NVARCHAR" />
+    <result column="cVenAbbName" property="cvenabbname" jdbcType="NVARCHAR" />
+    <result column="cVCCode" property="cvccode" jdbcType="NVARCHAR" />
+    <result column="cDCCode" property="cdccode" jdbcType="NVARCHAR" />
+    <result column="cTrade" property="ctrade" jdbcType="NVARCHAR" />
+    <result column="cVenAddress" property="cvenaddress" jdbcType="NVARCHAR" />
+    <result column="cVenPostCode" property="cvenpostcode" jdbcType="NVARCHAR" />
+    <result column="cVenRegCode" property="cvenregcode" jdbcType="NVARCHAR" />
+    <result column="cVenBank" property="cvenbank" jdbcType="NVARCHAR" />
+    <result column="cVenAccount" property="cvenaccount" jdbcType="NVARCHAR" />
+    <result column="dVenDevDate" property="dvendevdate" jdbcType="TIMESTAMP" />
+    <result column="cVenLPerson" property="cvenlperson" jdbcType="NVARCHAR" />
+    <result column="cVenPhone" property="cvenphone" jdbcType="NVARCHAR" />
+    <result column="cVenFax" property="cvenfax" jdbcType="NVARCHAR" />
+    <result column="cVenEmail" property="cvenemail" jdbcType="NVARCHAR" />
+    <result column="cVenPerson" property="cvenperson" jdbcType="NVARCHAR" />
+    <result column="cVenBP" property="cvenbp" jdbcType="NVARCHAR" />
+    <result column="cVenHand" property="cvenhand" jdbcType="NVARCHAR" />
+    <result column="cVenPPerson" property="cvenpperson" jdbcType="NVARCHAR" />
+    <result column="iVenDisRate" property="ivendisrate" jdbcType="DOUBLE" />
+    <result column="iVenCreGrade" property="ivencregrade" jdbcType="NVARCHAR" />
+    <result column="iVenCreLine" property="ivencreline" jdbcType="DOUBLE" />
+    <result column="iVenCreDate" property="ivencredate" jdbcType="INTEGER" />
+    <result column="cVenPayCond" property="cvenpaycond" jdbcType="NVARCHAR" />
+    <result column="cVenIAddress" property="cveniaddress" jdbcType="NVARCHAR" />
+    <result column="cVenIType" property="cvenitype" jdbcType="NVARCHAR" />
+    <result column="cVenHeadCode" property="cvenheadcode" jdbcType="NVARCHAR" />
+    <result column="cVenWhCode" property="cvenwhcode" jdbcType="NVARCHAR" />
+    <result column="cVenDepart" property="cvendepart" jdbcType="NVARCHAR" />
+    <result column="iAPMoney" property="iapmoney" jdbcType="DOUBLE" />
+    <result column="dLastDate" property="dlastdate" jdbcType="TIMESTAMP" />
+    <result column="iLastMoney" property="ilastmoney" jdbcType="DOUBLE" />
+    <result column="dLRDate" property="dlrdate" jdbcType="TIMESTAMP" />
+    <result column="iLRMoney" property="ilrmoney" jdbcType="DOUBLE" />
+    <result column="dEndDate" property="denddate" jdbcType="TIMESTAMP" />
+    <result column="iFrequency" property="ifrequency" jdbcType="INTEGER" />
+    <result column="bVenTax" property="bventax" jdbcType="BIT" />
+    <result column="cVenDefine1" property="cvendefine1" jdbcType="NVARCHAR" />
+    <result column="cVenDefine2" property="cvendefine2" jdbcType="NVARCHAR" />
+    <result column="cVenDefine3" property="cvendefine3" jdbcType="NVARCHAR" />
+    <result column="cCreatePerson" property="ccreateperson" jdbcType="NVARCHAR" />
+    <result column="cModifyPerson" property="cmodifyperson" jdbcType="NVARCHAR" />
+    <result column="dModifyDate" property="dmodifydate" jdbcType="TIMESTAMP" />
+    <result column="cRelCustomer" property="crelcustomer" jdbcType="NVARCHAR" />
+    <result column="iId" property="iid" jdbcType="INTEGER" />
+    <result column="cBarCode" property="cbarcode" jdbcType="NVARCHAR" />
+    <result column="cVenDefine4" property="cvendefine4" jdbcType="NVARCHAR" />
+    <result column="cVenDefine5" property="cvendefine5" jdbcType="NVARCHAR" />
+    <result column="cVenDefine6" property="cvendefine6" jdbcType="NVARCHAR" />
+    <result column="cVenDefine7" property="cvendefine7" jdbcType="NVARCHAR" />
+    <result column="cVenDefine8" property="cvendefine8" jdbcType="NVARCHAR" />
+    <result column="cVenDefine9" property="cvendefine9" jdbcType="NVARCHAR" />
+    <result column="cVenDefine10" property="cvendefine10" jdbcType="NVARCHAR" />
+    <result column="cVenDefine11" property="cvendefine11" jdbcType="INTEGER" />
+    <result column="cVenDefine12" property="cvendefine12" jdbcType="INTEGER" />
+    <result column="cVenDefine13" property="cvendefine13" jdbcType="DOUBLE" />
+    <result column="cVenDefine14" property="cvendefine14" jdbcType="DOUBLE" />
+    <result column="cVenDefine15" property="cvendefine15" jdbcType="TIMESTAMP" />
+    <result column="cVenDefine16" property="cvendefine16" jdbcType="TIMESTAMP" />
+    <result column="fRegistFund" property="fregistfund" jdbcType="DOUBLE" />
+    <result column="iEmployeeNum" property="iemployeenum" jdbcType="INTEGER" />
+    <result column="iGradeABC" property="igradeabc" jdbcType="SMALLINT" />
+    <result column="cMemo" property="cmemo" jdbcType="NVARCHAR" />
+    <result column="bLicenceDate" property="blicencedate" jdbcType="BIT" />
+    <result column="dLicenceSDate" property="dlicencesdate" jdbcType="TIMESTAMP" />
+    <result column="dLicenceEDate" property="dlicenceedate" jdbcType="TIMESTAMP" />
+    <result column="iLicenceADays" property="ilicenceadays" jdbcType="INTEGER" />
+    <result column="bBusinessDate" property="bbusinessdate" jdbcType="BIT" />
+    <result column="dBusinessSDate" property="dbusinesssdate" jdbcType="TIMESTAMP" />
+    <result column="dBusinessEDate" property="dbusinessedate" jdbcType="TIMESTAMP" />
+    <result column="iBusinessADays" property="ibusinessadays" jdbcType="INTEGER" />
+    <result column="bProxyDate" property="bproxydate" jdbcType="BIT" />
+    <result column="dProxySDate" property="dproxysdate" jdbcType="TIMESTAMP" />
+    <result column="dProxyEDate" property="dproxyedate" jdbcType="TIMESTAMP" />
+    <result column="iProxyADays" property="iproxyadays" jdbcType="INTEGER" />
+    <result column="bPassGMP" property="bpassgmp" jdbcType="BIT" />
+    <result column="bVenCargo" property="bvencargo" jdbcType="BIT" />
+    <result column="bProxyForeign" property="bproxyforeign" jdbcType="BIT" />
+    <result column="bVenService" property="bvenservice" jdbcType="BIT" />
+    <result column="cVenTradeCCode" property="cventradeccode" jdbcType="NVARCHAR" />
+    <result column="cVenBankCode" property="cvenbankcode" jdbcType="NVARCHAR" />
+    <result column="cVenExch_name" property="cvenexchName" jdbcType="NVARCHAR" />
+    <result column="iVenGSPType" property="ivengsptype" jdbcType="SMALLINT" />
+    <result column="iVenGSPAuth" property="ivengspauth" jdbcType="SMALLINT" />
+    <result column="cVenGSPAuthNo" property="cvengspauthno" jdbcType="NVARCHAR" />
+    <result column="cVenBusinessNo" property="cvenbusinessno" jdbcType="NVARCHAR" />
+    <result column="cVenLicenceNo" property="cvenlicenceno" jdbcType="NVARCHAR" />
+    <result column="bVenOverseas" property="bvenoverseas" jdbcType="BIT" />
+    <result column="bVenAccPeriodMng" property="bvenaccperiodmng" jdbcType="BIT" />
+    <result column="cVenPUOMProtocol" property="cvenpuomprotocol" jdbcType="NVARCHAR" />
+    <result column="cVenOtherProtocol" property="cvenotherprotocol" jdbcType="NVARCHAR" />
+    <result column="cVenCountryCode" property="cvencountrycode" jdbcType="NVARCHAR" />
+    <result column="cVenEnName" property="cvenenname" jdbcType="NVARCHAR" />
+    <result column="cVenEnAddr1" property="cvenenaddr1" jdbcType="NVARCHAR" />
+    <result column="cVenEnAddr2" property="cvenenaddr2" jdbcType="NVARCHAR" />
+    <result column="cVenEnAddr3" property="cvenenaddr3" jdbcType="NVARCHAR" />
+    <result column="cVenEnAddr4" property="cvenenaddr4" jdbcType="NVARCHAR" />
+    <result column="cVenPortCode" property="cvenportcode" jdbcType="NVARCHAR" />
+    <result column="cVenPrimaryVen" property="cvenprimaryven" jdbcType="NVARCHAR" />
+    <result column="fVenCommisionRate" property="fvencommisionrate" jdbcType="DOUBLE" />
+    <result column="fVenInsueRate" property="fveninsuerate" jdbcType="DOUBLE" />
+    <result column="bVenHomeBranch" property="bvenhomebranch" jdbcType="BIT" />
+    <result column="cVenBranchAddr" property="cvenbranchaddr" jdbcType="NVARCHAR" />
+    <result column="cVenBranchPhone" property="cvenbranchphone" jdbcType="NVARCHAR" />
+    <result column="cVenBranchPerson" property="cvenbranchperson" jdbcType="NVARCHAR" />
+    <result column="cVenSSCode" property="cvensscode" jdbcType="NVARCHAR" />
+    <result column="cOMWhCode" property="comwhcode" jdbcType="NVARCHAR" />
+    <result column="cVenCMProtocol" property="cvencmprotocol" jdbcType="NVARCHAR" />
+    <result column="cVenIMProtocol" property="cvenimprotocol" jdbcType="NVARCHAR" />
+    <result column="iVenTaxRate" property="iventaxrate" jdbcType="DOUBLE" />
+    <result column="dVenCreateDatetime" property="dvencreatedatetime" jdbcType="TIMESTAMP" />
+    <result column="cVenMnemCode" property="cvenmnemcode" jdbcType="NVARCHAR" />
+    <result column="cVenContactCode" property="cvencontactcode" jdbcType="CHAR" />
+    <result column="cvenbankall" property="cvenbankall" jdbcType="NVARCHAR" />
+    <result column="bIsVenAttachFile" property="bisvenattachfile" jdbcType="BIT" />
+    <result column="cLicenceRange" property="clicencerange" jdbcType="NVARCHAR" />
+    <result column="cBusinessRange" property="cbusinessrange" jdbcType="NVARCHAR" />
+    <result column="cVenGSPRange" property="cvengsprange" jdbcType="NVARCHAR" />
+    <result column="dVenGSPEDate" property="dvengspedate" jdbcType="TIMESTAMP" />
+    <result column="dVenGSPSDate" property="dvengspsdate" jdbcType="TIMESTAMP" />
+    <result column="iVenGSPADays" property="ivengspadays" jdbcType="INTEGER" />
+         <result column="ttype" property="ttype" jdbcType="NVARCHAR" />
+    <result column="tstatus" property="tstatus" jdbcType="NVARCHAR" />
+        <result column="I_id" property="iId" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.Vendor" extends="BaseResultMap" >
+    <result column="pubufts" property="pubufts" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cVenCode, cVenName, cVenAbbName, cVCCode, cDCCode, cTrade, cVenAddress, cVenPostCode, 
+    cVenRegCode, cVenBank, cVenAccount, dVenDevDate, cVenLPerson, cVenPhone, cVenFax, 
+    cVenEmail, cVenPerson, cVenBP, cVenHand, cVenPPerson, iVenDisRate, iVenCreGrade, 
+    iVenCreLine, iVenCreDate, cVenPayCond, cVenIAddress, cVenIType, cVenHeadCode, cVenWhCode, 
+    cVenDepart, iAPMoney, dLastDate, iLastMoney, dLRDate, iLRMoney, dEndDate, iFrequency, 
+    bVenTax, cVenDefine1, cVenDefine2, cVenDefine3, cCreatePerson, cModifyPerson, dModifyDate, 
+    cRelCustomer, iId, cBarCode, cVenDefine4, cVenDefine5, cVenDefine6, cVenDefine7, 
+    cVenDefine8, cVenDefine9, cVenDefine10, cVenDefine11, cVenDefine12, cVenDefine13, 
+    cVenDefine14, cVenDefine15, cVenDefine16, fRegistFund, iEmployeeNum, iGradeABC, cMemo, 
+    bLicenceDate, dLicenceSDate, dLicenceEDate, iLicenceADays, bBusinessDate, dBusinessSDate, 
+    dBusinessEDate, iBusinessADays, bProxyDate, dProxySDate, dProxyEDate, iProxyADays, 
+    bPassGMP, bVenCargo, bProxyForeign, bVenService, cVenTradeCCode, cVenBankCode, cVenExch_name, 
+    iVenGSPType, iVenGSPAuth, cVenGSPAuthNo, cVenBusinessNo, cVenLicenceNo, bVenOverseas, 
+    bVenAccPeriodMng, cVenPUOMProtocol, cVenOtherProtocol, cVenCountryCode, cVenEnName, 
+    cVenEnAddr1, cVenEnAddr2, cVenEnAddr3, cVenEnAddr4, cVenPortCode, cVenPrimaryVen, 
+    fVenCommisionRate, fVenInsueRate, bVenHomeBranch, cVenBranchAddr, cVenBranchPhone, 
+    cVenBranchPerson, cVenSSCode, cOMWhCode, cVenCMProtocol, cVenIMProtocol, iVenTaxRate, 
+    dVenCreateDatetime, cVenMnemCode, cVenContactCode, cvenbankall, bIsVenAttachFile, 
+    cLicenceRange, cBusinessRange, cVenGSPRange, dVenGSPEDate, dVenGSPSDate, iVenGSPADays,ttype,tstatus,I_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    pubufts
+  </sql>
+  <select id="selectByALL" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+        from xzys_les_Vendor   where   tstatus='0'   order by  ttype
+
+  </select>
+    <update id="updateVendor"  >
+    update xzys_les_Vendor 
+    	set tstatus =#{tstatus,jdbcType=NVARCHAR} 
+    	where i_id =   #{i_id,jdbcType=INTEGER} 
+    </update>
+  
+</mapper>

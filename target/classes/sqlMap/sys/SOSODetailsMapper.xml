@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.SOSODetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.SOSODetails" >
+    <id column="AutoID" property="autoid" jdbcType="INTEGER" />
+    <result column="cSOCode" property="csocode" jdbcType="NVARCHAR" />
+    <result column="cInvCode" property="cinvcode" jdbcType="NVARCHAR" />
+    <result column="dPreDate" property="dpredate" jdbcType="TIMESTAMP" />
+    <result column="iQuantity" property="iquantity" jdbcType="DECIMAL" />
+    <result column="iNum" property="inum" jdbcType="DECIMAL" />
+    <result column="iQuotedPrice" property="iquotedprice" jdbcType="DECIMAL" />
+    <result column="iUnitPrice" property="iunitprice" jdbcType="DECIMAL" />
+    <result column="iTaxUnitPrice" property="itaxunitprice" jdbcType="DECIMAL" />
+    <result column="iMoney" property="imoney" jdbcType="DECIMAL" />
+    <result column="iTax" property="itax" jdbcType="DECIMAL" />
+    <result column="iSum" property="isum" jdbcType="DECIMAL" />
+    <result column="iDisCount" property="idiscount" jdbcType="DECIMAL" />
+    <result column="iNatUnitPrice" property="inatunitprice" jdbcType="DECIMAL" />
+    <result column="iNatMoney" property="inatmoney" jdbcType="DECIMAL" />
+    <result column="iNatTax" property="inattax" jdbcType="DECIMAL" />
+    <result column="iNatSum" property="inatsum" jdbcType="DECIMAL" />
+    <result column="iNatDisCount" property="inatdiscount" jdbcType="DECIMAL" />
+    <result column="iFHNum" property="ifhnum" jdbcType="DECIMAL" />
+    <result column="iFHQuantity" property="ifhquantity" jdbcType="DECIMAL" />
+    <result column="iFHMoney" property="ifhmoney" jdbcType="DECIMAL" />
+    <result column="iKPQuantity" property="ikpquantity" jdbcType="DECIMAL" />
+    <result column="iKPNum" property="ikpnum" jdbcType="DECIMAL" />
+    <result column="iKPMoney" property="ikpmoney" jdbcType="DECIMAL" />
+    <result column="cMemo" property="cmemo" jdbcType="NVARCHAR" />
+    <result column="cFree1" property="cfree1" jdbcType="NVARCHAR" />
+    <result column="cFree2" property="cfree2" jdbcType="NVARCHAR" />
+    <result column="bFH" property="bfh" jdbcType="INTEGER" />
+    <result column="iSOsID" property="isosid" jdbcType="INTEGER" />
+    <result column="KL" property="kl" jdbcType="DECIMAL" />
+    <result column="KL2" property="kl2" jdbcType="DECIMAL" />
+    <result column="cInvName" property="cinvname" jdbcType="NVARCHAR" />
+    <result column="iTaxRate" property="itaxrate" jdbcType="DECIMAL" />
+    <result column="cDefine22" property="cdefine22" jdbcType="NVARCHAR" />
+    <result column="cDefine23" property="cdefine23" jdbcType="NVARCHAR" />
+    <result column="cDefine24" property="cdefine24" jdbcType="NVARCHAR" />
+    <result column="cDefine25" property="cdefine25" jdbcType="NVARCHAR" />
+    <result column="cDefine26" property="cdefine26" jdbcType="OTHER" />
+    <result column="cDefine27" property="cdefine27" jdbcType="OTHER" />
+    <result column="cItemCode" property="citemcode" jdbcType="NVARCHAR" />
+    <result column="cItem_class" property="citemClass" jdbcType="NVARCHAR" />
+    <result column="cItemName" property="citemname" jdbcType="NVARCHAR" />
+    <result column="cItem_CName" property="citemCname" jdbcType="NVARCHAR" />
+    <result column="cFree3" property="cfree3" jdbcType="NVARCHAR" />
+    <result column="cFree4" property="cfree4" jdbcType="NVARCHAR" />
+    <result column="cFree5" property="cfree5" jdbcType="NVARCHAR" />
+    <result column="cFree6" property="cfree6" jdbcType="NVARCHAR" />
+    <result column="cFree7" property="cfree7" jdbcType="NVARCHAR" />
+    <result column="cFree8" property="cfree8" jdbcType="NVARCHAR" />
+    <result column="cFree9" property="cfree9" jdbcType="NVARCHAR" />
+    <result column="cFree10" property="cfree10" jdbcType="NVARCHAR" />
+    <result column="iInvExchRate" property="iinvexchrate" jdbcType="DECIMAL" />
+    <result column="cUnitID" property="cunitid" jdbcType="NVARCHAR" />
+    <result column="ID" property="id" jdbcType="INTEGER" />
+    <result column="cDefine28" property="cdefine28" jdbcType="NVARCHAR" />
+    <result column="cDefine29" property="cdefine29" jdbcType="NVARCHAR" />
+    <result column="cDefine30" property="cdefine30" jdbcType="NVARCHAR" />
+    <result column="cDefine31" property="cdefine31" jdbcType="NVARCHAR" />
+    <result column="cDefine32" property="cdefine32" jdbcType="NVARCHAR" />
+    <result column="cDefine33" property="cdefine33" jdbcType="NVARCHAR" />
+    <result column="cDefine34" property="cdefine34" jdbcType="INTEGER" />
+    <result column="cDefine35" property="cdefine35" jdbcType="INTEGER" />
+    <result column="cDefine36" property="cdefine36" jdbcType="TIMESTAMP" />
+    <result column="cDefine37" property="cdefine37" jdbcType="TIMESTAMP" />
+    <result column="FPurQuan" property="fpurquan" jdbcType="DECIMAL" />
+    <result column="fSaleCost" property="fsalecost" jdbcType="DECIMAL" />
+    <result column="fSalePrice" property="fsaleprice" jdbcType="DECIMAL" />
+    <result column="cQuoCode" property="cquocode" jdbcType="NVARCHAR" />
+    <result column="iQuoID" property="iquoid" jdbcType="INTEGER" />
+    <result column="cSCloser" property="cscloser" jdbcType="NVARCHAR" />
+    <result column="dPreMoDate" property="dpremodate" jdbcType="TIMESTAMP" />
+    <result column="iRowNo" property="irowno" jdbcType="INTEGER" />
+    <result column="iCusBomID" property="icusbomid" jdbcType="INTEGER" />
+    <result column="iMoQuantity" property="imoquantity" jdbcType="DECIMAL" />
+    <result column="cContractID" property="ccontractid" jdbcType="NVARCHAR" />
+    <result column="cContractTagCode" property="ccontracttagcode" jdbcType="NVARCHAR" />
+    <result column="cContractRowGuid" property="ccontractrowguid" jdbcType="OTHER" />
+    <result column="iPPartSeqID" property="ippartseqid" jdbcType="INTEGER" />
+    <result column="iPPartID" property="ippartid" jdbcType="INTEGER" />
+    <result column="iPPartQty" property="ippartqty" jdbcType="DECIMAL" />
+    <result column="cCusInvCode" property="ccusinvcode" jdbcType="NVARCHAR" />
+    <result column="cCusInvName" property="ccusinvname" jdbcType="NVARCHAR" />
+    <result column="iPreKeepQuantity" property="iprekeepquantity" jdbcType="DECIMAL" />
+    <result column="iPreKeepNum" property="iprekeepnum" jdbcType="DECIMAL" />
+    <result column="iPreKeepTotQuantity" property="iprekeeptotquantity" jdbcType="DECIMAL" />
+    <result column="iPreKeepTotNum" property="iprekeeptotnum" jdbcType="DECIMAL" />
+    <result column="dreleasedate" property="dreleasedate" jdbcType="TIMESTAMP" />
+    <result column="fcusminprice" property="fcusminprice" jdbcType="DECIMAL" />
+    <result column="fimquantity" property="fimquantity" jdbcType="DECIMAL" />
+    <result column="fomquantity" property="fomquantity" jdbcType="DECIMAL" />
+    <result column="ballpurchase" property="ballpurchase" jdbcType="BIT" />
+    <result column="finquantity" property="finquantity" jdbcType="DECIMAL" />
+    <result column="icostquantity" property="icostquantity" jdbcType="DECIMAL" />
+    <result column="icostsum" property="icostsum" jdbcType="DECIMAL" />
+    <result column="foutquantity" property="foutquantity" jdbcType="DECIMAL" />
+    <result column="foutnum" property="foutnum" jdbcType="DECIMAL" />
+    <result column="iexchsum" property="iexchsum" jdbcType="DECIMAL" />
+    <result column="imoneysum" property="imoneysum" jdbcType="DECIMAL" />
+    <result column="iaoids" property="iaoids" jdbcType="INTEGER" />
+    <result column="cpreordercode" property="cpreordercode" jdbcType="NVARCHAR" />
+    <result column="fretquantity" property="fretquantity" jdbcType="DECIMAL" />
+    <result column="fretnum" property="fretnum" jdbcType="DECIMAL" />
+    <result column="dbclosedate" property="dbclosedate" jdbcType="TIMESTAMP" />
+    <result column="dbclosesystime" property="dbclosesystime" jdbcType="TIMESTAMP" />
+    <result column="bOrderBOM" property="borderbom" jdbcType="BIT" />
+    <result column="bOrderBOMOver" property="borderbomover" jdbcType="TINYINT" />
+    <result column="idemandtype" property="idemandtype" jdbcType="SMALLINT" />
+    <result column="cdemandcode" property="cdemandcode" jdbcType="NVARCHAR" />
+    <result column="cdemandmemo" property="cdemandmemo" jdbcType="NVARCHAR" />
+    <result column="fPurSum" property="fpursum" jdbcType="DECIMAL" />
+    <result column="fPurBillQty" property="fpurbillqty" jdbcType="DECIMAL" />
+    <result column="fPurBillSum" property="fpurbillsum" jdbcType="DECIMAL" />
+    <result column="iimid" property="iimid" jdbcType="BIGINT" />
+    <result column="ccorvouchtype" property="ccorvouchtype" jdbcType="NVARCHAR" />
+    <result column="icorrowno" property="icorrowno" jdbcType="INTEGER" />
+    <result column="busecusbom" property="busecusbom" jdbcType="BIT" />
+    <result column="body_outid" property="bodyOutid" jdbcType="CHAR" />
+    <result column="fVeriDispQty" property="fveridispqty" jdbcType="DECIMAL" />
+    <result column="fVeriDispSum" property="fveridispsum" jdbcType="DECIMAL" />
+    <result column="bsaleprice" property="bsaleprice" jdbcType="BIT" />
+    <result column="bgift" property="bgift" jdbcType="BIT" />
+    <result column="forecastdid" property="forecastdid" jdbcType="INTEGER" />
+    <result column="cdetailsdemandcode" property="cdetailsdemandcode" jdbcType="NVARCHAR" />
+    <result column="cdetailsdemandmemo" property="cdetailsdemandmemo" jdbcType="NVARCHAR" />
+    <result column="fTransedQty" property="ftransedqty" jdbcType="DECIMAL" />
+    <result column="cbSysBarCode" property="cbsysbarcode" jdbcType="NVARCHAR" />
+    <result column="fappqty" property="fappqty" jdbcType="DECIMAL" />
+    <result column="cParentCode" property="cparentcode" jdbcType="NVARCHAR" />
+    <result column="cChildCode" property="cchildcode" jdbcType="NVARCHAR" />
+    <result column="fchildqty" property="fchildqty" jdbcType="DECIMAL" />
+    <result column="fchildrate" property="fchildrate" jdbcType="DECIMAL" />
+    <result column="iCalcType" property="icalctype" jdbcType="TINYINT" />
+    <result column="iCurPartid" property="icurpartid" jdbcType="BIGINT" />
+    <result column="cFactoryCode" property="cfactorycode" jdbcType="NVARCHAR" />
+    <result column="GCSourceId" property="gcsourceid" jdbcType="INTEGER" />
+    <result column="GCSourceIds" property="gcsourceids" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.SOSODetails" extends="BaseResultMap" >
+    <result column="dufts" property="dufts" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    AutoID, cSOCode, cInvCode, dPreDate, iQuantity, iNum, iQuotedPrice, iUnitPrice, iTaxUnitPrice, 
+    iMoney, iTax, iSum, iDisCount, iNatUnitPrice, iNatMoney, iNatTax, iNatSum, iNatDisCount, 
+    iFHNum, iFHQuantity, iFHMoney, iKPQuantity, iKPNum, iKPMoney, cMemo, cFree1, cFree2, 
+    bFH, iSOsID, KL, KL2, cInvName, iTaxRate, cDefine22, cDefine23, cDefine24, cDefine25, 
+    cDefine26, cDefine27, cItemCode, cItem_class, cItemName, cItem_CName, cFree3, cFree4, 
+    cFree5, cFree6, cFree7, cFree8, cFree9, cFree10, iInvExchRate, cUnitID, ID, cDefine28, 
+    cDefine29, cDefine30, cDefine31, cDefine32, cDefine33, cDefine34, cDefine35, cDefine36, 
+    cDefine37, FPurQuan, fSaleCost, fSalePrice, cQuoCode, iQuoID, cSCloser, dPreMoDate, 
+    iRowNo, iCusBomID, iMoQuantity, cContractID, cContractTagCode, cContractRowGuid, 
+    iPPartSeqID, iPPartID, iPPartQty, cCusInvCode, cCusInvName, iPreKeepQuantity, iPreKeepNum, 
+    iPreKeepTotQuantity, iPreKeepTotNum, dreleasedate, fcusminprice, fimquantity, fomquantity, 
+    ballpurchase, finquantity, icostquantity, icostsum, foutquantity, foutnum, iexchsum, 
+    imoneysum, iaoids, cpreordercode, fretquantity, fretnum, dbclosedate, dbclosesystime, 
+    bOrderBOM, bOrderBOMOver, idemandtype, cdemandcode, cdemandmemo, fPurSum, fPurBillQty, 
+    fPurBillSum, iimid, ccorvouchtype, icorrowno, busecusbom, body_outid, fVeriDispQty, 
+    fVeriDispSum, bsaleprice, bgift, forecastdid, cdetailsdemandcode, cdetailsdemandmemo, 
+    fTransedQty, cbSysBarCode, fappqty, cParentCode, cChildCode, fchildqty, fchildrate, 
+    iCalcType, iCurPartid, cFactoryCode, GCSourceId, GCSourceIds
+  </sql>
+  <sql id="Blob_Column_List" >
+    dufts
+  </sql>
+
+    <select id="selectByALLSOSODetails" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from SO_SODetails
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="selectByAutoid" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from SO_SODetails
+        where
+          iSOsID = #{autoid,jdbcType=NUMERIC}
+    </select>
+    <select id="selectByCsocodeAndCinvcode" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from SO_SODetails
+        where
+        cSOCode = #{csocode,jdbcType=VARCHAR}
+        AND cInvCode = #{cinvcode,jdbcType=VARCHAR}
+    </select>
+  <update id="updateFretquantityByAutoid">
+    update SO_SODetails
+    set fretquantity = #{fretquantity}
+    where AutoID = #{autoid,jdbcType=NUMERIC}
+  </update>
+    <update id="updateFretquantityAndIfhquantityByAutoid">
+        update SO_SODetails
+        set fretquantity = #{fretquantity,jdbcType=DECIMAL},
+            iFHQuantity  = #{ifhquantity,jdbcType=DECIMAL}
+        where AutoID = #{autoid,jdbcType=NUMERIC}
+    </update>
+
+</mapper>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.CurrentStockMapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.CurrentStock" >
+    <result column="AutoID" property="autoid" jdbcType="INTEGER" />
+    <result column="cWhCode" property="cwhcode" jdbcType="NVARCHAR" />
+    <result column="cInvCode" property="cinvcode" jdbcType="NVARCHAR" />
+    <result column="ItemId" property="itemid" jdbcType="INTEGER" />
+    <result column="cBatch" property="cbatch" jdbcType="NVARCHAR" />
+    <result column="cVMIVenCode" property="cvmivencode" jdbcType="NVARCHAR" />
+    <result column="iSoType" property="isotype" jdbcType="INTEGER" />
+    <result column="iSodid" property="isodid" jdbcType="NVARCHAR" />
+    <result column="iQuantity" property="iquantity" jdbcType="DECIMAL" />
+    <result column="iNum" property="inum" jdbcType="DECIMAL" />
+    <result column="cFree1" property="cfree1" jdbcType="NVARCHAR" />
+    <result column="cFree2" property="cfree2" jdbcType="NVARCHAR" />
+    <result column="fOutQuantity" property="foutquantity" jdbcType="DECIMAL" />
+    <result column="fOutNum" property="foutnum" jdbcType="DECIMAL" />
+    <result column="fInQuantity" property="finquantity" jdbcType="DECIMAL" />
+    <result column="fInNum" property="finnum" jdbcType="DECIMAL" />
+    <result column="cFree3" property="cfree3" jdbcType="NVARCHAR" />
+    <result column="cFree4" property="cfree4" jdbcType="NVARCHAR" />
+    <result column="cFree5" property="cfree5" jdbcType="NVARCHAR" />
+    <result column="cFree6" property="cfree6" jdbcType="NVARCHAR" />
+    <result column="cFree7" property="cfree7" jdbcType="NVARCHAR" />
+    <result column="cFree8" property="cfree8" jdbcType="NVARCHAR" />
+    <result column="cFree9" property="cfree9" jdbcType="NVARCHAR" />
+    <result column="cFree10" property="cfree10" jdbcType="NVARCHAR" />
+    <result column="dVDate" property="dvdate" jdbcType="TIMESTAMP" />
+    <result column="bStopFlag" property="bstopflag" jdbcType="BIT" />
+    <result column="fTransInQuantity" property="ftransinquantity" jdbcType="DECIMAL" />
+    <result column="dMdate" property="dmdate" jdbcType="TIMESTAMP" />
+    <result column="fTransInNum" property="ftransinnum" jdbcType="DECIMAL" />
+    <result column="fTransOutQuantity" property="ftransoutquantity" jdbcType="DECIMAL" />
+    <result column="fTransOutNum" property="ftransoutnum" jdbcType="DECIMAL" />
+    <result column="fPlanQuantity" property="fplanquantity" jdbcType="DECIMAL" />
+    <result column="fPlanNum" property="fplannum" jdbcType="DECIMAL" />
+    <result column="fDisableQuantity" property="fdisablequantity" jdbcType="DECIMAL" />
+    <result column="fDisableNum" property="fdisablenum" jdbcType="DECIMAL" />
+    <result column="fAvaQuantity" property="favaquantity" jdbcType="DECIMAL" />
+    <result column="fAvaNum" property="favanum" jdbcType="DECIMAL" />
+    <result column="iMassDate" property="imassdate" jdbcType="INTEGER" />
+    <result column="BGSPSTOP" property="bgspstop" jdbcType="BIT" />
+    <result column="cMassUnit" property="cmassunit" jdbcType="SMALLINT" />
+    <result column="fStopQuantity" property="fstopquantity" jdbcType="DECIMAL" />
+    <result column="fStopNum" property="fstopnum" jdbcType="DECIMAL" />
+    <result column="dLastCheckDate" property="dlastcheckdate" jdbcType="TIMESTAMP" />
+    <result column="cCheckState" property="ccheckstate" jdbcType="NVARCHAR" />
+    <result column="dLastYearCheckDate" property="dlastyearcheckdate" jdbcType="TIMESTAMP" />
+    <result column="iExpiratDateCalcu" property="iexpiratdatecalcu" jdbcType="SMALLINT" />
+    <result column="cExpirationdate" property="cexpirationdate" jdbcType="VARCHAR" />
+    <result column="dExpirationdate" property="dexpirationdate" jdbcType="TIMESTAMP" />
+    <result column="ipeqty" property="ipeqty" jdbcType="DECIMAL" />
+    <result column="ipenum" property="ipenum" jdbcType="DECIMAL" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.CurrentStock" extends="BaseResultMap" >
+    <result column="ufts" property="ufts" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+   AutoID
+      ,cWhCode
+      ,cInvCode
+      ,ItemId
+      ,cBatch
+      ,cVMIVenCode
+      ,iSoType
+      ,iSodid
+      ,iQuantity
+      ,iNum
+      ,cFree1
+      ,cFree2
+      ,fOutQuantity
+      ,fOutNum
+      ,fInQuantity
+      ,fInNum
+      ,cFree3
+      ,cFree4
+      ,cFree5
+      ,cFree6
+      ,cFree7
+      ,cFree8
+      ,cFree9
+      ,cFree10
+      ,dVDate
+      ,bStopFlag
+      ,fTransInQuantity
+      ,dMdate
+      ,fTransInNum
+      ,fTransOutQuantity
+      ,fTransOutNum
+      ,fPlanQuantity
+      ,fPlanNum
+      ,fDisableQuantity
+      ,fDisableNum
+      ,fAvaQuantity
+      ,fAvaNum
+      ,ufts
+      ,iMassDate
+      ,BGSPSTOP
+      ,cMassUnit
+      ,fStopQuantity
+      ,fStopNum
+      ,dLastCheckDate
+      ,cCheckState
+      ,dLastYearCheckDate
+      ,iExpiratDateCalcu
+      ,cExpirationdate
+      ,dExpirationdate
+      ,ipeqty
+      ,ipenum
+  </sql>
+  <sql id="Blob_Column_List" >
+    ufts
+  </sql>
+  
+    <select id="selectByALL" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select  
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from CurrentStock where cWhCode= 'XS02'  
+   
+  </select>
+    <select id="selectOneByCinvcodeAndCwhcode" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from CurrentStock
+        where
+        cInvCode = #{cinvcode,jdbcType=VARCHAR}
+        AND cWhCode = #{cwhcode,jdbcType=VARCHAR}
+    </select>
+    <update id="updateIquantityByAutoid">
+        update CurrentStock
+        set iQuantity = #{iquantity}
+        where AutoID = #{autoid,jdbcType=NUMERIC}
+    </update>
+</mapper>

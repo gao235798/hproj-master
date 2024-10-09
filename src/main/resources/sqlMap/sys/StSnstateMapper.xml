@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.espread.sys.mapper.StSnstateMapper">
+
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.StSnstate">
+            <id property="autoid" column="AutoID" jdbcType="INTEGER"/>
+            <result property="cinvcode" column="cInvCode" jdbcType="VARCHAR"/>
+            <result property="cwhcode" column="cWhCode" jdbcType="VARCHAR"/>
+            <result property="cposition" column="cPosition" jdbcType="VARCHAR"/>
+            <result property="cfree1" column="cfree1" jdbcType="VARCHAR"/>
+            <result property="cfree2" column="cfree2" jdbcType="VARCHAR"/>
+            <result property="cfree3" column="cfree3" jdbcType="VARCHAR"/>
+            <result property="cfree4" column="cfree4" jdbcType="VARCHAR"/>
+            <result property="cfree5" column="cfree5" jdbcType="VARCHAR"/>
+            <result property="cfree6" column="cfree6" jdbcType="VARCHAR"/>
+            <result property="cfree7" column="cfree7" jdbcType="VARCHAR"/>
+            <result property="cfree8" column="cfree8" jdbcType="VARCHAR"/>
+            <result property="cfree9" column="cfree9" jdbcType="VARCHAR"/>
+            <result property="cfree10" column="cfree10" jdbcType="VARCHAR"/>
+            <result property="csndefine1" column="cSNDefine1" jdbcType="VARCHAR"/>
+            <result property="csndefine2" column="cSNDefine2" jdbcType="VARCHAR"/>
+            <result property="csndefine3" column="cSNDefine3" jdbcType="VARCHAR"/>
+            <result property="csndefine4" column="cSNDefine4" jdbcType="VARCHAR"/>
+            <result property="csndefine5" column="cSNDefine5" jdbcType="VARCHAR"/>
+            <result property="csndefine6" column="cSNDefine6" jdbcType="VARCHAR"/>
+            <result property="csndefine7" column="cSNDefine7" jdbcType="VARCHAR"/>
+            <result property="csndefine8" column="cSNDefine8" jdbcType="VARCHAR"/>
+            <result property="csndefine9" column="cSNDefine9" jdbcType="VARCHAR"/>
+            <result property="csndefine10" column="cSNDefine10" jdbcType="VARCHAR"/>
+            <result property="isnstate" column="iSNState" jdbcType="SMALLINT"/>
+            <result property="isnprestate" column="iSNPreState" jdbcType="SMALLINT"/>
+            <result property="isnoperatecount" column="iSNOperateCount" jdbcType="INTEGER"/>
+            <result property="cincode" column="cInCode" jdbcType="VARCHAR"/>
+            <result property="itrackid" column="itrackid" jdbcType="INTEGER"/>
+            <result property="cbatch" column="cBatch" jdbcType="VARCHAR"/>
+            <result property="cvencode" column="cVenCode" jdbcType="VARCHAR"/>
+            <result property="cinvsn" column="cInvSN" jdbcType="VARCHAR"/>
+            <result property="dmdate" column="dmdate" jdbcType="TIMESTAMP"/>
+            <result property="dvdate" column="dvdate" jdbcType="TIMESTAMP"/>
+            <result property="imassunit" column="imassunit" jdbcType="SMALLINT"/>
+            <result property="imassdate" column="imassdate" jdbcType="INTEGER"/>
+            <result property="cinvouchtype" column="cinvouchtype" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        AutoID,cInvCode,cWhCode,
+        cPosition,cfree1,cfree2,
+        cfree3,cfree4,cfree5,
+        cfree6,cfree7,cfree8,
+        cfree9,cfree10,cSNDefine1,
+        cSNDefine2,cSNDefine3,cSNDefine4,
+        cSNDefine5,cSNDefine6,cSNDefine7,
+        cSNDefine8,cSNDefine9,cSNDefine10,
+        iSNState,iSNPreState,iSNOperateCount,
+        cInCode,itrackid,cBatch,
+        cVenCode,cInvSN,dmdate,
+        dvdate,imassunit,imassdate,
+        cinvouchtype
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from ST_SNState
+        where  AutoID = #{autoid,jdbcType=INTEGER} 
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from ST_SNState
+        where  AutoID = #{autoid,jdbcType=INTEGER} 
+    </delete>
+
+    <insert id="insert" parameterType="com.espread.sys.model.StSnstate" >
+        insert into ST_SNState
+        ( cInvCode,cWhCode
+        ,cPosition,cfree1,cfree2
+        ,cfree3,cfree4,cfree5
+        ,cfree6,cfree7,cfree8
+        ,cfree9,cfree10,cSNDefine1
+        ,cSNDefine2,cSNDefine3,cSNDefine4
+        ,cSNDefine5,cSNDefine6,cSNDefine7
+        ,cSNDefine8,cSNDefine9,cSNDefine10
+        ,iSNState,iSNPreState,iSNOperateCount
+        ,cInCode,itrackid,cBatch
+        ,cVenCode,cInvSN,dmdate
+        ,dvdate,imassunit,imassdate
+        ,cinvouchtype)
+        values (#{cinvcode,jdbcType=VARCHAR},#{cwhcode,jdbcType=VARCHAR}
+        ,#{cposition,jdbcType=VARCHAR},#{cfree1,jdbcType=VARCHAR},#{cfree2,jdbcType=VARCHAR}
+        ,#{cfree3,jdbcType=VARCHAR},#{cfree4,jdbcType=VARCHAR},#{cfree5,jdbcType=VARCHAR}
+        ,#{cfree6,jdbcType=VARCHAR},#{cfree7,jdbcType=VARCHAR},#{cfree8,jdbcType=VARCHAR}
+        ,#{cfree9,jdbcType=VARCHAR},#{cfree10,jdbcType=VARCHAR},#{csndefine1,jdbcType=VARCHAR}
+        ,#{csndefine2,jdbcType=VARCHAR},#{csndefine3,jdbcType=VARCHAR},#{csndefine4,jdbcType=VARCHAR}
+        ,#{csndefine5,jdbcType=VARCHAR},#{csndefine6,jdbcType=VARCHAR},#{csndefine7,jdbcType=VARCHAR}
+        ,#{csndefine8,jdbcType=VARCHAR},#{csndefine9,jdbcType=VARCHAR},#{csndefine10,jdbcType=VARCHAR}
+        ,#{isnstate,jdbcType=SMALLINT},#{isnprestate,jdbcType=SMALLINT},#{isnoperatecount,jdbcType=INTEGER}
+        ,#{cincode,jdbcType=VARCHAR},#{itrackid,jdbcType=INTEGER},#{cbatch,jdbcType=VARCHAR}
+        ,#{cvencode,jdbcType=VARCHAR},#{cinvsn,jdbcType=VARCHAR},#{dmdate,jdbcType=TIMESTAMP}
+        ,#{dvdate,jdbcType=TIMESTAMP},#{imassunit,jdbcType=SMALLINT},#{imassdate,jdbcType=INTEGER}
+        ,#{cinvouchtype,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="AutoID" keyProperty="autoid" parameterType="com.espread.sys.model.StSnstate" useGeneratedKeys="true">
+        insert into ST_SNState
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="autoid != null">AutoID,</if>
+                <if test="cinvcode != null">cInvCode,</if>
+                <if test="cwhcode != null">cWhCode,</if>
+                <if test="cposition != null">cPosition,</if>
+                <if test="cfree1 != null">cfree1,</if>
+                <if test="cfree2 != null">cfree2,</if>
+                <if test="cfree3 != null">cfree3,</if>
+                <if test="cfree4 != null">cfree4,</if>
+                <if test="cfree5 != null">cfree5,</if>
+                <if test="cfree6 != null">cfree6,</if>
+                <if test="cfree7 != null">cfree7,</if>
+                <if test="cfree8 != null">cfree8,</if>
+                <if test="cfree9 != null">cfree9,</if>
+                <if test="cfree10 != null">cfree10,</if>
+                <if test="csndefine1 != null">cSNDefine1,</if>
+                <if test="csndefine2 != null">cSNDefine2,</if>
+                <if test="csndefine3 != null">cSNDefine3,</if>
+                <if test="csndefine4 != null">cSNDefine4,</if>
+                <if test="csndefine5 != null">cSNDefine5,</if>
+                <if test="csndefine6 != null">cSNDefine6,</if>
+                <if test="csndefine7 != null">cSNDefine7,</if>
+                <if test="csndefine8 != null">cSNDefine8,</if>
+                <if test="csndefine9 != null">cSNDefine9,</if>
+                <if test="csndefine10 != null">cSNDefine10,</if>
+                <if test="isnstate != null">iSNState,</if>
+                <if test="isnprestate != null">iSNPreState,</if>
+                <if test="isnoperatecount != null">iSNOperateCount,</if>
+                <if test="cincode != null">cInCode,</if>
+                <if test="itrackid != null">itrackid,</if>
+                <if test="cbatch != null">cBatch,</if>
+                <if test="cvencode != null">cVenCode,</if>
+                <if test="cinvsn != null">cInvSN,</if>
+                <if test="dmdate != null">dmdate,</if>
+                <if test="dvdate != null">dvdate,</if>
+                <if test="imassunit != null">imassunit,</if>
+                <if test="imassdate != null">imassdate,</if>
+                <if test="cinvouchtype != null">cinvouchtype,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="autoid != null">#{autoid,jdbcType=INTEGER},</if>
+                <if test="cinvcode != null">#{cinvcode,jdbcType=VARCHAR},</if>
+                <if test="cwhcode != null">#{cwhcode,jdbcType=VARCHAR},</if>
+                <if test="cposition != null">#{cposition,jdbcType=VARCHAR},</if>
+                <if test="cfree1 != null">#{cfree1,jdbcType=VARCHAR},</if>
+                <if test="cfree2 != null">#{cfree2,jdbcType=VARCHAR},</if>
+                <if test="cfree3 != null">#{cfree3,jdbcType=VARCHAR},</if>
+                <if test="cfree4 != null">#{cfree4,jdbcType=VARCHAR},</if>
+                <if test="cfree5 != null">#{cfree5,jdbcType=VARCHAR},</if>
+                <if test="cfree6 != null">#{cfree6,jdbcType=VARCHAR},</if>
+                <if test="cfree7 != null">#{cfree7,jdbcType=VARCHAR},</if>
+                <if test="cfree8 != null">#{cfree8,jdbcType=VARCHAR},</if>
+                <if test="cfree9 != null">#{cfree9,jdbcType=VARCHAR},</if>
+                <if test="cfree10 != null">#{cfree10,jdbcType=VARCHAR},</if>
+                <if test="csndefine1 != null">#{csndefine1,jdbcType=VARCHAR},</if>
+                <if test="csndefine2 != null">#{csndefine2,jdbcType=VARCHAR},</if>
+                <if test="csndefine3 != null">#{csndefine3,jdbcType=VARCHAR},</if>
+                <if test="csndefine4 != null">#{csndefine4,jdbcType=VARCHAR},</if>
+                <if test="csndefine5 != null">#{csndefine5,jdbcType=VARCHAR},</if>
+                <if test="csndefine6 != null">#{csndefine6,jdbcType=VARCHAR},</if>
+                <if test="csndefine7 != null">#{csndefine7,jdbcType=VARCHAR},</if>
+                <if test="csndefine8 != null">#{csndefine8,jdbcType=VARCHAR},</if>
+                <if test="csndefine9 != null">#{csndefine9,jdbcType=VARCHAR},</if>
+                <if test="csndefine10 != null">#{csndefine10,jdbcType=VARCHAR},</if>
+                <if test="isnstate != null">#{isnstate,jdbcType=SMALLINT},</if>
+                <if test="isnprestate != null">#{isnprestate,jdbcType=SMALLINT},</if>
+                <if test="isnoperatecount != null">#{isnoperatecount,jdbcType=INTEGER},</if>
+                <if test="cincode != null">#{cincode,jdbcType=VARCHAR},</if>
+                <if test="itrackid != null">#{itrackid,jdbcType=INTEGER},</if>
+                <if test="cbatch != null">#{cbatch,jdbcType=VARCHAR},</if>
+                <if test="cvencode != null">#{cvencode,jdbcType=VARCHAR},</if>
+                <if test="cinvsn != null">#{cinvsn,jdbcType=VARCHAR},</if>
+                <if test="dmdate != null">#{dmdate,jdbcType=TIMESTAMP},</if>
+                <if test="dvdate != null">#{dvdate,jdbcType=TIMESTAMP},</if>
+                <if test="imassunit != null">#{imassunit,jdbcType=SMALLINT},</if>
+                <if test="imassdate != null">#{imassdate,jdbcType=INTEGER},</if>
+                <if test="cinvouchtype != null">#{cinvouchtype,jdbcType=VARCHAR},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.espread.sys.model.StSnstate">
+        update ST_SNState
+        <set>
+                <if test="cinvcode != null">
+                    cInvCode = #{cinvcode,jdbcType=VARCHAR},
+                </if>
+                <if test="cwhcode != null">
+                    cWhCode = #{cwhcode,jdbcType=VARCHAR},
+                </if>
+                <if test="cposition != null">
+                    cPosition = #{cposition,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree1 != null">
+                    cfree1 = #{cfree1,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree2 != null">
+                    cfree2 = #{cfree2,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree3 != null">
+                    cfree3 = #{cfree3,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree4 != null">
+                    cfree4 = #{cfree4,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree5 != null">
+                    cfree5 = #{cfree5,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree6 != null">
+                    cfree6 = #{cfree6,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree7 != null">
+                    cfree7 = #{cfree7,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree8 != null">
+                    cfree8 = #{cfree8,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree9 != null">
+                    cfree9 = #{cfree9,jdbcType=VARCHAR},
+                </if>
+                <if test="cfree10 != null">
+                    cfree10 = #{cfree10,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine1 != null">
+                    cSNDefine1 = #{csndefine1,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine2 != null">
+                    cSNDefine2 = #{csndefine2,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine3 != null">
+                    cSNDefine3 = #{csndefine3,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine4 != null">
+                    cSNDefine4 = #{csndefine4,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine5 != null">
+                    cSNDefine5 = #{csndefine5,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine6 != null">
+                    cSNDefine6 = #{csndefine6,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine7 != null">
+                    cSNDefine7 = #{csndefine7,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine8 != null">
+                    cSNDefine8 = #{csndefine8,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine9 != null">
+                    cSNDefine9 = #{csndefine9,jdbcType=VARCHAR},
+                </if>
+                <if test="csndefine10 != null">
+                    cSNDefine10 = #{csndefine10,jdbcType=VARCHAR},
+                </if>
+                <if test="isnstate != null">
+                    iSNState = #{isnstate,jdbcType=SMALLINT},
+                </if>
+                <if test="isnprestate != null">
+                    iSNPreState = #{isnprestate,jdbcType=SMALLINT},
+                </if>
+                <if test="isnoperatecount != null">
+                    iSNOperateCount = #{isnoperatecount,jdbcType=INTEGER},
+                </if>
+                <if test="cincode != null">
+                    cInCode = #{cincode,jdbcType=VARCHAR},
+                </if>
+                <if test="itrackid != null">
+                    itrackid = #{itrackid,jdbcType=INTEGER},
+                </if>
+                <if test="cbatch != null">
+                    cBatch = #{cbatch,jdbcType=VARCHAR},
+                </if>
+                <if test="cvencode != null">
+                    cVenCode = #{cvencode,jdbcType=VARCHAR},
+                </if>
+                <if test="cinvsn != null">
+                    cInvSN = #{cinvsn,jdbcType=VARCHAR},
+                </if>
+                <if test="dmdate != null">
+                    dmdate = #{dmdate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="dvdate != null">
+                    dvdate = #{dvdate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="imassunit != null">
+                    imassunit = #{imassunit,jdbcType=SMALLINT},
+                </if>
+                <if test="imassdate != null">
+                    imassdate = #{imassdate,jdbcType=INTEGER},
+                </if>
+                <if test="cinvouchtype != null">
+                    cinvouchtype = #{cinvouchtype,jdbcType=VARCHAR},
+                </if>
+        </set>
+        where   AutoID = #{autoid,jdbcType=INTEGER} 
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.espread.sys.model.StSnstate">
+        update ST_SNState
+        set 
+            cInvCode =  #{cinvcode,jdbcType=VARCHAR},
+            cWhCode =  #{cwhcode,jdbcType=VARCHAR},
+            cPosition =  #{cposition,jdbcType=VARCHAR},
+            cfree1 =  #{cfree1,jdbcType=VARCHAR},
+            cfree2 =  #{cfree2,jdbcType=VARCHAR},
+            cfree3 =  #{cfree3,jdbcType=VARCHAR},
+            cfree4 =  #{cfree4,jdbcType=VARCHAR},
+            cfree5 =  #{cfree5,jdbcType=VARCHAR},
+            cfree6 =  #{cfree6,jdbcType=VARCHAR},
+            cfree7 =  #{cfree7,jdbcType=VARCHAR},
+            cfree8 =  #{cfree8,jdbcType=VARCHAR},
+            cfree9 =  #{cfree9,jdbcType=VARCHAR},
+            cfree10 =  #{cfree10,jdbcType=VARCHAR},
+            cSNDefine1 =  #{csndefine1,jdbcType=VARCHAR},
+            cSNDefine2 =  #{csndefine2,jdbcType=VARCHAR},
+            cSNDefine3 =  #{csndefine3,jdbcType=VARCHAR},
+            cSNDefine4 =  #{csndefine4,jdbcType=VARCHAR},
+            cSNDefine5 =  #{csndefine5,jdbcType=VARCHAR},
+            cSNDefine6 =  #{csndefine6,jdbcType=VARCHAR},
+            cSNDefine7 =  #{csndefine7,jdbcType=VARCHAR},
+            cSNDefine8 =  #{csndefine8,jdbcType=VARCHAR},
+            cSNDefine9 =  #{csndefine9,jdbcType=VARCHAR},
+            cSNDefine10 =  #{csndefine10,jdbcType=VARCHAR},
+            iSNState =  #{isnstate,jdbcType=SMALLINT},
+            iSNPreState =  #{isnprestate,jdbcType=SMALLINT},
+            iSNOperateCount =  #{isnoperatecount,jdbcType=INTEGER},
+            cInCode =  #{cincode,jdbcType=VARCHAR},
+            itrackid =  #{itrackid,jdbcType=INTEGER},
+            cBatch =  #{cbatch,jdbcType=VARCHAR},
+            cVenCode =  #{cvencode,jdbcType=VARCHAR},
+            cInvSN =  #{cinvsn,jdbcType=VARCHAR},
+            dmdate =  #{dmdate,jdbcType=TIMESTAMP},
+            dvdate =  #{dvdate,jdbcType=TIMESTAMP},
+            imassunit =  #{imassunit,jdbcType=SMALLINT},
+            imassdate =  #{imassdate,jdbcType=INTEGER},
+            cinvouchtype =  #{cinvouchtype,jdbcType=VARCHAR}
+        where   AutoID = #{autoid,jdbcType=INTEGER} 
+    </update>
+    <select id="selectByCinvsn" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ST_SNState
+        where
+        cInvSN = #{cinvsn,jdbcType=VARCHAR}
+    </select>
+    <update id="updateIsnoperatecountByAutoid">
+        update ST_SNState
+        set iSNOperateCount = #{isnoperatecount,jdbcType=NUMERIC}
+        where AutoID = #{autoid,jdbcType=NUMERIC}
+    </update>
+    <select id="selectOneByCinvsn" resultMap="BaseResultMap">
+        select
+        TOP 1
+        <include refid="Base_Column_List"/>
+        from  ST_SNState
+        where
+        cInvSN = #{cinvsn,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

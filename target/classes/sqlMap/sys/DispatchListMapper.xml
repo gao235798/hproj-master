@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.DispatchListMapper">
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.DispatchList">
+        <result column="DLID" property="dlid" jdbcType="INTEGER"/>
+        <result column="cDLCode" property="cdlcode" jdbcType="NVARCHAR"/>
+        <result column="cVouchType" property="cvouchtype" jdbcType="NVARCHAR"/>
+        <result column="cSTCode" property="cstcode" jdbcType="NVARCHAR"/>
+        <result column="dDate" property="ddate" jdbcType="TIMESTAMP"/>
+        <result column="cRdCode" property="crdcode" jdbcType="NVARCHAR"/>
+        <result column="cDepCode" property="cdepcode" jdbcType="NVARCHAR"/>
+        <result column="cPersonCode" property="cpersoncode" jdbcType="NVARCHAR"/>
+        <result column="SBVID" property="sbvid" jdbcType="INTEGER"/>
+        <result column="cSBVCode" property="csbvcode" jdbcType="NVARCHAR"/>
+        <result column="cSOCode" property="csocode" jdbcType="NVARCHAR"/>
+        <result column="cCusCode" property="ccuscode" jdbcType="NVARCHAR"/>
+        <result column="cPayCode" property="cpaycode" jdbcType="NVARCHAR"/>
+        <result column="cSCCode" property="csccode" jdbcType="NVARCHAR"/>
+        <result column="cShipAddress" property="cshipaddress" jdbcType="NVARCHAR"/>
+        <result column="cexch_name" property="cexchName" jdbcType="NVARCHAR"/>
+        <result column="iExchRate" property="iexchrate" jdbcType="DOUBLE"/>
+        <result column="iTaxRate" property="itaxrate" jdbcType="DOUBLE"/>
+        <result column="bFirst" property="bfirst" jdbcType="BIT"/>
+        <result column="bReturnFlag" property="breturnflag" jdbcType="BIT"/>
+        <result column="bSettleAll" property="bsettleall" jdbcType="BIT"/>
+        <result column="cMemo" property="cmemo" jdbcType="NVARCHAR"/>
+        <result column="cSaleOut" property="csaleout" jdbcType="NVARCHAR"/>
+        <result column="cDefine1" property="cdefine1" jdbcType="NVARCHAR"/>
+        <result column="cDefine2" property="cdefine2" jdbcType="NVARCHAR"/>
+        <result column="cDefine3" property="cdefine3" jdbcType="NVARCHAR"/>
+        <result column="cDefine4" property="cdefine4" jdbcType="TIMESTAMP"/>
+        <result column="cDefine5" property="cdefine5" jdbcType="INTEGER"/>
+        <result column="cDefine6" property="cdefine6" jdbcType="TIMESTAMP"/>
+        <result column="cDefine7" property="cdefine7" jdbcType="DOUBLE"/>
+        <result column="cDefine8" property="cdefine8" jdbcType="NVARCHAR"/>
+        <result column="cDefine9" property="cdefine9" jdbcType="NVARCHAR"/>
+        <result column="cDefine10" property="cdefine10" jdbcType="NVARCHAR"/>
+        <result column="cVerifier" property="cverifier" jdbcType="NVARCHAR"/>
+        <result column="cMaker" property="cmaker" jdbcType="NVARCHAR"/>
+        <result column="iNetLock" property="inetlock" jdbcType="REAL"/>
+        <result column="iSale" property="isale" jdbcType="SMALLINT"/>
+        <result column="cCusName" property="ccusname" jdbcType="NVARCHAR"/>
+        <result column="iVTid" property="ivtid" jdbcType="INTEGER"/>
+        <result column="cBusType" property="cbustype" jdbcType="NVARCHAR"/>
+        <result column="cCloser" property="ccloser" jdbcType="NVARCHAR"/>
+        <result column="cAccounter" property="caccounter" jdbcType="NVARCHAR"/>
+        <result column="cCreChpName" property="ccrechpname" jdbcType="NVARCHAR"/>
+        <result column="cDefine11" property="cdefine11" jdbcType="NVARCHAR"/>
+        <result column="cDefine12" property="cdefine12" jdbcType="NVARCHAR"/>
+        <result column="cDefine13" property="cdefine13" jdbcType="NVARCHAR"/>
+        <result column="cDefine14" property="cdefine14" jdbcType="NVARCHAR"/>
+        <result column="cDefine15" property="cdefine15" jdbcType="INTEGER"/>
+        <result column="cDefine16" property="cdefine16" jdbcType="DOUBLE"/>
+        <result column="bIAFirst" property="biafirst" jdbcType="BIT"/>
+        <result column="ioutgolden" property="ioutgolden" jdbcType="INTEGER"/>
+        <result column="cgatheringplan" property="cgatheringplan" jdbcType="NVARCHAR"/>
+        <result column="dCreditStart" property="dcreditstart" jdbcType="TIMESTAMP"/>
+        <result column="dGatheringDate" property="dgatheringdate" jdbcType="TIMESTAMP"/>
+        <result column="icreditdays" property="icreditdays" jdbcType="INTEGER"/>
+        <result column="bCredit" property="bcredit" jdbcType="BIT"/>
+        <result column="caddcode" property="caddcode" jdbcType="NVARCHAR"/>
+        <result column="iverifystate" property="iverifystate" jdbcType="INTEGER"/>
+        <result column="ireturncount" property="ireturncount" jdbcType="TINYINT"/>
+        <result column="iswfcontrolled" property="iswfcontrolled" jdbcType="TINYINT"/>
+        <result column="icreditstate" property="icreditstate" jdbcType="VARCHAR"/>
+        <result column="bARFirst" property="barfirst" jdbcType="BIT"/>
+        <result column="cmodifier" property="cmodifier" jdbcType="NVARCHAR"/>
+        <result column="dmoddate" property="dmoddate" jdbcType="TIMESTAMP"/>
+        <result column="dverifydate" property="dverifydate" jdbcType="TIMESTAMP"/>
+        <result column="ccusperson" property="ccusperson" jdbcType="NVARCHAR"/>
+        <result column="dcreatesystime" property="dcreatesystime" jdbcType="TIMESTAMP"/>
+        <result column="dverifysystime" property="dverifysystime" jdbcType="TIMESTAMP"/>
+        <result column="dmodifysystime" property="dmodifysystime" jdbcType="TIMESTAMP"/>
+        <result column="csvouchtype" property="csvouchtype" jdbcType="NVARCHAR"/>
+        <result column="iflowid" property="iflowid" jdbcType="INTEGER"/>
+        <result column="bsigncreate" property="bsigncreate" jdbcType="BIT"/>
+        <result column="bcashsale" property="bcashsale" jdbcType="BIT"/>
+        <result column="cgathingcode" property="cgathingcode" jdbcType="NVARCHAR"/>
+        <result column="cChanger" property="cchanger" jdbcType="NVARCHAR"/>
+        <result column="cChangeMemo" property="cchangememo" jdbcType="NVARCHAR"/>
+        <result column="outid" property="outid" jdbcType="CHAR"/>
+        <result column="bmustbook" property="bmustbook" jdbcType="BIT"/>
+        <result column="cBookDepcode" property="cbookdepcode" jdbcType="NVARCHAR"/>
+        <result column="cBookType" property="cbooktype" jdbcType="NVARCHAR"/>
+        <result column="bSaUsed" property="bsaused" jdbcType="BIT"/>
+        <result column="bneedbill" property="bneedbill" jdbcType="BIT"/>
+        <result column="baccswitchflag" property="baccswitchflag" jdbcType="BIT"/>
+        <result column="iPrintCount" property="iprintcount" jdbcType="INTEGER"/>
+        <result column="ccuspersoncode" property="ccuspersoncode" jdbcType="NVARCHAR"/>
+        <result column="cSourceCode" property="csourcecode" jdbcType="NVARCHAR"/>
+        <result column="bsaleoutcreatebill" property="bsaleoutcreatebill" jdbcType="BIT"/>
+        <result column="cSysBarCode" property="csysbarcode" jdbcType="NVARCHAR"/>
+        <result column="cCurrentAuditor" property="ccurrentauditor" jdbcType="NVARCHAR"/>
+        <result column="csscode" property="csscode" jdbcType="NVARCHAR"/>
+        <result column="cinvoicecompany" property="cinvoicecompany" jdbcType="NVARCHAR"/>
+        <result column="fEBweight" property="febweight" jdbcType="DECIMAL"/>
+        <result column="cEBweightUnit" property="cebweightunit" jdbcType="NVARCHAR"/>
+        <result column="cEBExpressCode" property="cebexpresscode" jdbcType="NVARCHAR"/>
+        <result column="iEBExpressCoID" property="iebexpresscoid" jdbcType="BIGINT"/>
+        <result column="SeparateID" property="separateid" jdbcType="INTEGER"/>
+        <result column="bNotToGoldTax" property="bnottogoldtax" jdbcType="TINYINT"/>
+        <result column="cEBTrnumber" property="cebtrnumber" jdbcType="NVARCHAR"/>
+        <result column="cEBBuyer" property="cebbuyer" jdbcType="NVARCHAR"/>
+        <result column="cEBBuyerNote" property="cebbuyernote" jdbcType="NVARCHAR"/>
+        <result column="ccontactname" property="ccontactname" jdbcType="NVARCHAR"/>
+        <result column="cEBprovince" property="cebprovince" jdbcType="NVARCHAR"/>
+        <result column="cEBcity" property="cebcity" jdbcType="NVARCHAR"/>
+        <result column="cEBdistrict" property="cebdistrict" jdbcType="NVARCHAR"/>
+        <result column="cmobilephone" property="cmobilephone" jdbcType="NVARCHAR"/>
+        <result column="cInvoiceCusName" property="cinvoicecusname" jdbcType="NVARCHAR"/>
+        <result column="cweighter" property="cweighter" jdbcType="NVARCHAR"/>
+        <result column="dweighttime" property="dweighttime" jdbcType="TIMESTAMP"/>
+        <result column="cPickVouchCode" property="cpickvouchcode" jdbcType="NVARCHAR"/>
+        <result column="cGCRouteCode" property="cgcroutecode" jdbcType="NVARCHAR"/>
+        <result column="cdefine17" property="cgcroutecode" jdbcType="NVARCHAR"/>
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.DispatchList" extends="BaseResultMap">
+        <result column="ufts" property="ufts" jdbcType="BINARY"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+       DLID,cDLCode, cVouchType, cSTCode, dDate, cRdCode, cDepCode, cPersonCode, SBVID, cSBVCode, cSOCode, cCusCode, cPayCode, cSCCode, cShipAddress, cexch_name, iExchRate, iTaxRate, bFirst, bReturnFlag, bSettleAll, cMemo, cSaleOut, cDefine1, cDefine2, cDefine3, cDefine4, cDefine5, cDefine6, cDefine7, cDefine8, cDefine9, cDefine10, cVerifier, cMaker, iNetLock, iSale, cCusName, iVTid, cBusType, cCloser, cAccounter, cCreChpName, cDefine11, cDefine12, cDefine13, cDefine14, cDefine15, cDefine16, bIAFirst, ioutgolden, cgatheringplan, dCreditStart, dGatheringDate, icreditdays, bCredit, caddcode, iverifystate, ireturncount, iswfcontrolled, icreditstate, bARFirst, cmodifier, dmoddate, dverifydate, ccusperson, dcreatesystime, dverifysystime, dmodifysystime, csvouchtype, iflowid, bsigncreate, bcashsale, cgathingcode, cChanger, cChangeMemo, outid, bmustbook, cBookDepcode, cBookType, bSaUsed, bneedbill, baccswitchflag, iPrintCount, ccuspersoncode, cSourceCode, bsaleoutcreatebill, cSysBarCode, cCurrentAuditor, csscode, cinvoicecompany, fEBweight, cEBweightUnit, cEBExpressCode, iEBExpressCoID, SeparateID, bNotToGoldTax, cEBTrnumber, cEBBuyer, cEBBuyerNote, ccontactname, cEBprovince, cEBcity, cEBdistrict, cmobilephone, cInvoiceCusName, cweighter, dweighttime, cPickVouchCode, cGCRouteCode, cdefine17
+    </sql>
+    <sql id="Blob_Column_List">
+        ufts
+    </sql>
+    <select id="selectByALLFHSH" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+        select<include refid="Base_Column_List"/>,<include refid="Blob_Column_List"/>from DispatchList
+        where cMaker='DMS' and isnull(cVerifier ,'')='' and isnull(cDefine8,'') =''
+        and isnull(cDefine9,'') !='' and dDate>= '2020-12-28 00:00:00.000'
+    </select>
+
+    <select id="selectCheckOrder" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>,
+        <include refid="Blob_Column_List"/>
+        from DispatchList
+        where (cVerifier is not null or cVerifier != ' ') and cCusCode = 25001011
+         and (cDefine17 is null or cDefine17 = ' ')
+        -- and cDefine17 = ''
+        -- and cCusCode = 吉麦客户编码
+    </select>
+
+    <update id="updateDispatchList">
+        update DispatchList
+        set cDefine8 =#{cDefine8,jdbcType=NVARCHAR}
+        where DLID = #{DLID,jdbcType=INTEGER}
+    </update>
+    
+    <update id="updatecdefine17">
+        update DispatchList
+        set cDefine17 =#{cDefine17,jdbcType=NVARCHAR}
+        where DLID = #{DLID,jdbcType=INTEGER}
+    </update>
+    <select id="selectByDlid" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from DispatchList
+        where
+        DLID = #{dlid,jdbcType=NUMERIC}
+    </select>
+    <select id="selectByCdlcode" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from DispatchList
+        where
+        cDLCode = #{cdlcode,jdbcType=VARCHAR}
+    </select>
+    <select id="selectDispatchListByCustomers" resultType="java.util.List">
+        select  <include refid="Base_Column_List"/>
+            from DispatchList  where cCusCode = #{csocode,jdbcType=VARCHAR}
+        and (cVerifier is not null or cVerifier != ' ') and (cDefine17 is null or cDefine17 = ' ')
+    </select>
+    <update id="updateCsocodeByDlid">
+        update DispatchList
+        set cSOCode = #{csocode,jdbcType=VARCHAR}
+        where DLID = #{dlid,jdbcType=NUMERIC}
+    </update>
+    <update id="updatecdefine18">
+        update DispatchList
+        set cDefine18 =#{cDefine18,jdbcType=NVARCHAR}
+        where DLID = #{DLID,jdbcType=INTEGER}
+    </update>
+</mapper>

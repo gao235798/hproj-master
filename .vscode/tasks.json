@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "java (build)",
+			"paths": [
+				"${workspace}"
+			],
+			"isFullBuild": true,
+			"group": "build",
+			"problemMatcher": [],
+			"label": "java (build): Build Workspace",
+			"detail": "$(tools) Build all the Java projects in workspace."
+		},
+		{
+			"label": "Maven Build",
+			"type": "shell",
+			"command": "D:\\sofeware\\maven\\apache-maven-3.3.9\\bin\\mvn.cmd",
+			"args": [
+			  "package",
+			  "-f",
+			  "d:\\project\\hproj-master\\pom.xml"
+			],
+			"group": {
+			  "kind": "build",
+			},
+		  },
+		{
+			"label": "Deploy to Tomcat",
+			"type": "shell",
+			"command": "cp ${workspaceFolder}/target/espread-1.0.war D:/sofeware/apache-tomcat-8.5.32/webapps",
+			"group": {
+			  "kind": "build",
+			},
+			"dependsOn": "Maven Build"
+		},
+		{
+			"label": "Tomcat Start",
+			"type": "shell",
+			"command": "D:/sofeware/apache-tomcat-8.5.32/bin/startup.bat",
+			"group": {
+			  "kind": "build",
+			  "isDefault": true
+			},
+			"dependsOn": "Deploy to Tomcat"
+		}
+	]
+}

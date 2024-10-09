@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+      	
+	<description>cache配置</description>
+	
+    <!-- 使用ehcache缓存 -->
+    <bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:cache/ehcache.xml" />
+        <property name="shared" value="true"></property>
+    </bean>
+    
+    <!-- Mybatis在需要缓存的***mapper.xml中配置cache -->
+		<!-- 以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 只要在对应的mapper配置文件中加入<cache />标签即可
+			<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+			<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>	
+		-->
+	<!-- 如果有某些sql不需要执行，可以把useCache设置为false
+		<select id="selectByExample" resultMap="BaseResultMap" parameterType="com.anenjoy.manage.entity.TblUserTempExample" useCache="false" >
+	-->
+		
+</beans>

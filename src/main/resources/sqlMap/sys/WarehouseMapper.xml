@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.WarehouseMapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.Warehouse" >
+   <id column="I_id" property="iId" jdbcType="INTEGER" />
+    <id column="cWhCode" property="cwhcode" jdbcType="NVARCHAR" />
+    <result column="cWhName" property="cwhname" jdbcType="NVARCHAR" />
+    <result column="cDepCode" property="cdepcode" jdbcType="NVARCHAR" />
+    <result column="cWhAddress" property="cwhaddress" jdbcType="NVARCHAR" />
+    <result column="cWhPhone" property="cwhphone" jdbcType="NVARCHAR" />
+    <result column="cWhPerson" property="cwhperson" jdbcType="NVARCHAR" />
+    <result column="cWhValueStyle" property="cwhvaluestyle" jdbcType="NVARCHAR" />
+    <result column="bWhPos" property="bwhpos" jdbcType="BIT" />
+    <result column="iWhFundQuota" property="iwhfundquota" jdbcType="DOUBLE" />
+    <result column="cMonth" property="cmonth" jdbcType="NVARCHAR" />
+    <result column="cWhMemo" property="cwhmemo" jdbcType="NVARCHAR" />
+    <result column="bFreeze" property="bfreeze" jdbcType="BIT" />
+    <result column="cBarCode" property="cbarcode" jdbcType="NVARCHAR" />
+    <result column="bMRP" property="bmrp" jdbcType="BIT" />
+    <result column="bROP" property="brop" jdbcType="BIT" />
+    <result column="iFrequency" property="ifrequency" jdbcType="SMALLINT" />
+    <result column="cFrequency" property="cfrequency" jdbcType="NVARCHAR" />
+    <result column="iDays" property="idays" jdbcType="SMALLINT" />
+    <result column="dLastDate" property="dlastdate" jdbcType="TIMESTAMP" />
+    <result column="iWHProperty" property="iwhproperty" jdbcType="SMALLINT" />
+    <result column="bShop" property="bshop" jdbcType="BIT" />
+    <result column="bControlSerial" property="bcontrolserial" jdbcType="BIT" />
+    <result column="bInCost" property="bincost" jdbcType="BIT" />
+    <result column="bInAvailCalcu" property="binavailcalcu" jdbcType="BIT" />
+    <result column="bProxyWh" property="bproxywh" jdbcType="BIT" />
+    <result column="iSAConMode" property="isaconmode" jdbcType="SMALLINT" />
+    <result column="iEXConMode" property="iexconmode" jdbcType="SMALLINT" />
+    <result column="iSTConMode" property="istconmode" jdbcType="SMALLINT" />
+    <result column="bBondedWh" property="bbondedwh" jdbcType="BIT" />
+    <result column="bWhAsset" property="bwhasset" jdbcType="BIT" />
+    <result column="fWhQuota" property="fwhquota" jdbcType="DOUBLE" />
+    <result column="dWhEndDate" property="dwhenddate" jdbcType="TIMESTAMP" />
+    <result column="bCheckSubitemCost" property="bchecksubitemcost" jdbcType="BIT" />
+    <result column="cPickPos" property="cpickpos" jdbcType="NVARCHAR" />
+    <result column="bEB" property="beb" jdbcType="BIT" />
+    <result column="dModifyDate" property="dmodifydate" jdbcType="TIMESTAMP" />
+    <result column="cWareGroupCode" property="cwaregroupcode" jdbcType="NVARCHAR" />
+    <result column="cProvince" property="cprovince" jdbcType="NVARCHAR" />
+    <result column="cCity" property="ccity" jdbcType="NVARCHAR" />
+    <result column="cCounty" property="ccounty" jdbcType="NVARCHAR" />
+    <result column="cFactoryCode" property="cfactorycode" jdbcType="NVARCHAR" />
+    <result column="ttype" property="ttype" jdbcType="NVARCHAR" />
+    <result column="tstatus" property="tstatus" jdbcType="NVARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.Warehouse" extends="BaseResultMap" >
+    <result column="pubufts" property="pubufts" jdbcType="BINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    I_id,cWhCode, cWhName, cDepCode, cWhAddress, cWhPhone, cWhPerson, cWhValueStyle, bWhPos, 
+    iWhFundQuota, cMonth, cWhMemo, bFreeze, cBarCode, bMRP, bROP, iFrequency, cFrequency, 
+    iDays, dLastDate, iWHProperty, bShop, bControlSerial, bInCost, bInAvailCalcu, bProxyWh, 
+    iSAConMode, iEXConMode, iSTConMode, bBondedWh, bWhAsset, fWhQuota, dWhEndDate, bCheckSubitemCost, 
+    cPickPos, bEB, dModifyDate, cWareGroupCode, cProvince, cCity, cCounty, cFactoryCode,ttype,tstatus
+  </sql>
+  <sql id="Blob_Column_List" >
+    pubufts
+  </sql>
+  <select id="selectByALL" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select  
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from xzys_les_Warehouse   where  tstatus='0'   order by  ttype
+    
+  </select>
+  
+    <update id="updateWarehouse"  >
+    update xzys_les_Warehouse 
+    	set tstatus =#{tstatus,jdbcType=NVARCHAR} 
+    	where i_id =   #{i_id,jdbcType=INTEGER} 
+    </update>
+</mapper>

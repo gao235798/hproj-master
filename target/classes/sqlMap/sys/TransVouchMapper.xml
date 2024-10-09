@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.TransVouchMapper">
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.TransVouch">
+        <id column="cTVCode" property="ctvcode" jdbcType="NVARCHAR"/>
+        <result column="dTVDate" property="dtvdate" jdbcType="TIMESTAMP"/>
+        <result column="cOWhCode" property="cowhcode" jdbcType="NVARCHAR"/>
+        <result column="cIWhCode" property="ciwhcode" jdbcType="NVARCHAR"/>
+        <result column="cODepCode" property="codepcode" jdbcType="NVARCHAR"/>
+        <result column="cIDepCode" property="cidepcode" jdbcType="NVARCHAR"/>
+        <result column="cPersonCode" property="cpersoncode" jdbcType="NVARCHAR"/>
+        <result column="cIRdCode" property="cirdcode" jdbcType="NVARCHAR"/>
+        <result column="cORdCode" property="cordcode" jdbcType="NVARCHAR"/>
+        <result column="cTVMemo" property="ctvmemo" jdbcType="NVARCHAR"/>
+        <result column="cDefine1" property="cdefine1" jdbcType="NVARCHAR"/>
+        <result column="cDefine2" property="cdefine2" jdbcType="NVARCHAR"/>
+        <result column="cDefine3" property="cdefine3" jdbcType="NVARCHAR"/>
+        <result column="cDefine4" property="cdefine4" jdbcType="TIMESTAMP"/>
+        <result column="cDefine5" property="cdefine5" jdbcType="INTEGER"/>
+        <result column="cDefine6" property="cdefine6" jdbcType="TIMESTAMP"/>
+        <result column="cDefine7" property="cdefine7" jdbcType="DOUBLE"/>
+        <result column="cDefine8" property="cdefine8" jdbcType="NVARCHAR"/>
+        <result column="cDefine9" property="cdefine9" jdbcType="NVARCHAR"/>
+        <result column="cDefine10" property="cdefine10" jdbcType="NVARCHAR"/>
+        <result column="cAccounter" property="caccounter" jdbcType="NVARCHAR"/>
+        <result column="cMaker" property="cmaker" jdbcType="NVARCHAR"/>
+        <result column="iNetLock" property="inetlock" jdbcType="REAL"/>
+        <result column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="VT_ID" property="vtId" jdbcType="INTEGER"/>
+        <result column="cVerifyPerson" property="cverifyperson" jdbcType="NVARCHAR"/>
+        <result column="dVerifyDate" property="dverifydate" jdbcType="TIMESTAMP"/>
+        <result column="cPSPCode" property="cpspcode" jdbcType="NVARCHAR"/>
+        <result column="cMPoCode" property="cmpocode" jdbcType="NVARCHAR"/>
+        <result column="iQuantity" property="iquantity" jdbcType="DOUBLE"/>
+        <result column="bTransFlag" property="btransflag" jdbcType="INTEGER"/>
+        <result column="cDefine11" property="cdefine11" jdbcType="NVARCHAR"/>
+        <result column="cDefine12" property="cdefine12" jdbcType="NVARCHAR"/>
+        <result column="cDefine13" property="cdefine13" jdbcType="NVARCHAR"/>
+        <result column="cDefine14" property="cdefine14" jdbcType="NVARCHAR"/>
+        <result column="cDefine15" property="cdefine15" jdbcType="INTEGER"/>
+        <result column="cDefine16" property="cdefine16" jdbcType="DOUBLE"/>
+        <result column="iproorderid" property="iproorderid" jdbcType="INTEGER"/>
+        <result column="cOrderType" property="cordertype" jdbcType="NVARCHAR"/>
+        <result column="cTranRequestCode" property="ctranrequestcode" jdbcType="NVARCHAR"/>
+        <result column="cVersion" property="cversion" jdbcType="NVARCHAR"/>
+        <result column="BomId" property="bomid" jdbcType="INTEGER"/>
+        <result column="cFree1" property="cfree1" jdbcType="NVARCHAR"/>
+        <result column="cFree2" property="cfree2" jdbcType="NVARCHAR"/>
+        <result column="cFree3" property="cfree3" jdbcType="NVARCHAR"/>
+        <result column="cFree4" property="cfree4" jdbcType="NVARCHAR"/>
+        <result column="cFree5" property="cfree5" jdbcType="NVARCHAR"/>
+        <result column="cFree6" property="cfree6" jdbcType="NVARCHAR"/>
+        <result column="cFree7" property="cfree7" jdbcType="NVARCHAR"/>
+        <result column="cFree8" property="cfree8" jdbcType="NVARCHAR"/>
+        <result column="cFree9" property="cfree9" jdbcType="NVARCHAR"/>
+        <result column="cFree10" property="cfree10" jdbcType="NVARCHAR"/>
+        <result column="cAppTVCode" property="capptvcode" jdbcType="NVARCHAR"/>
+        <result column="csource" property="csource" jdbcType="NVARCHAR"/>
+        <result column="itransflag" property="itransflag" jdbcType="NVARCHAR"/>
+        <result column="cModifyPerson" property="cmodifyperson" jdbcType="NVARCHAR"/>
+        <result column="dModifyDate" property="dmodifydate" jdbcType="TIMESTAMP"/>
+        <result column="dnmaketime" property="dnmaketime" jdbcType="TIMESTAMP"/>
+        <result column="dnmodifytime" property="dnmodifytime" jdbcType="TIMESTAMP"/>
+        <result column="dnverifytime" property="dnverifytime" jdbcType="TIMESTAMP"/>
+        <result column="ireturncount" property="ireturncount" jdbcType="INTEGER"/>
+        <result column="iverifystate" property="iverifystate" jdbcType="INTEGER"/>
+        <result column="iswfcontrolled" property="iswfcontrolled" jdbcType="INTEGER"/>
+        <result column="cbustype" property="cbustype" jdbcType="NVARCHAR"/>
+        <result column="cSourceCodeLs" property="csourcecodels" jdbcType="NVARCHAR"/>
+        <result column="iPrintCount" property="iprintcount" jdbcType="INTEGER"/>
+        <result column="csourceguid" property="csourceguid" jdbcType="NVARCHAR"/>
+        <result column="csysbarcode" property="csysbarcode" jdbcType="NVARCHAR"/>
+        <result column="cCurrentAuditor" property="ccurrentauditor" jdbcType="NVARCHAR"/>
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.TransVouch" extends="BaseResultMap">
+        <result column="ufts" property="ufts" jdbcType="BINARY"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        cTVCode, dTVDate, cOWhCode, cIWhCode, cODepCode, cIDepCode, cPersonCode, cIRdCode,
+        cORdCode, cTVMemo, cDefine1, cDefine2, cDefine3, cDefine4, cDefine5, cDefine6, cDefine7,
+        cDefine8, cDefine9, cDefine10, cAccounter, cMaker, iNetLock, ID, VT_ID, cVerifyPerson,
+        dVerifyDate, cPSPCode, cMPoCode, iQuantity, bTransFlag, cDefine11, cDefine12, cDefine13,
+        cDefine14, cDefine15, cDefine16, iproorderid, cOrderType, cTranRequestCode, cVersion,
+        BomId, cFree1, cFree2, cFree3, cFree4, cFree5, cFree6, cFree7, cFree8, cFree9, cFree10,
+        cAppTVCode, csource, itransflag, cModifyPerson, dModifyDate, dnmaketime, dnmodifytime,
+        dnverifytime, ireturncount, iverifystate, iswfcontrolled, cbustype, cSourceCodeLs,
+        iPrintCount, csourceguid, csysbarcode, cCurrentAuditor
+    </sql>
+    <sql id="Blob_Column_List">
+        ufts
+    </sql>
+    <select id="selectByALLDb" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from TransVouch
+        where isnull(cVerifyPerson,'')!='' and isnull(cDefine8,'') ='' and isnull(cDefine9,'') ='' and (( cIRdCode='153'
+        and cORdCode ='253') or ( cIRdCode='150' and cORdCode ='250'))
+    </select>
+
+
+    <select id="selectByALLWltk" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from TransVouch
+        where isnull(cVerifyPerson,'')!='' and isnull(cDefine8,'') ='' and isnull(cDefine9,'') ='' and (( cIRdCode='151'
+        and cORdCode ='251') or ( cIRdCode='148' and cORdCode ='248'))
+    </select>
+
+
+    <select id="selectByALLBf" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from TransVouch
+        where isnull(cVerifyPerson,'')!='' and isnull(cDefine8,'') ='' and isnull(cDefine9,'') ='' and cIRdCode='147'
+        and cORdCode ='247'
+    </select>
+
+    <select id="selectByALLSH" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from TransVouch
+        where cMaker='LES' and isnull(cVerifyPerson,'')='' and isnull(cDefine8,'') ='' and isnull(cDefine9,'') !=''
+    </select>
+
+    <update id="updateTransVouch">
+        update TransVouch
+        set cDefine8 =#{cDefine8,jdbcType=NVARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

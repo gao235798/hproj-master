@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.PriceJustifyMapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.PriceJustify" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="dDate" property="ddate" jdbcType="TIMESTAMP" />
+    <result column="cInvCode" property="cinvcode" jdbcType="NVARCHAR" />
+    <result column="iOPrice" property="ioprice" jdbcType="DOUBLE" />
+    <result column="iPrice" property="iprice" jdbcType="DOUBLE" />
+    <result column="cMemo" property="cmemo" jdbcType="NVARCHAR" />
+    <result column="cMaker" property="cmaker" jdbcType="NVARCHAR" />
+    <result column="iOInvCost1" property="ioinvcost1" jdbcType="DOUBLE" />
+    <result column="iNInvCost1" property="ininvcost1" jdbcType="DOUBLE" />
+    <result column="iOInvCost2" property="ioinvcost2" jdbcType="DOUBLE" />
+    <result column="iNInvCost2" property="ininvcost2" jdbcType="DOUBLE" />
+    <result column="iOInvCost3" property="ioinvcost3" jdbcType="DOUBLE" />
+    <result column="iNInvCost3" property="ininvcost3" jdbcType="DOUBLE" />
+    <result column="iOInvSaleCost" property="ioinvsalecost" jdbcType="DOUBLE" />
+    <result column="iNInvSaleCost" property="ininvsalecost" jdbcType="DOUBLE" />
+    <result column="cCusCCode" property="ccusccode" jdbcType="NVARCHAR" />
+    <result column="cCusCode" property="ccuscode" jdbcType="NVARCHAR" />
+    <result column="cFree1" property="cfree1" jdbcType="NVARCHAR" />
+    <result column="cFree2" property="cfree2" jdbcType="NVARCHAR" />
+    <result column="IOSalePrice1" property="iosaleprice1" jdbcType="DOUBLE" />
+    <result column="INSalePrice1" property="insaleprice1" jdbcType="DOUBLE" />
+    <result column="IOSalePrice2" property="iosaleprice2" jdbcType="DOUBLE" />
+    <result column="INSalePrice2" property="insaleprice2" jdbcType="DOUBLE" />
+    <result column="IOSalePrice3" property="iosaleprice3" jdbcType="DOUBLE" />
+    <result column="INSalePrice3" property="insaleprice3" jdbcType="DOUBLE" />
+    <result column="IOInvCost4" property="ioinvcost4" jdbcType="DOUBLE" />
+    <result column="iNInvCost4" property="ininvcost4" jdbcType="DOUBLE" />
+    <result column="IOSalePrice4" property="iosaleprice4" jdbcType="DOUBLE" />
+    <result column="INSalePrice4" property="insaleprice4" jdbcType="DOUBLE" />
+    <result column="IOInvCost5" property="ioinvcost5" jdbcType="DOUBLE" />
+    <result column="iNInvCost5" property="ininvcost5" jdbcType="DOUBLE" />
+    <result column="IOSalePrice5" property="iosaleprice5" jdbcType="DOUBLE" />
+    <result column="INSalePrice5" property="insaleprice5" jdbcType="DOUBLE" />
+    <result column="IOInvCost6" property="ioinvcost6" jdbcType="DOUBLE" />
+    <result column="iNInvCost6" property="ininvcost6" jdbcType="DOUBLE" />
+    <result column="IOSalePrice6" property="iosaleprice6" jdbcType="DOUBLE" />
+    <result column="INSalePrice6" property="insaleprice6" jdbcType="DOUBLE" />
+    <result column="IOInvCost7" property="ioinvcost7" jdbcType="DOUBLE" />
+    <result column="iNInvCost7" property="ininvcost7" jdbcType="DOUBLE" />
+    <result column="IOSalePrice7" property="iosaleprice7" jdbcType="DOUBLE" />
+    <result column="INSalePrice7" property="insaleprice7" jdbcType="DOUBLE" />
+    <result column="IOInvCost8" property="ioinvcost8" jdbcType="DOUBLE" />
+    <result column="iNInvCost8" property="ininvcost8" jdbcType="DOUBLE" />
+    <result column="IOSalePrice8" property="iosaleprice8" jdbcType="DOUBLE" />
+    <result column="INSalePrice8" property="insaleprice8" jdbcType="DOUBLE" />
+    <result column="IOInvCost9" property="ioinvcost9" jdbcType="DOUBLE" />
+    <result column="iNInvCost9" property="ininvcost9" jdbcType="DOUBLE" />
+    <result column="IOSalePrice9" property="iosaleprice9" jdbcType="DOUBLE" />
+    <result column="INSalePrice9" property="insaleprice9" jdbcType="DOUBLE" />
+    <result column="IOInvCost10" property="ioinvcost10" jdbcType="DOUBLE" />
+    <result column="iNInvCost10" property="ininvcost10" jdbcType="DOUBLE" />
+    <result column="IOSalePrice10" property="iosaleprice10" jdbcType="DOUBLE" />
+    <result column="INSalePrice10" property="insaleprice10" jdbcType="DOUBLE" />
+    <result column="iinvjustautoid" property="iinvjustautoid" jdbcType="BIGINT" />
+    <result column="icusjustautoid" property="icusjustautoid" jdbcType="BIGINT" />
+    <result column="iinvpriceautoid" property="iinvpriceautoid" jdbcType="BIGINT" />
+    <result column="icuspriceautoid" property="icuspriceautoid" jdbcType="BIGINT" />
+    <result column="bInValid" property="binvalid" jdbcType="BIT" />
+    <result column="ioinvjustautoid" property="ioinvjustautoid" jdbcType="BIGINT" />
+    <result column="iocusjustautoid" property="iocusjustautoid" jdbcType="BIGINT" />
+    <result column="fminquantity" property="fminquantity" jdbcType="DECIMAL" />
+    <result column="fcusminprice" property="fcusminprice" jdbcType="DECIMAL" />
+    <result column="bsales" property="bsales" jdbcType="BIT" />
+    <result column="cexch_name" property="cexchName" jdbcType="NVARCHAR" />
+    <result column="cdepcode" property="cdepcode" jdbcType="NVARCHAR" />
+    <result column="cpersoncode" property="cpersoncode" jdbcType="NVARCHAR" />
+    <result column="dstartdate" property="dstartdate" jdbcType="TIMESTAMP" />
+    <result column="denddate" property="denddate" jdbcType="TIMESTAMP" />
+    <result column="cdefine22" property="cdefine22" jdbcType="NVARCHAR" />
+    <result column="cdefine23" property="cdefine23" jdbcType="NVARCHAR" />
+    <result column="cdefine24" property="cdefine24" jdbcType="NVARCHAR" />
+    <result column="cdefine25" property="cdefine25" jdbcType="NVARCHAR" />
+    <result column="cdefine26" property="cdefine26" jdbcType="DOUBLE" />
+    <result column="cdefine27" property="cdefine27" jdbcType="DOUBLE" />
+    <result column="cdefine28" property="cdefine28" jdbcType="NVARCHAR" />
+    <result column="cdefine29" property="cdefine29" jdbcType="NVARCHAR" />
+    <result column="cdefine30" property="cdefine30" jdbcType="NVARCHAR" />
+    <result column="cdefine31" property="cdefine31" jdbcType="NVARCHAR" />
+    <result column="cdefine32" property="cdefine32" jdbcType="NVARCHAR" />
+    <result column="cdefine33" property="cdefine33" jdbcType="NVARCHAR" />
+    <result column="cdefine34" property="cdefine34" jdbcType="INTEGER" />
+    <result column="cdefine35" property="cdefine35" jdbcType="INTEGER" />
+    <result column="cdefine36" property="cdefine36" jdbcType="TIMESTAMP" />
+    <result column="cdefine37" property="cdefine37" jdbcType="TIMESTAMP" />
+    <result column="cCusInvCode" property="ccusinvcode" jdbcType="NVARCHAR" />
+    <result column="cCusInvName" property="ccusinvname" jdbcType="NVARCHAR" />
+    <result column="cfree3" property="cfree3" jdbcType="NVARCHAR" />
+    <result column="cfree4" property="cfree4" jdbcType="NVARCHAR" />
+    <result column="cfree5" property="cfree5" jdbcType="NVARCHAR" />
+    <result column="cfree6" property="cfree6" jdbcType="NVARCHAR" />
+    <result column="cfree7" property="cfree7" jdbcType="NVARCHAR" />
+    <result column="cfree8" property="cfree8" jdbcType="NVARCHAR" />
+    <result column="cfree9" property="cfree9" jdbcType="NVARCHAR" />
+    <result column="cfree10" property="cfree10" jdbcType="NVARCHAR" />
+    <result column="ccusproperty1" property="ccusproperty1" jdbcType="NVARCHAR" />
+    <result column="iperjustautoid" property="iperjustautoid" jdbcType="INTEGER" />
+    <result column="iperpriceautoid" property="iperpriceautoid" jdbcType="INTEGER" />
+    <result column="bsaleprice" property="bsaleprice" jdbcType="BIT" />
+  </resultMap>
+  
+   <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.PriceJustify" extends="BaseResultMap" >
+    <result column="pubufts" property="pubufts" jdbcType="BINARY" />
+      <result column="cInvCCode" property="cInvCCode" jdbcType="NVARCHAR" />
+     
+              
+  </resultMap>
+  <sql id="Base_Column_List" >
+   a.ID, a.dDate, a.cInvCode, a.iOPrice, a.iPrice, a.cMemo, a.cMaker, a.iOInvCost1, a.iNInvCost1, a.iOInvCost2, 
+    a.iNInvCost2, a.iOInvCost3, a.iNInvCost3, a.iOInvSaleCost, a.iNInvSaleCost, a.cCusCCode, a.cCusCode, 
+    a.cFree1, a.cFree2, a.IOSalePrice1, a.INSalePrice1, a.IOSalePrice2, a.INSalePrice2, a.IOSalePrice3, 
+    a.INSalePrice3, a.IOInvCost4, a.iNInvCost4, a.IOSalePrice4, a.INSalePrice4, a.IOInvCost5, a.iNInvCost5, 
+    a.IOSalePrice5, a.INSalePrice5, a.IOInvCost6, a.iNInvCost6, a.IOSalePrice6, a.INSalePrice6, a.IOInvCost7, 
+    a.iNInvCost7, a.IOSalePrice7, a.INSalePrice7, a.IOInvCost8, a.iNInvCost8, a.IOSalePrice8, a.INSalePrice8, 
+    a.IOInvCost9, a.iNInvCost9, a.IOSalePrice9, a.INSalePrice9, a.IOInvCost10, a.iNInvCost10, a.IOSalePrice10, 
+    a.INSalePrice10, a.iinvjustautoid, a.icusjustautoid, a.iinvpriceautoid, a.icuspriceautoid, 
+   a.bInValid, a.ioinvjustautoid, a.iocusjustautoid, a.fminquantity, a.fcusminprice, a.bsales, a.cexch_name, 
+     a.cdepcode, a.cpersoncode, a.dstartdate, a.denddate, a.cdefine22, a.cdefine23, a.cdefine24, a.cdefine25,
+     a.cdefine26, a.cdefine27, a.cdefine28, a.cdefine29, a.cdefine30, a.cdefine31, a.cdefine32, a.cdefine33,
+    a.cdefine34, a.cdefine35, a.cdefine36, a.cdefine37, a.cCusInvCode, a.cCusInvName, a.cfree3, a.cfree4, 
+    a.cfree5, a.cfree6, a.cfree7, a.cfree8, a.cfree9, a.cfree10, a.ccusproperty1, a.iperjustautoid, a.iperpriceautoid, 
+    a.bsaleprice
+  </sql>
+
+  <select id="selectByALL" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+     ,b.cInvCCode
+    from  PriceJustify a left join Inventory b  on a.cInvCode=b.cinvcode
+    where  (b.cInvCCode  like '1%' or b.cInvCCode  like '2%'  or b.cInvCode='60200183' ) 
+      and isnull(a.cdefine23,'') ='' and dstartdate  >= '2020-12-17 00:00:00.000'
+  </select>
+  
+  
+   
+   <update id="updatePriceJustify"  >
+       update [UFDATA_002_2019].dbo.PriceJustify 
+    	set  cdefine23 =#{cdefine23,jdbcType=NVARCHAR} 
+    	where ID =   #{ID,jdbcType=INTEGER} 
+    </update>
+</mapper>

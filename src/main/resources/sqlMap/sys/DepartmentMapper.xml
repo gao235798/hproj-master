@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.espread.sys.mapper.DepartmentMapper">
+    <resultMap id="BaseResultMap" type="com.espread.sys.model.Department">
+        <id column="cDepCode" jdbcType="NVARCHAR" property="cdepcode"/>
+        <result column="bDepEnd" jdbcType="BIT" property="bdepend"/>
+        <result column="cDepName" jdbcType="NVARCHAR" property="cdepname"/>
+        <result column="iDepGrade" jdbcType="TINYINT" property="idepgrade"/>
+        <result column="cDepPerson" jdbcType="NVARCHAR" property="cdepperson"/>
+        <result column="cDepProp" jdbcType="NVARCHAR" property="cdepprop"/>
+        <result column="cDepPhone" jdbcType="NVARCHAR" property="cdepphone"/>
+        <result column="cDepAddress" jdbcType="NVARCHAR" property="cdepaddress"/>
+        <result column="cDepMemo" jdbcType="NVARCHAR" property="cdepmemo"/>
+        <result column="iCreLine" jdbcType="DOUBLE" property="icreline"/>
+        <result column="cCreGrade" jdbcType="NVARCHAR" property="ccregrade"/>
+        <result column="iCreDate" jdbcType="INTEGER" property="icredate"/>
+        <result column="cOfferGrade" jdbcType="NVARCHAR" property="coffergrade"/>
+        <result column="iOfferRate" jdbcType="DOUBLE" property="iofferrate"/>
+        <result column="bShop" jdbcType="BIT" property="bshop"/>
+        <result column="cDepGUID" jdbcType="CHAR" property="cdepguid"/>
+        <result column="dDepBeginDate" jdbcType="TIMESTAMP" property="ddepbegindate"/>
+        <result column="dDepEndDate" jdbcType="TIMESTAMP" property="ddependdate"/>
+        <result column="vAuthorizeDoc" jdbcType="NVARCHAR" property="vauthorizedoc"/>
+        <result column="vAuthorizeUnit" jdbcType="NVARCHAR" property="vauthorizeunit"/>
+        <result column="cDepFax" jdbcType="NVARCHAR" property="cdepfax"/>
+        <result column="cDepPostCode" jdbcType="NVARCHAR" property="cdeppostcode"/>
+        <result column="cDepEmail" jdbcType="NVARCHAR" property="cdepemail"/>
+        <result column="cDepType" jdbcType="NVARCHAR" property="cdeptype"/>
+        <result column="bInheritDutyBasic" jdbcType="INTEGER" property="binheritdutybasic"/>
+        <result column="bInheritWorkCalendar" jdbcType="INTEGER" property="binheritworkcalendar"/>
+        <result column="cDutyCode" jdbcType="NVARCHAR" property="cdutycode"/>
+        <result column="cRestCode" jdbcType="NVARCHAR" property="crestcode"/>
+        <result column="bIM" jdbcType="BIT" property="bim"/>
+        <result column="cDepNameEn" jdbcType="NVARCHAR" property="cdepnameen"/>
+        <result column="bRetail" jdbcType="BIT" property="bretail"/>
+        <result column="cDepFullName" jdbcType="NVARCHAR" property="cdepfullname"/>
+        <result column="iDepOrder" jdbcType="INTEGER" property="ideporder"/>
+        <result column="cDepLeader" jdbcType="NVARCHAR" property="cdepleader"/>
+        <result column="dModifyDate" jdbcType="TIMESTAMP" property="dmodifydate"/>
+        <result column="cESpaceMembID" jdbcType="NVARCHAR" property="cespacemembid"/>
+        <result column="ttype" property="ttype" jdbcType="NVARCHAR"/>
+        <result column="tstatus" property="tstatus" jdbcType="NVARCHAR"/>
+        <result column="I_id" property="iId" jdbcType="INTEGER"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.espread.sys.model.Department">
+        <result column="pubufts" jdbcType="BINARY" property="pubufts"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        cDepCode
+        , bDepEnd, cDepName, iDepGrade, cDepPerson, cDepProp, cDepPhone, cDepAddress,
+    cDepMemo, iCreLine, cCreGrade, iCreDate, cOfferGrade, iOfferRate, bShop, cDepGUID, 
+    dDepBeginDate, dDepEndDate, vAuthorizeDoc, vAuthorizeUnit, cDepFax, cDepPostCode, 
+    cDepEmail, cDepType, bInheritDutyBasic, bInheritWorkCalendar, cDutyCode, cRestCode, 
+    bIM, cDepNameEn, bRetail, cDepFullName, iDepOrder, cDepLeader, dModifyDate, cESpaceMembID,ttype,tstatus,I_id
+    </sql>
+    <sql id="Blob_Column_List">
+        pubufts
+    </sql>
+    <select id="selectByALL" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from xzys_les_Department where bDepEnd =1 and tstatus='0' order by ttype
+
+    </select>
+
+    <update id="updateDepartment">
+        update xzys_les_Department
+        set tstatus =#{tstatus,jdbcType=NVARCHAR}
+        where i_id = #{i_id,jdbcType=INTEGER}
+    </update>
+
+</mapper>

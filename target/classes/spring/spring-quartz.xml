@@ -1,0 +1,62 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context.xsd
+      http://www.springframework.org/schema/task 
+      http://www.springframework.org/schema/task/spring-task.xsd">
+
+
+    <!-- 引用配置properties -->
+	<!-- 声明任务工厂 -->  
+    <bean id="scheduler" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+        <property name="dataSource" ref="dynamicDataSource" />
+		<property name="configLocation" value="classpath:quartz.properties" />
+		<!--applicationContextSchedulerContextKey：是org.springframework.scheduling.quartz.SchedulerFactoryBean这个类中
+		把spring上下 文以key/value的方式存放在了quartz的上下文中了，可以用applicationContextSchedulerContextKey所定义的key得到对应的spring上下文-->  
+		<property name="applicationContextSchedulerContextKey" value="applicationContextKey"/>    
+    </bean>  
+
+	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序  -->
+	<bean name="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<!--  添加触发器 --> 
+		<property name="triggers">
+			<list>
+				<ref bean="myJobTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- 启动触发器的配置结束 -->
+
+	<!-- quartz-2.x的配置 -->
+	<bean id="myJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	   	<!-- 这里不可以直接在属性jobDetail中引用taskJob，因为他要求的是一个jobDetail类型的对象，所以我们得通过MethodInvokingJobDetailFactoryBean来转一下 --> 
+		<property name="jobDetail">
+			<ref bean="myJobDetail" />
+		</property>
+		 <!--  每60秒触发一次 --> 
+		<property name="cronExpression">
+			<value>0 */1 * * * ?</value>
+		</property>
+	</bean>
+	<!-- 调度的配置结束 -->
+
+	<!-- job的配置开始 -->
+	<bean id="myJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="myJob" />
+		</property>
+		<property name="targetMethod">
+			<value>work</value>
+		</property>
+	</bean>
+	<!-- job的配置结束 -->
+	
+	<!-- 工作的bean -->
+	<bean id="myJob" class="com.espread.common.job.MyJob" />
+
+</beans>

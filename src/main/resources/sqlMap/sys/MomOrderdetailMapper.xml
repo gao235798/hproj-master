@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.espread.sys.mapper.MomOrderdetailMapper" >
+  <resultMap id="BaseResultMap" type="com.espread.sys.model.MomOrderdetail" >
+    <id column="MoDId" property="modid" jdbcType="INTEGER" />
+    <result column="MoId" property="moid" jdbcType="INTEGER" />
+    <result column="SortSeq" property="sortseq" jdbcType="INTEGER" />
+    <result column="MoClass" property="moclass" jdbcType="TINYINT" />
+    <result column="MoTypeId" property="motypeid" jdbcType="INTEGER" />
+    <result column="Qty" property="qty" jdbcType="DECIMAL" />
+    <result column="MrpQty" property="mrpqty" jdbcType="DECIMAL" />
+    <result column="AuxUnitCode" property="auxunitcode" jdbcType="NVARCHAR" />
+    <result column="AuxQty" property="auxqty" jdbcType="DECIMAL" />
+    <result column="ChangeRate" property="changerate" jdbcType="DECIMAL" />
+    <result column="MoLotCode" property="molotcode" jdbcType="NVARCHAR" />
+    <result column="WhCode" property="whcode" jdbcType="NVARCHAR" />
+    <result column="MDeptCode" property="mdeptcode" jdbcType="NVARCHAR" />
+    <result column="SoType" property="sotype" jdbcType="TINYINT" />
+    <result column="SoDId" property="sodid" jdbcType="NVARCHAR" />
+    <result column="SoCode" property="socode" jdbcType="NVARCHAR" />
+    <result column="SoSeq" property="soseq" jdbcType="INTEGER" />
+    <result column="DeclaredQty" property="declaredqty" jdbcType="DECIMAL" />
+    <result column="QualifiedInQty" property="qualifiedinqty" jdbcType="DECIMAL" />
+    <result column="Status" property="status" jdbcType="TINYINT" />
+    <result column="OrgStatus" property="orgstatus" jdbcType="TINYINT" />
+    <result column="BomId" property="bomid" jdbcType="INTEGER" />
+    <result column="RoutingId" property="routingid" jdbcType="INTEGER" />
+    <result column="CustBomId" property="custbomid" jdbcType="INTEGER" />
+    <result column="DemandId" property="demandid" jdbcType="INTEGER" />
+    <result column="PlanCode" property="plancode" jdbcType="NVARCHAR" />
+    <result column="PartId" property="partid" jdbcType="INTEGER" />
+    <result column="InvCode" property="invcode" jdbcType="NVARCHAR" />
+    <result column="Free1" property="free1" jdbcType="NVARCHAR" />
+    <result column="Free2" property="free2" jdbcType="NVARCHAR" />
+    <result column="Free3" property="free3" jdbcType="NVARCHAR" />
+    <result column="Free4" property="free4" jdbcType="NVARCHAR" />
+    <result column="Free5" property="free5" jdbcType="NVARCHAR" />
+    <result column="Free6" property="free6" jdbcType="NVARCHAR" />
+    <result column="Free7" property="free7" jdbcType="NVARCHAR" />
+    <result column="Free8" property="free8" jdbcType="NVARCHAR" />
+    <result column="Free9" property="free9" jdbcType="NVARCHAR" />
+    <result column="Free10" property="free10" jdbcType="NVARCHAR" />
+    <result column="SfcFlag" property="sfcflag" jdbcType="BIT" />
+    <result column="CrpFlag" property="crpflag" jdbcType="BIT" />
+    <result column="QcFlag" property="qcflag" jdbcType="BIT" />
+    <result column="RelsDate" property="relsdate" jdbcType="TIMESTAMP" />
+    <result column="RelsUser" property="relsuser" jdbcType="NVARCHAR" />
+    <result column="CloseDate" property="closedate" jdbcType="TIMESTAMP" />
+    <result column="OrgClsDate" property="orgclsdate" jdbcType="TIMESTAMP" />
+    <result column="Define22" property="define22" jdbcType="NVARCHAR" />
+    <result column="Define23" property="define23" jdbcType="NVARCHAR" />
+    <result column="Define24" property="define24" jdbcType="NVARCHAR" />
+    <result column="Define25" property="define25" jdbcType="NVARCHAR" />
+    <result column="Define26" property="define26" jdbcType="DOUBLE" />
+    <result column="Define27" property="define27" jdbcType="DOUBLE" />
+    <result column="Define28" property="define28" jdbcType="NVARCHAR" />
+    <result column="Define29" property="define29" jdbcType="NVARCHAR" />
+    <result column="Define30" property="define30" jdbcType="NVARCHAR" />
+    <result column="Define31" property="define31" jdbcType="NVARCHAR" />
+    <result column="Define32" property="define32" jdbcType="NVARCHAR" />
+    <result column="Define33" property="define33" jdbcType="NVARCHAR" />
+    <result column="Define34" property="define34" jdbcType="INTEGER" />
+    <result column="Define35" property="define35" jdbcType="INTEGER" />
+    <result column="Define36" property="define36" jdbcType="TIMESTAMP" />
+    <result column="Define37" property="define37" jdbcType="TIMESTAMP" />
+    <result column="LeadTime" property="leadtime" jdbcType="INTEGER" />
+    <result column="OpScheduleType" property="opscheduletype" jdbcType="TINYINT" />
+    <result column="OrdFlag" property="ordflag" jdbcType="BIT" />
+    <result column="WIPType" property="wiptype" jdbcType="TINYINT" />
+    <result column="SupplyWhCode" property="supplywhcode" jdbcType="NVARCHAR" />
+    <result column="ReasonCode" property="reasoncode" jdbcType="NVARCHAR" />
+    <result column="IsWFControlled" property="iswfcontrolled" jdbcType="TINYINT" />
+    <result column="iVerifyState" property="iverifystate" jdbcType="INTEGER" />
+    <result column="iReturnCount" property="ireturncount" jdbcType="INTEGER" />
+    <result column="Remark" property="remark" jdbcType="NVARCHAR" />
+    <result column="SourceMoCode" property="sourcemocode" jdbcType="NVARCHAR" />
+    <result column="SourceMoSeq" property="sourcemoseq" jdbcType="INTEGER" />
+    <result column="SourceMoId" property="sourcemoid" jdbcType="INTEGER" />
+    <result column="SourceMoDId" property="sourcemodid" jdbcType="INTEGER" />
+    <result column="SourceQCCode" property="sourceqccode" jdbcType="NVARCHAR" />
+    <result column="SourceQCId" property="sourceqcid" jdbcType="INTEGER" />
+    <result column="SourceQCDId" property="sourceqcdid" jdbcType="INTEGER" />
+    <result column="CostItemCode" property="costitemcode" jdbcType="NVARCHAR" />
+    <result column="CostItemName" property="costitemname" jdbcType="NVARCHAR" />
+    <result column="RelsTime" property="relstime" jdbcType="TIMESTAMP" />
+    <result column="CloseUser" property="closeuser" jdbcType="NVARCHAR" />
+    <result column="CloseTime" property="closetime" jdbcType="TIMESTAMP" />
+    <result column="OrgClsTime" property="orgclstime" jdbcType="TIMESTAMP" />
+    <result column="AuditStatus" property="auditstatus" jdbcType="TINYINT" />
+    <result column="PAllocateId" property="pallocateid" jdbcType="INTEGER" />
+    <result column="DemandCode" property="demandcode" jdbcType="NVARCHAR" />
+    <result column="CollectiveFlag" property="collectiveflag" jdbcType="TINYINT" />
+    <result column="OrderType" property="ordertype" jdbcType="TINYINT" />
+    <result column="OrderDId" property="orderdid" jdbcType="INTEGER" />
+    <result column="OrderCode" property="ordercode" jdbcType="NVARCHAR" />
+    <result column="OrderSeq" property="orderseq" jdbcType="INTEGER" />
+    <result column="ManualCode" property="manualcode" jdbcType="NVARCHAR" />
+    <result column="ReformFlag" property="reformflag" jdbcType="BIT" />
+    <result column="SourceQCVouchType" property="sourceqcvouchtype" jdbcType="TINYINT" />
+    <result column="OrgQty" property="orgqty" jdbcType="DECIMAL" />
+    <result column="FmFlag" property="fmflag" jdbcType="BIT" />
+    <result column="MinSN" property="minsn" jdbcType="NVARCHAR" />
+    <result column="MaxSN" property="maxsn" jdbcType="NVARCHAR" />
+    <result column="SourceSvcCode" property="sourcesvccode" jdbcType="NVARCHAR" />
+    <result column="SourceSvcId" property="sourcesvcid" jdbcType="NVARCHAR" />
+    <result column="SourceSvcDId" property="sourcesvcdid" jdbcType="NVARCHAR" />
+    <result column="BomType" property="bomtype" jdbcType="TINYINT" />
+    <result column="RoutingType" property="routingtype" jdbcType="TINYINT" />
+    <result column="BusFlowId" property="busflowid" jdbcType="INTEGER" />
+    <result column="RunCardFlag" property="runcardflag" jdbcType="BIT" />
+    <result column="RequisitionFlag" property="requisitionflag" jdbcType="BIT" />
+    <result column="AlloVTid" property="allovtid" jdbcType="INTEGER" />
+    <result column="RelsAlloVTid" property="relsallovtid" jdbcType="INTEGER" />
+    <result column="iPrintCount" property="iprintcount" jdbcType="INTEGER" />
+    <result column="cbSysBarCode" property="cbsysbarcode" jdbcType="NVARCHAR" />
+    <result column="cCurrentAuditor" property="ccurrentauditor" jdbcType="NVARCHAR" />
+    <result column="CustCode" property="custcode" jdbcType="NVARCHAR" />
+    <result column="LPlanCode" property="lplancode" jdbcType="NVARCHAR" />
+    <result column="SourceSvcVouchType" property="sourcesvcvouchtype" jdbcType="TINYINT" />
+    <result column="FactoryCode" property="factorycode" jdbcType="NVARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.espread.sys.model.MomOrderdetail" extends="BaseResultMap" >
+    <result column="Ufts" property="ufts" jdbcType="BINARY" />
+    <result column="MoCode" property="mocode" jdbcType="NVARCHAR" />
+     <result column="StartDate" property="startdate" jdbcType="TIMESTAMP" />
+      <result column="DueDate" property="duedate" jdbcType="TIMESTAMP" />
+      <result column="cComUnitName" property="ccomunitname" jdbcType="NVARCHAR" />
+      <result column="cinvcode" property="cinvcode" jdbcType="NVARCHAR" />
+      
+  </resultMap>
+  <sql id="Base_Column_List" >
+     a.MoDId,a.MoId,a.SortSeq,a.MoClass,a.MoTypeId,a.Qty,a.MrpQty,a.AuxUnitCode,a.AuxQty,a.ChangeRate,
+  a.MoLotCode,a.WhCode,a.MDeptCode,a.SoType,a.SoDId,a.SoCode,a.SoSeq,a.DeclaredQty,a.QualifiedInQty
+    ,a.Status,a.OrgStatus,a.BomId,a.RoutingId,a.CustBomId,a.DemandId,a.PlanCode,a.PartId,a.InvCode
+    ,a.Free1,a.Free2,a.Free3,a.Free4,a.Free5,a.Free6,a.Free7,a.Free8,a.Free9,a.Free10,a.SfcFlag,a.CrpFlag
+    ,a.QcFlag,a.RelsDate,a.RelsUser,a.CloseDate,a.OrgClsDate,a.Define22,a.Define23,a.Define24
+    ,a.Define25,a.Define26,a.Define27,a.Define28,a.Define29,a.Define30,a.Define31,a.Define32,a.Define33
+    ,a.Define34,a.Define35,a.Define36,a.Define37,a.LeadTime,a.OpScheduleType,a.OrdFlag,a.WIPType
+    ,a.SupplyWhCode,a.ReasonCode,a.IsWFControlled,a.iVerifyState,a.iReturnCount,a.Remark,a.SourceMoCode
+    ,a.SourceMoSeq,a.SourceMoId,a.SourceMoDId,a.SourceQCCode,a.SourceQCId,a.SourceQCDId,a.CostItemCode
+    ,a.CostItemName,a.RelsTime,a.CloseUser,a.CloseTime,a.OrgClsTime,a.AuditStatus,a.PAllocateId
+    ,a.DemandCode,a.CollectiveFlag,a.OrderType,a.OrderDId,a.OrderCode,a.OrderSeq,a.ManualCode
+    ,a.ReformFlag,a.SourceQCVouchType,a.OrgQty,a.FmFlag,a.MinSN,a.MaxSN,a.SourceSvcCode,a.SourceSvcId
+    ,a.SourceSvcDId,a.BomType,a.RoutingType,a.BusFlowId,a.RunCardFlag,a.RequisitionFlag,a.AlloVTid
+    ,a.RelsAlloVTid,a.iPrintCount,a.cbSysBarCode,a.cCurrentAuditor,a.CustCode,a.LPlanCode,a.SourceSvcVouchType,a.FactoryCode
+  </sql>
+  <sql id="Blob_Column_List" >
+    a.Ufts,b.MoCode,c.StartDate ,c.DueDate ,e.cComUnitName
+  </sql>
+  <select id="selectByMomOrderdetail" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from mom_orderdetail a left join mom_order b on  a.MoId=b.MoId  left join  mom_morder c  on  a.MoDId=c.MoDId  left join inventory d on  a.InvCode = d.cinvcode  left join ComputationUnit   e 
+  on d.cComUnitCode  =e.cComunitCode 
+    where  a.Status in('3','4')  and isnull(a.Define24 ,'') ='' 
+  </select>
+  
+   <update id="updateMomOrderdetail"  >
+    update mom_orderdetail 
+    	set  Define24 = #{Define24,jdbcType=NVARCHAR} 
+    	where modid =   #{modid,jdbcType=INTEGER} 
+    </update>
+    
+     <select id="selectByMomOrderdetailJHFK" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+   distinct a.SoCode,k.cinvcode
+from  mom_orderdetail a  inner join mom_order  f on f.MoId=a.moid
+inner join mom_morder h on h.MoDId=a.MoDId
+inner join bas_part j 	on a.PartId=j.partid
+inner join inventory k on k.cInvCode=j.InvCode
+where   a.Status in('3','4') and  isnull(a.RelsUser ,'') !=''  and isnull(a.Define25 ,'') =''  and  isnull(a.SOCODE ,'') !='' 
+  </select>
+  
+  
+     <select id="selectByMomOrderdetailJHFKMX" resultMap="ResultMapWithBLOBs"  >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+   k.cinvcode,h.StartDate ,h.DueDate
+from  mom_orderdetail a  inner join mom_order  f on f.MoId=a.moid
+inner join mom_morder h on h.MoDId=a.MoDId
+inner join bas_part j 	on a.PartId=j.partid
+inner join inventory k on k.cInvCode=j.InvCode
+where   a.Status in('3','4') and  isnull(a.RelsUser ,'') !=''   and isnull(a.Define25 ,'') =''    AND a.SoCode = #{SoCode,jdbcType=NVARCHAR}  AND  k.cinvcode = #{cinvcode,jdbcType=NVARCHAR} 
+  </select>
+  
+   <update id="updateMomOrderdetailJHFK"  >
+    update mom_orderdetail 
+    	set  Define25 = #{Define25,jdbcType=NVARCHAR} 
+    	where modid =   #{modid,jdbcType=INTEGER} 
+    </update>
+</mapper>

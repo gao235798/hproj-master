@@ -251,7 +251,7 @@ public class HaServiceImpl implements HaService {
 		h.put("name", h.get("cInvName"));
 		h.put("InvAddCode", h.get("cInvAddCode"));
 		h.put("specs", h.get("cInvStd"));
-//		h.put("sort_code", h.get("cInvCCode"));
+		h.put("sort_code", h.get("cInvCCode"));   //结构不同需要注释
 		h.put("main_supplier", h.get("cVenCode"));
 		h.put("main_measure", h.get("cComunitCode"));
 		h.put("switch_item", h.get("cReplaceItem"));

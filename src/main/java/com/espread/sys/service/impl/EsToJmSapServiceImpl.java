@@ -154,7 +154,7 @@ public class EsToJmSapServiceImpl implements EsToJmSapService {
         // 构建 SysQrtzLog 日志
         SysQrtzLog sysQrtLog = new SysQrtzLog("43");// 日志类型 -43：同步销售出库单
         //添加jm写入销售订单出货单接口
-        String apiurl = "http://192.168.1.29:55555/externalApi/syncDeliveryOrder";
+        String apiurl = "http://192.168.1.188:55555/externalApi/syncDeliveryOrder";
         // 调用接口传输信息，没有认证信息
         String res = HttpUtilTool.toHttpsPost(apiurl, toPurchaseReceiptJson(da), null,HttpUtilTool.GetTokenCredentials());
         // 解析 JSON 数据

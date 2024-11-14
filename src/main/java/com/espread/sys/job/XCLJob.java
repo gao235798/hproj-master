@@ -32,7 +32,7 @@ public class XCLJob implements Job {
 		EhrToDmsXml ehrToDmsXml = ApplicationContextHelper.getBean(EhrToDmsXml.class);
 		SysQtrzLogService sysQtrzLogService = ApplicationContextHelper.getBean(SysQtrzLogService.class);
 		SysQrtzLog sysQrtzLog = ehrToDmsXml.toXCL();
-			sysQtrzLogService.save(sysQrtzLog);
+		sysQtrzLogService.save(sysQrtzLog);
 		
 
 		LOGGER.error("库存同步接口job结束----------------------------------");

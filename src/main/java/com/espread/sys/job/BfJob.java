@@ -39,7 +39,6 @@ public class BfJob implements Job {
 			SysQrtzLog sysQrtzLog = ehrToLesXml.toBf(rdrecord11);
 			sysQtrzLogService.save(sysQrtzLog);
 		}
-
 		LOGGER.error("物料报废接口job结束----------------------------------");
 
 	}

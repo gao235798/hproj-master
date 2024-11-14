@@ -192,8 +192,6 @@ public class SysServicesServerImpl implements SysServicesServer {
     @DataSourceChange(Const.DATASOURCE_SLAVE01)
     public String SalesOrderReturn(Map<String, Object> soHeader, List<Map<String, Object>> soItemList) {
 
-        StSnstate stSnstate1 = stSnstateMapper.selectOneByCinvsn("1111");
-
         String  messageage = null ; //返回消息
         // 解析销售退货单的基本信息
         String deliveryNo = (String) soHeader.get("deliveryNo");
